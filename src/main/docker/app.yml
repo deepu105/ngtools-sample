@@ -1,0 +1,19 @@
+version: '2'
+services:
+    jh4test-app:
+        image: jh4test
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://jh4test-mysql:3306/jh4test?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=jh4test-elasticsearch:9300
+        ports:
+            - 8080:8080
+    jh4test-mysql:
+        extends:
+            file: mysql.yml
+            service: jh4test-mysql
+    jh4test-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: jh4test-elasticsearch

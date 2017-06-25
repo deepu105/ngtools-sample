@@ -1,0 +1,66 @@
+{
+    "jh4TestApp": {
+        "fieldTestInfiniteScrollEntity" : {
+            "home": {
+                "title": "Field Test Infinite Scroll Entities",
+                "createLabel": "Create a new Field Test Infinite Scroll Entity",
+                "createOrEditLabel": "Create or edit a Field Test Infinite Scroll Entity",
+                "search": "Search for Field Test Infinite Scroll Entity"
+            },
+            "created": "A new Field Test Infinite Scroll Entity is created with identifier {{ param }}",
+            "updated": "A Field Test Infinite Scroll Entity is updated with identifier {{ param }}",
+            "deleted": "A Field Test Infinite Scroll Entity is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Field Test Infinite Scroll Entity {{ id }}?"
+            },
+            "detail": {
+                "title": "Field Test Infinite Scroll Entity"
+            },
+            "stringHugo": "String Hugo",
+            "stringRequiredHugo": "String Required Hugo",
+            "stringMinlengthHugo": "String Minlength Hugo",
+            "stringMaxlengthHugo": "String Maxlength Hugo",
+            "stringPatternHugo": "String Pattern Hugo",
+            "integerHugo": "Integer Hugo",
+            "integerRequiredHugo": "Integer Required Hugo",
+            "integerMinHugo": "Integer Min Hugo",
+            "integerMaxHugo": "Integer Max Hugo",
+            "longHugo": "Long Hugo",
+            "longRequiredHugo": "Long Required Hugo",
+            "longMinHugo": "Long Min Hugo",
+            "longMaxHugo": "Long Max Hugo",
+            "floatHugo": "Float Hugo",
+            "floatRequiredHugo": "Float Required Hugo",
+            "floatMinHugo": "Float Min Hugo",
+            "floatMaxHugo": "Float Max Hugo",
+            "doubleRequiredHugo": "Double Required Hugo",
+            "doubleMinHugo": "Double Min Hugo",
+            "doubleMaxHugo": "Double Max Hugo",
+            "bigDecimalRequiredHugo": "Big Decimal Required Hugo",
+            "bigDecimalMinHugo": "Big Decimal Min Hugo",
+            "bigDecimalMaxHugo": "Big Decimal Max Hugo",
+            "localDateHugo": "Local Date Hugo",
+            "localDateRequiredHugo": "Local Date Required Hugo",
+            "instantHugo": "Instant Hugo",
+            "instanteRequiredHugo": "Instante Required Hugo",
+            "zonedDateTimeHugo": "Zoned Date Time Hugo",
+            "zonedDateTimeRequiredHugo": "Zoned Date Time Required Hugo",
+            "booleanHugo": "Boolean Hugo",
+            "booleanRequiredHugo": "Boolean Required Hugo",
+            "enumHugo": "Enum Hugo",
+            "enumRequiredHugo": "Enum Required Hugo",
+            "byteImageHugo": "Byte Image Hugo",
+            "byteImageRequiredHugo": "Byte Image Required Hugo",
+            "byteImageMinbytesHugo": "Byte Image Minbytes Hugo",
+            "byteImageMaxbytesHugo": "Byte Image Maxbytes Hugo",
+            "byteAnyHugo": "Byte Any Hugo",
+            "byteAnyRequiredHugo": "Byte Any Required Hugo",
+            "byteAnyMinbytesHugo": "Byte Any Minbytes Hugo",
+            "byteAnyMaxbytesHugo": "Byte Any Maxbytes Hugo",
+            "byteTextHugo": "Byte Text Hugo",
+            "byteTextRequiredHugo": "Byte Text Required Hugo",
+            "byteTextMinbytesHugo": "Byte Text Minbytes Hugo",
+            "byteTextMaxbytesHugo": "Byte Text Maxbytes Hugo"
+        }
+    }
+}

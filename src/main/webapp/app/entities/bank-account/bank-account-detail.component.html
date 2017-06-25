@@ -1,0 +1,76 @@
+
+<div *ngIf="bankAccount">
+    <h2><span jhiTranslate="jh4TestApp.bankAccount.detail.title">Bank Account</span> {{bankAccount.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.name">Name</span></dt>
+        <dd>
+            <span>{{bankAccount.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.bankNumber">Bank Number</span></dt>
+        <dd>
+            <span>{{bankAccount.bankNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.agencyNumber">Agency Number</span></dt>
+        <dd>
+            <span>{{bankAccount.agencyNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.lastOperationDuration">Last Operation Duration</span></dt>
+        <dd>
+            <span>{{bankAccount.lastOperationDuration}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.meanOperationDuration">Mean Operation Duration</span></dt>
+        <dd>
+            <span>{{bankAccount.meanOperationDuration}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.balance">Balance</span></dt>
+        <dd>
+            <span>{{bankAccount.balance}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.openingDay">Opening Day</span></dt>
+        <dd>
+            <span>{{bankAccount.openingDay | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.lastOperationDate">Last Operation Date</span></dt>
+        <dd>
+            <span>{{bankAccount.lastOperationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.active">Active</span></dt>
+        <dd>
+            <span>{{bankAccount.active}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.accountType">Account Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.BankAccountType.' + bankAccount.accountType}}">{{bankAccount.accountType}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.attachment">Attachment</span></dt>
+        <dd>
+            <div *ngIf="bankAccount.attachment">
+                <a (click)="openFile(bankAccount.attachmentContentType, bankAccount.attachment)" jhiTranslate="entity.action.open">open</a>
+                {{bankAccount.attachmentContentType}}, {{byteSize(bankAccount.attachment)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.description">Description</span></dt>
+        <dd>
+            <span>{{bankAccount.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.bankAccount.user">User</span></dt>
+        <dd>
+            {{bankAccount.userLogin}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'bank-account/'+ bankAccount.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

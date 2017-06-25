@@ -1,0 +1,10 @@
+{
+    "jh4TestApp": {
+        "BankAccountType" : {
+            "null": "",
+            "CHECKING": "CHECKING",
+            "SAVINGS": "SAVINGS",
+            "LOAN": "LOAN"
+        }
+    }
+}

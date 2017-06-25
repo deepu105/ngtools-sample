@@ -1,0 +1,25 @@
+
+<div *ngIf="entityWithServiceImplPaginationAndDTO">
+    <h2><span jhiTranslate="jh4TestApp.entityWithServiceImplPaginationAndDTO.detail.title">Entity With Service Impl Pagination And DTO</span> {{entityWithServiceImplPaginationAndDTO.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.entityWithServiceImplPaginationAndDTO.theo">Theo</span></dt>
+        <dd>
+            <span>{{entityWithServiceImplPaginationAndDTO.theo}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'entity-with-service-impl-pagination-and-dto/'+ entityWithServiceImplPaginationAndDTO.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

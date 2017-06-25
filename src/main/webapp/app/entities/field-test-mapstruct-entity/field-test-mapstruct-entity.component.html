@@ -1,0 +1,189 @@
+<div>
+    <h2>
+        <span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.home.title">Field Test Mapstruct Entities</span>
+        <button class="btn btn-primary float-right create-field-test-mapstruct-entity" [routerLink]="['/', { outlets: { popup: ['field-test-mapstruct-entity-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="jh4TestApp.fieldTestMapstructEntity.home.createLabel">
+            Create new Field Test Mapstruct Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jh4TestApp.fieldTestMapstructEntity.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="fieldTestMapstructEntities">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringEva">String Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringRequiredEva">String Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringMinlengthEva">String Minlength Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringMaxlengthEva">String Maxlength Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringPatternEva">String Pattern Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.integerEva">Integer Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.integerRequiredEva">Integer Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.integerMinEva">Integer Min Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.integerMaxEva">Integer Max Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.longEva">Long Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.longRequiredEva">Long Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.longMinEva">Long Min Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.longMaxEva">Long Max Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.floatEva">Float Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.floatRequiredEva">Float Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.floatMinEva">Float Min Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.floatMaxEva">Float Max Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.doubleRequiredEva">Double Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.doubleMinEva">Double Min Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.doubleMaxEva">Double Max Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.bigDecimalRequiredEva">Big Decimal Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.bigDecimalMinEva">Big Decimal Min Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.bigDecimalMaxEva">Big Decimal Max Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.localDateEva">Local Date Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.localDateRequiredEva">Local Date Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.instantEva">Instant Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.instanteRequiredEva">Instante Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.zonedDateTimeEva">Zoned Date Time Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.zonedDateTimeRequiredEva">Zoned Date Time Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.booleanEva">Boolean Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.booleanRequiredEva">Boolean Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.enumEva">Enum Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.enumRequiredEva">Enum Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteImageEva">Byte Image Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteImageRequiredEva">Byte Image Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteImageMinbytesEva">Byte Image Minbytes Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteImageMaxbytesEva">Byte Image Maxbytes Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteAnyEva">Byte Any Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteAnyRequiredEva">Byte Any Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteAnyMinbytesEva">Byte Any Minbytes Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteAnyMaxbytesEva">Byte Any Maxbytes Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteTextEva">Byte Text Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteTextRequiredEva">Byte Text Required Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteTextMinbytesEva">Byte Text Minbytes Eva</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteTextMaxbytesEva">Byte Text Maxbytes Eva</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fieldTestMapstructEntity of fieldTestMapstructEntities ;trackBy: trackId">
+                <td><a [routerLink]="['../field-test-mapstruct-entity', fieldTestMapstructEntity.id ]">{{fieldTestMapstructEntity.id}}</a></td>
+                <td>{{fieldTestMapstructEntity.stringEva}}</td>
+                <td>{{fieldTestMapstructEntity.stringRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.stringMinlengthEva}}</td>
+                <td>{{fieldTestMapstructEntity.stringMaxlengthEva}}</td>
+                <td>{{fieldTestMapstructEntity.stringPatternEva}}</td>
+                <td>{{fieldTestMapstructEntity.integerEva}}</td>
+                <td>{{fieldTestMapstructEntity.integerRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.integerMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.integerMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.longEva}}</td>
+                <td>{{fieldTestMapstructEntity.longRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.longMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.longMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.floatEva}}</td>
+                <td>{{fieldTestMapstructEntity.floatRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.floatMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.floatMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.doubleRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.doubleMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.doubleMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.bigDecimalRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.bigDecimalMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.bigDecimalMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.localDateEva | date:'mediumDate'}}</td>
+                <td>{{fieldTestMapstructEntity.localDateRequiredEva | date:'mediumDate'}}</td>
+                <td>{{fieldTestMapstructEntity.instantEva | date:'medium'}}</td>
+                <td>{{fieldTestMapstructEntity.instanteRequiredEva | date:'medium'}}</td>
+                <td>{{fieldTestMapstructEntity.zonedDateTimeEva | date:'medium'}}</td>
+                <td>{{fieldTestMapstructEntity.zonedDateTimeRequiredEva | date:'medium'}}</td>
+                <td>{{fieldTestMapstructEntity.booleanEva}}</td>
+                <td>{{fieldTestMapstructEntity.booleanRequiredEva}}</td>
+                <td jhiTranslate="{{'jh4TestApp.EnumFieldClass.' + fieldTestMapstructEntity.enumEva}}">{{fieldTestMapstructEntity.enumEva}}</td>
+                <td jhiTranslate="{{'jh4TestApp.EnumRequiredFieldClass.' + fieldTestMapstructEntity.enumRequiredEva}}">{{fieldTestMapstructEntity.enumRequiredEva}}</td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteImageEva" (click)="openFile(fieldTestMapstructEntity.byteImageEvaContentType, fieldTestMapstructEntity.byteImageEva)">
+                        <img [src]="'data:' + fieldTestMapstructEntity.byteImageEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageEva" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestMapstructEntity.byteImageEva">{{fieldTestMapstructEntity.byteImageEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteImageRequiredEva" (click)="openFile(fieldTestMapstructEntity.byteImageRequiredEvaContentType, fieldTestMapstructEntity.byteImageRequiredEva)">
+                        <img [src]="'data:' + fieldTestMapstructEntity.byteImageRequiredEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageRequiredEva" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestMapstructEntity.byteImageRequiredEva">{{fieldTestMapstructEntity.byteImageRequiredEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageRequiredEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteImageMinbytesEva" (click)="openFile(fieldTestMapstructEntity.byteImageMinbytesEvaContentType, fieldTestMapstructEntity.byteImageMinbytesEva)">
+                        <img [src]="'data:' + fieldTestMapstructEntity.byteImageMinbytesEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageMinbytesEva" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestMapstructEntity.byteImageMinbytesEva">{{fieldTestMapstructEntity.byteImageMinbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageMinbytesEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteImageMaxbytesEva" (click)="openFile(fieldTestMapstructEntity.byteImageMaxbytesEvaContentType, fieldTestMapstructEntity.byteImageMaxbytesEva)">
+                        <img [src]="'data:' + fieldTestMapstructEntity.byteImageMaxbytesEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageMaxbytesEva" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestMapstructEntity.byteImageMaxbytesEva">{{fieldTestMapstructEntity.byteImageMaxbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageMaxbytesEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteAnyEva" (click)="openFile(fieldTestMapstructEntity.byteAnyEvaContentType, fieldTestMapstructEntity.byteAnyEva)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestMapstructEntity.byteAnyEva">{{fieldTestMapstructEntity.byteAnyEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteAnyRequiredEva" (click)="openFile(fieldTestMapstructEntity.byteAnyRequiredEvaContentType, fieldTestMapstructEntity.byteAnyRequiredEva)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestMapstructEntity.byteAnyRequiredEva">{{fieldTestMapstructEntity.byteAnyRequiredEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyRequiredEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteAnyMinbytesEva" (click)="openFile(fieldTestMapstructEntity.byteAnyMinbytesEvaContentType, fieldTestMapstructEntity.byteAnyMinbytesEva)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestMapstructEntity.byteAnyMinbytesEva">{{fieldTestMapstructEntity.byteAnyMinbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyMinbytesEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteAnyMaxbytesEva" (click)="openFile(fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType, fieldTestMapstructEntity.byteAnyMaxbytesEva)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestMapstructEntity.byteAnyMaxbytesEva">{{fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyMaxbytesEva)}}</span>
+                </td>
+                <td>{{fieldTestMapstructEntity.byteTextEva}}</td>
+                <td>{{fieldTestMapstructEntity.byteTextRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.byteTextMinbytesEva}}</td>
+                <td>{{fieldTestMapstructEntity.byteTextMaxbytesEva}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../field-test-mapstruct-entity', fieldTestMapstructEntity.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-mapstruct-entity/'+ fieldTestMapstructEntity.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-mapstruct-entity/'+ fieldTestMapstructEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

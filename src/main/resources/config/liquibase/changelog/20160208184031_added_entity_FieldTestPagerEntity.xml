@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity FieldTestPagerEntity.
+    -->
+    <changeSet id="20160208184031-1" author="jhipster">
+        <createTable tableName="field_test_pager_entity">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="string_jade" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="string_required_jade" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="string_minlength_jade" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="string_maxlength_jade" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="string_pattern_jade" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="integer_jade" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="integer_required_jade" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="integer_min_jade" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="integer_max_jade" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_jade" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_required_jade" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="long_min_jade" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_max_jade" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="float_jade" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="float_required_jade" type="${floatType}">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="float_min_jade" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="float_max_jade" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="double_required_jade" type="double">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="double_min_jade" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="double_max_jade" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="big_decimal_required_jade" type="decimal(10,2)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="big_decimal_min_jade" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="big_decimal_max_jade" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="local_date_jade" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="local_date_required_jade" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="instant_jade" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="instante_required_jade" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="zoned_date_time_jade" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="zoned_date_time_required_jade" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="boolean_jade" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="boolean_required_jade" type="bit">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="enum_jade" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="enum_required_jade" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_image_jade" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_image_jade_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_image_required_jade" type="longblob">
+                <constraints nullable="false" />
+            </column>
+            <column name="byte_image_required_jade_content_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_image_minbytes_jade" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_image_minbytes_jade_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_image_maxbytes_jade" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_image_maxbytes_jade_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_any_jade" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_any_jade_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_any_required_jade" type="longblob">
+                <constraints nullable="false" />
+            </column>
+            <column name="byte_any_required_jade_content_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_any_minbytes_jade" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_any_minbytes_jade_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_any_maxbytes_jade" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_any_maxbytes_jade_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_text_jade" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_text_required_jade" type="clob">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_text_minbytes_jade" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_text_maxbytes_jade" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="field_test_pager_entity" columnName="instant_jade" columnDataType="datetime"/>
+        <dropDefaultValue tableName="field_test_pager_entity" columnName="instante_required_jade" columnDataType="datetime"/>
+        <dropDefaultValue tableName="field_test_pager_entity" columnName="zoned_date_time_jade" columnDataType="datetime"/>
+        <dropDefaultValue tableName="field_test_pager_entity" columnName="zoned_date_time_required_jade" columnDataType="datetime"/>
+        
+    </changeSet>
+</databaseChangeLog>

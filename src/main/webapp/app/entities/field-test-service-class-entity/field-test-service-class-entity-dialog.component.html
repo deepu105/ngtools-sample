@@ -1,0 +1,640 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFieldTestServiceClassEntityLabel" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.home.createOrEditLabel">Create or edit a Field Test Service Class Entity</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!fieldTestServiceClassEntity.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="fieldTestServiceClassEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.stringBob" for="field_stringBob">String Bob</label>
+            <input type="text" class="form-control" name="stringBob" id="field_stringBob"
+                [(ngModel)]="fieldTestServiceClassEntity.stringBob"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.stringRequiredBob" for="field_stringRequiredBob">String Required Bob</label>
+            <input type="text" class="form-control" name="stringRequiredBob" id="field_stringRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.stringRequiredBob" required />
+            <div [hidden]="!(editForm.controls.stringRequiredBob?.dirty && editForm.controls.stringRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.stringMinlengthBob" for="field_stringMinlengthBob">String Minlength Bob</label>
+            <input type="text" class="form-control" name="stringMinlengthBob" id="field_stringMinlengthBob"
+                [(ngModel)]="fieldTestServiceClassEntity.stringMinlengthBob" minlength="0" />
+            <div [hidden]="!(editForm.controls.stringMinlengthBob?.dirty && editForm.controls.stringMinlengthBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMinlengthBob?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 0 }">
+                   This field is required to be at least 0 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.stringMaxlengthBob" for="field_stringMaxlengthBob">String Maxlength Bob</label>
+            <input type="text" class="form-control" name="stringMaxlengthBob" id="field_stringMaxlengthBob"
+                [(ngModel)]="fieldTestServiceClassEntity.stringMaxlengthBob" maxlength="20" />
+            <div [hidden]="!(editForm.controls.stringMaxlengthBob?.dirty && editForm.controls.stringMaxlengthBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMaxlengthBob?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.stringPatternBob" for="field_stringPatternBob">String Pattern Bob</label>
+            <input type="text" class="form-control" name="stringPatternBob" id="field_stringPatternBob"
+                [(ngModel)]="fieldTestServiceClassEntity.stringPatternBob" pattern="^[a-zA-Z0-9]*$" />
+            <div [hidden]="!(editForm.controls.stringPatternBob?.dirty && editForm.controls.stringPatternBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.stringPatternBob?.errors?.pattern" jhiTranslate="entity.validation.pattern" translateValues="{ pattern: 'String Pattern Bob' }">
+                    This field should follow pattern for "String Pattern Bob".
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.integerBob" for="field_integerBob">Integer Bob</label>
+            <input type="number" class="form-control" name="integerBob" id="field_integerBob"
+                [(ngModel)]="fieldTestServiceClassEntity.integerBob"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.integerRequiredBob" for="field_integerRequiredBob">Integer Required Bob</label>
+            <input type="number" class="form-control" name="integerRequiredBob" id="field_integerRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.integerRequiredBob" required />
+            <div [hidden]="!(editForm.controls.integerRequiredBob?.dirty && editForm.controls.integerRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.integerRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerRequiredBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.integerMinBob" for="field_integerMinBob">Integer Min Bob</label>
+            <input type="number" class="form-control" name="integerMinBob" id="field_integerMinBob"
+                [(ngModel)]="fieldTestServiceClassEntity.integerMinBob" min="0" />
+            <div [hidden]="!(editForm.controls.integerMinBob?.dirty && editForm.controls.integerMinBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinBob?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.integerMaxBob" for="field_integerMaxBob">Integer Max Bob</label>
+            <input type="number" class="form-control" name="integerMaxBob" id="field_integerMaxBob"
+                [(ngModel)]="fieldTestServiceClassEntity.integerMaxBob" max="100" />
+            <div [hidden]="!(editForm.controls.integerMaxBob?.dirty && editForm.controls.integerMaxBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxBob?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.longBob" for="field_longBob">Long Bob</label>
+            <input type="number" class="form-control" name="longBob" id="field_longBob"
+                [(ngModel)]="fieldTestServiceClassEntity.longBob"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.longRequiredBob" for="field_longRequiredBob">Long Required Bob</label>
+            <input type="number" class="form-control" name="longRequiredBob" id="field_longRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.longRequiredBob" required />
+            <div [hidden]="!(editForm.controls.longRequiredBob?.dirty && editForm.controls.longRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.longRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longRequiredBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.longMinBob" for="field_longMinBob">Long Min Bob</label>
+            <input type="number" class="form-control" name="longMinBob" id="field_longMinBob"
+                [(ngModel)]="fieldTestServiceClassEntity.longMinBob" min="0" />
+            <div [hidden]="!(editForm.controls.longMinBob?.dirty && editForm.controls.longMinBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinBob?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.longMaxBob" for="field_longMaxBob">Long Max Bob</label>
+            <input type="number" class="form-control" name="longMaxBob" id="field_longMaxBob"
+                [(ngModel)]="fieldTestServiceClassEntity.longMaxBob" max="100" />
+            <div [hidden]="!(editForm.controls.longMaxBob?.dirty && editForm.controls.longMaxBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxBob?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.floatBob" for="field_floatBob">Float Bob</label>
+            <input type="number" class="form-control" name="floatBob" id="field_floatBob"
+                [(ngModel)]="fieldTestServiceClassEntity.floatBob"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.floatRequiredBob" for="field_floatRequiredBob">Float Required Bob</label>
+            <input type="number" class="form-control" name="floatRequiredBob" id="field_floatRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.floatRequiredBob" required />
+            <div [hidden]="!(editForm.controls.floatRequiredBob?.dirty && editForm.controls.floatRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.floatRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatRequiredBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.floatMinBob" for="field_floatMinBob">Float Min Bob</label>
+            <input type="number" class="form-control" name="floatMinBob" id="field_floatMinBob"
+                [(ngModel)]="fieldTestServiceClassEntity.floatMinBob" min="0" />
+            <div [hidden]="!(editForm.controls.floatMinBob?.dirty && editForm.controls.floatMinBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinBob?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.floatMaxBob" for="field_floatMaxBob">Float Max Bob</label>
+            <input type="number" class="form-control" name="floatMaxBob" id="field_floatMaxBob"
+                [(ngModel)]="fieldTestServiceClassEntity.floatMaxBob" max="100" />
+            <div [hidden]="!(editForm.controls.floatMaxBob?.dirty && editForm.controls.floatMaxBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxBob?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.doubleRequiredBob" for="field_doubleRequiredBob">Double Required Bob</label>
+            <input type="number" class="form-control" name="doubleRequiredBob" id="field_doubleRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.doubleRequiredBob" required />
+            <div [hidden]="!(editForm.controls.doubleRequiredBob?.dirty && editForm.controls.doubleRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.doubleRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleRequiredBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.doubleMinBob" for="field_doubleMinBob">Double Min Bob</label>
+            <input type="number" class="form-control" name="doubleMinBob" id="field_doubleMinBob"
+                [(ngModel)]="fieldTestServiceClassEntity.doubleMinBob" min="0" />
+            <div [hidden]="!(editForm.controls.doubleMinBob?.dirty && editForm.controls.doubleMinBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinBob?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.doubleMaxBob" for="field_doubleMaxBob">Double Max Bob</label>
+            <input type="number" class="form-control" name="doubleMaxBob" id="field_doubleMaxBob"
+                [(ngModel)]="fieldTestServiceClassEntity.doubleMaxBob" max="100" />
+            <div [hidden]="!(editForm.controls.doubleMaxBob?.dirty && editForm.controls.doubleMaxBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxBob?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.bigDecimalRequiredBob" for="field_bigDecimalRequiredBob">Big Decimal Required Bob</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredBob" id="field_bigDecimalRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.bigDecimalRequiredBob" required />
+            <div [hidden]="!(editForm.controls.bigDecimalRequiredBob?.dirty && editForm.controls.bigDecimalRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.bigDecimalRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalRequiredBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.bigDecimalMinBob" for="field_bigDecimalMinBob">Big Decimal Min Bob</label>
+            <input type="number" class="form-control" name="bigDecimalMinBob" id="field_bigDecimalMinBob"
+                [(ngModel)]="fieldTestServiceClassEntity.bigDecimalMinBob" min="0" />
+            <div [hidden]="!(editForm.controls.bigDecimalMinBob?.dirty && editForm.controls.bigDecimalMinBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinBob?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.bigDecimalMaxBob" for="field_bigDecimalMaxBob">Big Decimal Max Bob</label>
+            <input type="number" class="form-control" name="bigDecimalMaxBob" id="field_bigDecimalMaxBob"
+                [(ngModel)]="fieldTestServiceClassEntity.bigDecimalMaxBob" max="100" />
+            <div [hidden]="!(editForm.controls.bigDecimalMaxBob?.dirty && editForm.controls.bigDecimalMaxBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxBob?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxBob?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.localDateBob" for="field_localDateBob">Local Date Bob</label>
+            <div class="input-group">
+                <input id="field_localDateBob" type="text" class="form-control" name="localDateBob" ngbDatepicker  #localDateBobDp="ngbDatepicker" [(ngModel)]="fieldTestServiceClassEntity.localDateBob"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateBobDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.localDateRequiredBob" for="field_localDateRequiredBob">Local Date Required Bob</label>
+            <div class="input-group">
+                <input id="field_localDateRequiredBob" type="text" class="form-control" name="localDateRequiredBob" ngbDatepicker  #localDateRequiredBobDp="ngbDatepicker" [(ngModel)]="fieldTestServiceClassEntity.localDateRequiredBob"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateRequiredBobDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.localDateRequiredBob?.dirty && editForm.controls.localDateRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.localDateRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.instantBob" for="field_instantBob">Instant Bob</label>
+            <div class="d-flex">
+                <input id="field_instantBob" type="datetime-local" class="form-control" name="instantBob" [(ngModel)]="fieldTestServiceClassEntity.instantBob"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.instanteRequiredBob" for="field_instanteRequiredBob">Instante Required Bob</label>
+            <div class="d-flex">
+                <input id="field_instanteRequiredBob" type="datetime-local" class="form-control" name="instanteRequiredBob" [(ngModel)]="fieldTestServiceClassEntity.instanteRequiredBob"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.instanteRequiredBob?.dirty && editForm.controls.instanteRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.instanteRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.instanteRequiredBob?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.zonedDateTimeBob" for="field_zonedDateTimeBob">Zoned Date Time Bob</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeBob" type="datetime-local" class="form-control" name="zonedDateTimeBob" [(ngModel)]="fieldTestServiceClassEntity.zonedDateTimeBob"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.zonedDateTimeRequiredBob" for="field_zonedDateTimeRequiredBob">Zoned Date Time Required Bob</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeRequiredBob" type="datetime-local" class="form-control" name="zonedDateTimeRequiredBob" [(ngModel)]="fieldTestServiceClassEntity.zonedDateTimeRequiredBob"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.zonedDateTimeRequiredBob?.dirty && editForm.controls.zonedDateTimeRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.zonedDateTimeRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.zonedDateTimeRequiredBob?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.booleanBob" for="field_booleanBob">Boolean Bob</label>
+            <input type="checkbox" class="form-control" name="booleanBob" id="field_booleanBob"
+                [(ngModel)]="fieldTestServiceClassEntity.booleanBob"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.booleanRequiredBob" for="field_booleanRequiredBob">Boolean Required Bob</label>
+            <input type="checkbox" class="form-control" name="booleanRequiredBob" id="field_booleanRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.booleanRequiredBob"  />
+            <div [hidden]="!(editForm.controls.booleanRequiredBob?.dirty && editForm.controls.booleanRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.booleanRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.enumBob" for="field_enumBob">Enum Bob</label>
+            <select class="form-control" name="enumBob" [(ngModel)]="fieldTestServiceClassEntity.enumBob" id="field_enumBob" >
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.enumRequiredBob" for="field_enumRequiredBob">Enum Required Bob</label>
+            <select class="form-control" name="enumRequiredBob" [(ngModel)]="fieldTestServiceClassEntity.enumRequiredBob" id="field_enumRequiredBob"  required>
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div [hidden]="!(editForm.controls.enumRequiredBob?.dirty && editForm.controls.enumRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.enumRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteImageBob" for="field_byteImageBob">Byte Image Bob</label>
+            <div>
+                <img [src]="'data:' + fieldTestServiceClassEntity.byteImageBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageBob" style="max-height: 100px;" *ngIf="fieldTestServiceClassEntity.byteImageBob" alt="fieldTestServiceClassEntity image"/>
+                <div *ngIf="fieldTestServiceClassEntity.byteImageBob" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestServiceClassEntity.byteImageBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageBob)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageBob', 'byteImageBobContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteImageBob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageBob" id="field_byteImageBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteImageBob"  />
+            <input type="hidden" class="form-control" name="byteImageBobContentType" id="field_byteImageBobContentType"
+                [(ngModel)]="fieldTestServiceClassEntity.byteImageBobContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteImageRequiredBob" for="field_byteImageRequiredBob">Byte Image Required Bob</label>
+            <div>
+                <img [src]="'data:' + fieldTestServiceClassEntity.byteImageRequiredBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageRequiredBob" style="max-height: 100px;" *ngIf="fieldTestServiceClassEntity.byteImageRequiredBob" alt="fieldTestServiceClassEntity image"/>
+                <div *ngIf="fieldTestServiceClassEntity.byteImageRequiredBob" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestServiceClassEntity.byteImageRequiredBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageRequiredBob)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageRequiredBob', 'byteImageRequiredBobContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteImageRequiredBob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredBob" id="field_byteImageRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteImageRequiredBob" required />
+            <input type="hidden" class="form-control" name="byteImageRequiredBobContentType" id="field_byteImageRequiredBobContentType"
+                [(ngModel)]="fieldTestServiceClassEntity.byteImageRequiredBobContentType" />
+            <div [hidden]="!(editForm.controls.byteImageRequiredBob?.dirty && editForm.controls.byteImageRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteImageRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteImageMinbytesBob" for="field_byteImageMinbytesBob">Byte Image Minbytes Bob</label>
+            <div>
+                <img [src]="'data:' + fieldTestServiceClassEntity.byteImageMinbytesBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageMinbytesBob" style="max-height: 100px;" *ngIf="fieldTestServiceClassEntity.byteImageMinbytesBob" alt="fieldTestServiceClassEntity image"/>
+                <div *ngIf="fieldTestServiceClassEntity.byteImageMinbytesBob" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestServiceClassEntity.byteImageMinbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageMinbytesBob)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMinbytesBob', 'byteImageMinbytesBobContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteImageMinbytesBob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesBob" id="field_byteImageMinbytesBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteImageMinbytesBob" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteImageMinbytesBobContentType" id="field_byteImageMinbytesBobContentType"
+                [(ngModel)]="fieldTestServiceClassEntity.byteImageMinbytesBobContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMinbytesBob?.dirty && editForm.controls.byteImageMinbytesBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMinbytesBob?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteImageMaxbytesBob" for="field_byteImageMaxbytesBob">Byte Image Maxbytes Bob</label>
+            <div>
+                <img [src]="'data:' + fieldTestServiceClassEntity.byteImageMaxbytesBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageMaxbytesBob" style="max-height: 100px;" *ngIf="fieldTestServiceClassEntity.byteImageMaxbytesBob" alt="fieldTestServiceClassEntity image"/>
+                <div *ngIf="fieldTestServiceClassEntity.byteImageMaxbytesBob" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestServiceClassEntity.byteImageMaxbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageMaxbytesBob)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMaxbytesBob', 'byteImageMaxbytesBobContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteImageMaxbytesBob', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesBob" id="field_byteImageMaxbytesBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteImageMaxbytesBob" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteImageMaxbytesBobContentType" id="field_byteImageMaxbytesBobContentType"
+                [(ngModel)]="fieldTestServiceClassEntity.byteImageMaxbytesBobContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMaxbytesBob?.dirty && editForm.controls.byteImageMaxbytesBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMaxbytesBob?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteAnyBob" for="field_byteAnyBob">Byte Any Bob</label>
+            <div>
+                <div *ngIf="fieldTestServiceClassEntity.byteAnyBob" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestServiceClassEntity.byteAnyBobContentType, fieldTestServiceClassEntity.byteAnyBob)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestServiceClassEntity.byteAnyBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyBob)}}</span>
+                    <button type="button" (click)="fieldTestServiceClassEntity.byteAnyBob=null;fieldTestServiceClassEntity.byteAnyBobContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteAnyBob', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyBob" id="field_byteAnyBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteAnyBob"  />
+            <input type="hidden" class="form-control" name="byteAnyBobContentType" id="field_byteAnyBobContentType"
+                [(ngModel)]="fieldTestServiceClassEntity.byteAnyBobContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteAnyRequiredBob" for="field_byteAnyRequiredBob">Byte Any Required Bob</label>
+            <div>
+                <div *ngIf="fieldTestServiceClassEntity.byteAnyRequiredBob" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestServiceClassEntity.byteAnyRequiredBobContentType, fieldTestServiceClassEntity.byteAnyRequiredBob)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestServiceClassEntity.byteAnyRequiredBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyRequiredBob)}}</span>
+                    <button type="button" (click)="fieldTestServiceClassEntity.byteAnyRequiredBob=null;fieldTestServiceClassEntity.byteAnyRequiredBobContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteAnyRequiredBob', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredBob" id="field_byteAnyRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteAnyRequiredBob" required />
+            <input type="hidden" class="form-control" name="byteAnyRequiredBobContentType" id="field_byteAnyRequiredBobContentType"
+                [(ngModel)]="fieldTestServiceClassEntity.byteAnyRequiredBobContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyRequiredBob?.dirty && editForm.controls.byteAnyRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteAnyRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteAnyMinbytesBob" for="field_byteAnyMinbytesBob">Byte Any Minbytes Bob</label>
+            <div>
+                <div *ngIf="fieldTestServiceClassEntity.byteAnyMinbytesBob" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestServiceClassEntity.byteAnyMinbytesBobContentType, fieldTestServiceClassEntity.byteAnyMinbytesBob)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestServiceClassEntity.byteAnyMinbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyMinbytesBob)}}</span>
+                    <button type="button" (click)="fieldTestServiceClassEntity.byteAnyMinbytesBob=null;fieldTestServiceClassEntity.byteAnyMinbytesBobContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteAnyMinbytesBob', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesBob" id="field_byteAnyMinbytesBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteAnyMinbytesBob" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteAnyMinbytesBobContentType" id="field_byteAnyMinbytesBobContentType"
+                [(ngModel)]="fieldTestServiceClassEntity.byteAnyMinbytesBobContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMinbytesBob?.dirty && editForm.controls.byteAnyMinbytesBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMinbytesBob?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteAnyMaxbytesBob" for="field_byteAnyMaxbytesBob">Byte Any Maxbytes Bob</label>
+            <div>
+                <div *ngIf="fieldTestServiceClassEntity.byteAnyMaxbytesBob" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType, fieldTestServiceClassEntity.byteAnyMaxbytesBob)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyMaxbytesBob)}}</span>
+                    <button type="button" (click)="fieldTestServiceClassEntity.byteAnyMaxbytesBob=null;fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteAnyMaxbytesBob', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesBob" id="field_byteAnyMaxbytesBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteAnyMaxbytesBob" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesBobContentType" id="field_byteAnyMaxbytesBobContentType"
+                [(ngModel)]="fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMaxbytesBob?.dirty && editForm.controls.byteAnyMaxbytesBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMaxbytesBob?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteTextBob" for="field_byteTextBob">Byte Text Bob</label>
+            <textarea class="form-control" name="byteTextBob" id="field_byteTextBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteTextBob"  ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteTextRequiredBob" for="field_byteTextRequiredBob">Byte Text Required Bob</label>
+            <textarea class="form-control" name="byteTextRequiredBob" id="field_byteTextRequiredBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteTextRequiredBob" required ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextRequiredBob?.dirty && editForm.controls.byteTextRequiredBob?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteTextRequiredBob?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteTextMinbytesBob" for="field_byteTextMinbytesBob">Byte Text Minbytes Bob</label>
+            <textarea class="form-control" name="byteTextMinbytesBob" id="field_byteTextMinbytesBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteTextMinbytesBob" minbytes="0" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMinbytesBob?.dirty && editForm.controls.byteTextMinbytesBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMinbytesBob?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceClassEntity.byteTextMaxbytesBob" for="field_byteTextMaxbytesBob">Byte Text Maxbytes Bob</label>
+            <textarea class="form-control" name="byteTextMaxbytesBob" id="field_byteTextMaxbytesBob"
+                [(ngModel)]="fieldTestServiceClassEntity.byteTextMaxbytesBob" maxbytes="10000" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMaxbytesBob?.dirty && editForm.controls.byteTextMaxbytesBob?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMaxbytesBob?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

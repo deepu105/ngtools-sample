@@ -1,0 +1,66 @@
+{
+    "jh4TestApp": {
+        "fieldTestMapstructEntity" : {
+            "home": {
+                "title": "Field Test Mapstruct Entities",
+                "createLabel": "Create a new Field Test Mapstruct Entity",
+                "createOrEditLabel": "Create or edit a Field Test Mapstruct Entity",
+                "search": "Search for Field Test Mapstruct Entity"
+            },
+            "created": "A new Field Test Mapstruct Entity is created with identifier {{ param }}",
+            "updated": "A Field Test Mapstruct Entity is updated with identifier {{ param }}",
+            "deleted": "A Field Test Mapstruct Entity is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Field Test Mapstruct Entity {{ id }}?"
+            },
+            "detail": {
+                "title": "Field Test Mapstruct Entity"
+            },
+            "stringEva": "String Eva",
+            "stringRequiredEva": "String Required Eva",
+            "stringMinlengthEva": "String Minlength Eva",
+            "stringMaxlengthEva": "String Maxlength Eva",
+            "stringPatternEva": "String Pattern Eva",
+            "integerEva": "Integer Eva",
+            "integerRequiredEva": "Integer Required Eva",
+            "integerMinEva": "Integer Min Eva",
+            "integerMaxEva": "Integer Max Eva",
+            "longEva": "Long Eva",
+            "longRequiredEva": "Long Required Eva",
+            "longMinEva": "Long Min Eva",
+            "longMaxEva": "Long Max Eva",
+            "floatEva": "Float Eva",
+            "floatRequiredEva": "Float Required Eva",
+            "floatMinEva": "Float Min Eva",
+            "floatMaxEva": "Float Max Eva",
+            "doubleRequiredEva": "Double Required Eva",
+            "doubleMinEva": "Double Min Eva",
+            "doubleMaxEva": "Double Max Eva",
+            "bigDecimalRequiredEva": "Big Decimal Required Eva",
+            "bigDecimalMinEva": "Big Decimal Min Eva",
+            "bigDecimalMaxEva": "Big Decimal Max Eva",
+            "localDateEva": "Local Date Eva",
+            "localDateRequiredEva": "Local Date Required Eva",
+            "instantEva": "Instant Eva",
+            "instanteRequiredEva": "Instante Required Eva",
+            "zonedDateTimeEva": "Zoned Date Time Eva",
+            "zonedDateTimeRequiredEva": "Zoned Date Time Required Eva",
+            "booleanEva": "Boolean Eva",
+            "booleanRequiredEva": "Boolean Required Eva",
+            "enumEva": "Enum Eva",
+            "enumRequiredEva": "Enum Required Eva",
+            "byteImageEva": "Byte Image Eva",
+            "byteImageRequiredEva": "Byte Image Required Eva",
+            "byteImageMinbytesEva": "Byte Image Minbytes Eva",
+            "byteImageMaxbytesEva": "Byte Image Maxbytes Eva",
+            "byteAnyEva": "Byte Any Eva",
+            "byteAnyRequiredEva": "Byte Any Required Eva",
+            "byteAnyMinbytesEva": "Byte Any Minbytes Eva",
+            "byteAnyMaxbytesEva": "Byte Any Maxbytes Eva",
+            "byteTextEva": "Byte Text Eva",
+            "byteTextRequiredEva": "Byte Text Required Eva",
+            "byteTextMinbytesEva": "Byte Text Minbytes Eva",
+            "byteTextMaxbytesEva": "Byte Text Maxbytes Eva"
+        }
+    }
+}

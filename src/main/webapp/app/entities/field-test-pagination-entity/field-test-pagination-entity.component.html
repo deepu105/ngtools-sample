@@ -1,0 +1,197 @@
+<div>
+    <h2>
+        <span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.home.title">Field Test Pagination Entities</span>
+        <button class="btn btn-primary float-right create-field-test-pagination-entity" [routerLink]="['/', { outlets: { popup: ['field-test-pagination-entity-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="jh4TestApp.fieldTestPaginationEntity.home.createLabel">
+            Create new Field Test Pagination Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jh4TestApp.fieldTestPaginationEntity.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="fieldTestPaginationEntities">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringAlice">String Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringRequiredAlice">String Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringMinlengthAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringMinlengthAlice">String Minlength Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringMaxlengthAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringMaxlengthAlice">String Maxlength Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringPatternAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringPatternAlice">String Pattern Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="integerAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerAlice">Integer Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="integerRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerRequiredAlice">Integer Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="integerMinAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerMinAlice">Integer Min Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="integerMaxAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerMaxAlice">Integer Max Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="longAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longAlice">Long Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="longRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longRequiredAlice">Long Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="longMinAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longMinAlice">Long Min Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="longMaxAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longMaxAlice">Long Max Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="floatAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatAlice">Float Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="floatRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatRequiredAlice">Float Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="floatMinAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatMinAlice">Float Min Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="floatMaxAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatMaxAlice">Float Max Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="doubleRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.doubleRequiredAlice">Double Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="doubleMinAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.doubleMinAlice">Double Min Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="doubleMaxAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.doubleMaxAlice">Double Max Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bigDecimalRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.bigDecimalRequiredAlice">Big Decimal Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bigDecimalMinAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.bigDecimalMinAlice">Big Decimal Min Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bigDecimalMaxAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.bigDecimalMaxAlice">Big Decimal Max Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="localDateAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.localDateAlice">Local Date Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="localDateRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.localDateRequiredAlice">Local Date Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="instantAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.instantAlice">Instant Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="instanteRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.instanteRequiredAlice">Instante Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="zonedDateTimeAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.zonedDateTimeAlice">Zoned Date Time Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="zonedDateTimeRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.zonedDateTimeRequiredAlice">Zoned Date Time Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="booleanAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.booleanAlice">Boolean Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="booleanRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.booleanRequiredAlice">Boolean Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="enumAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.enumAlice">Enum Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="enumRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.enumRequiredAlice">Enum Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteImageAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageAlice">Byte Image Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteImageRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageRequiredAlice">Byte Image Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteImageMinbytesAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageMinbytesAlice">Byte Image Minbytes Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteImageMaxbytesAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageMaxbytesAlice">Byte Image Maxbytes Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteAnyAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyAlice">Byte Any Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteAnyRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyRequiredAlice">Byte Any Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteAnyMinbytesAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyMinbytesAlice">Byte Any Minbytes Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteAnyMaxbytesAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyMaxbytesAlice">Byte Any Maxbytes Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteTextAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextAlice">Byte Text Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteTextRequiredAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextRequiredAlice">Byte Text Required Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteTextMinbytesAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextMinbytesAlice">Byte Text Minbytes Alice</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteTextMaxbytesAlice"><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextMaxbytesAlice">Byte Text Maxbytes Alice</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fieldTestPaginationEntity of fieldTestPaginationEntities ;trackBy: trackId">
+                <td><a [routerLink]="['../field-test-pagination-entity', fieldTestPaginationEntity.id ]">{{fieldTestPaginationEntity.id}}</a></td>
+                <td>{{fieldTestPaginationEntity.stringAlice}}</td>
+                <td>{{fieldTestPaginationEntity.stringRequiredAlice}}</td>
+                <td>{{fieldTestPaginationEntity.stringMinlengthAlice}}</td>
+                <td>{{fieldTestPaginationEntity.stringMaxlengthAlice}}</td>
+                <td>{{fieldTestPaginationEntity.stringPatternAlice}}</td>
+                <td>{{fieldTestPaginationEntity.integerAlice}}</td>
+                <td>{{fieldTestPaginationEntity.integerRequiredAlice}}</td>
+                <td>{{fieldTestPaginationEntity.integerMinAlice}}</td>
+                <td>{{fieldTestPaginationEntity.integerMaxAlice}}</td>
+                <td>{{fieldTestPaginationEntity.longAlice}}</td>
+                <td>{{fieldTestPaginationEntity.longRequiredAlice}}</td>
+                <td>{{fieldTestPaginationEntity.longMinAlice}}</td>
+                <td>{{fieldTestPaginationEntity.longMaxAlice}}</td>
+                <td>{{fieldTestPaginationEntity.floatAlice}}</td>
+                <td>{{fieldTestPaginationEntity.floatRequiredAlice}}</td>
+                <td>{{fieldTestPaginationEntity.floatMinAlice}}</td>
+                <td>{{fieldTestPaginationEntity.floatMaxAlice}}</td>
+                <td>{{fieldTestPaginationEntity.doubleRequiredAlice}}</td>
+                <td>{{fieldTestPaginationEntity.doubleMinAlice}}</td>
+                <td>{{fieldTestPaginationEntity.doubleMaxAlice}}</td>
+                <td>{{fieldTestPaginationEntity.bigDecimalRequiredAlice}}</td>
+                <td>{{fieldTestPaginationEntity.bigDecimalMinAlice}}</td>
+                <td>{{fieldTestPaginationEntity.bigDecimalMaxAlice}}</td>
+                <td>{{fieldTestPaginationEntity.localDateAlice | date:'mediumDate'}}</td>
+                <td>{{fieldTestPaginationEntity.localDateRequiredAlice | date:'mediumDate'}}</td>
+                <td>{{fieldTestPaginationEntity.instantAlice | date:'medium'}}</td>
+                <td>{{fieldTestPaginationEntity.instanteRequiredAlice | date:'medium'}}</td>
+                <td>{{fieldTestPaginationEntity.zonedDateTimeAlice | date:'medium'}}</td>
+                <td>{{fieldTestPaginationEntity.zonedDateTimeRequiredAlice | date:'medium'}}</td>
+                <td>{{fieldTestPaginationEntity.booleanAlice}}</td>
+                <td>{{fieldTestPaginationEntity.booleanRequiredAlice}}</td>
+                <td jhiTranslate="{{'jh4TestApp.EnumFieldClass.' + fieldTestPaginationEntity.enumAlice}}">{{fieldTestPaginationEntity.enumAlice}}</td>
+                <td jhiTranslate="{{'jh4TestApp.EnumRequiredFieldClass.' + fieldTestPaginationEntity.enumRequiredAlice}}">{{fieldTestPaginationEntity.enumRequiredAlice}}</td>
+                <td>
+                    <a *ngIf="fieldTestPaginationEntity.byteImageAlice" (click)="openFile(fieldTestPaginationEntity.byteImageAliceContentType, fieldTestPaginationEntity.byteImageAlice)">
+                        <img [src]="'data:' + fieldTestPaginationEntity.byteImageAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageAlice" style="max-height: 30px;" alt="fieldTestPaginationEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPaginationEntity.byteImageAlice">{{fieldTestPaginationEntity.byteImageAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageAlice)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPaginationEntity.byteImageRequiredAlice" (click)="openFile(fieldTestPaginationEntity.byteImageRequiredAliceContentType, fieldTestPaginationEntity.byteImageRequiredAlice)">
+                        <img [src]="'data:' + fieldTestPaginationEntity.byteImageRequiredAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageRequiredAlice" style="max-height: 30px;" alt="fieldTestPaginationEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPaginationEntity.byteImageRequiredAlice">{{fieldTestPaginationEntity.byteImageRequiredAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageRequiredAlice)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPaginationEntity.byteImageMinbytesAlice" (click)="openFile(fieldTestPaginationEntity.byteImageMinbytesAliceContentType, fieldTestPaginationEntity.byteImageMinbytesAlice)">
+                        <img [src]="'data:' + fieldTestPaginationEntity.byteImageMinbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMinbytesAlice" style="max-height: 30px;" alt="fieldTestPaginationEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPaginationEntity.byteImageMinbytesAlice">{{fieldTestPaginationEntity.byteImageMinbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageMinbytesAlice)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPaginationEntity.byteImageMaxbytesAlice" (click)="openFile(fieldTestPaginationEntity.byteImageMaxbytesAliceContentType, fieldTestPaginationEntity.byteImageMaxbytesAlice)">
+                        <img [src]="'data:' + fieldTestPaginationEntity.byteImageMaxbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMaxbytesAlice" style="max-height: 30px;" alt="fieldTestPaginationEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPaginationEntity.byteImageMaxbytesAlice">{{fieldTestPaginationEntity.byteImageMaxbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageMaxbytesAlice)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPaginationEntity.byteAnyAlice" (click)="openFile(fieldTestPaginationEntity.byteAnyAliceContentType, fieldTestPaginationEntity.byteAnyAlice)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestPaginationEntity.byteAnyAlice">{{fieldTestPaginationEntity.byteAnyAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyAlice)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPaginationEntity.byteAnyRequiredAlice" (click)="openFile(fieldTestPaginationEntity.byteAnyRequiredAliceContentType, fieldTestPaginationEntity.byteAnyRequiredAlice)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestPaginationEntity.byteAnyRequiredAlice">{{fieldTestPaginationEntity.byteAnyRequiredAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyRequiredAlice)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPaginationEntity.byteAnyMinbytesAlice" (click)="openFile(fieldTestPaginationEntity.byteAnyMinbytesAliceContentType, fieldTestPaginationEntity.byteAnyMinbytesAlice)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestPaginationEntity.byteAnyMinbytesAlice">{{fieldTestPaginationEntity.byteAnyMinbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyMinbytesAlice)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPaginationEntity.byteAnyMaxbytesAlice" (click)="openFile(fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType, fieldTestPaginationEntity.byteAnyMaxbytesAlice)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestPaginationEntity.byteAnyMaxbytesAlice">{{fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyMaxbytesAlice)}}</span>
+                </td>
+                <td>{{fieldTestPaginationEntity.byteTextAlice}}</td>
+                <td>{{fieldTestPaginationEntity.byteTextRequiredAlice}}</td>
+                <td>{{fieldTestPaginationEntity.byteTextMinbytesAlice}}</td>
+                <td>{{fieldTestPaginationEntity.byteTextMaxbytesAlice}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../field-test-pagination-entity', fieldTestPaginationEntity.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-pagination-entity/'+ fieldTestPaginationEntity.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-pagination-entity/'+ fieldTestPaginationEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="fieldTestPaginationEntities && fieldTestPaginationEntities.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

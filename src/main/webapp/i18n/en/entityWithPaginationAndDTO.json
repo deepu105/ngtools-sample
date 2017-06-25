@@ -1,0 +1,22 @@
+{
+    "jh4TestApp": {
+        "entityWithPaginationAndDTO" : {
+            "home": {
+                "title": "Entity With Pagination And DTOS",
+                "createLabel": "Create a new Entity With Pagination And DTO",
+                "createOrEditLabel": "Create or edit a Entity With Pagination And DTO",
+                "search": "Search for Entity With Pagination And DTO"
+            },
+            "created": "A new Entity With Pagination And DTO is created with identifier {{ param }}",
+            "updated": "A Entity With Pagination And DTO is updated with identifier {{ param }}",
+            "deleted": "A Entity With Pagination And DTO is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Entity With Pagination And DTO {{ id }}?"
+            },
+            "detail": {
+                "title": "Entity With Pagination And DTO"
+            },
+            "lea": "Lea"
+        }
+    }
+}

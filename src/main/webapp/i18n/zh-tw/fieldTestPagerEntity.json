@@ -1,0 +1,66 @@
+{
+    "jh4TestApp": {
+        "fieldTestPagerEntity" : {
+            "home": {
+                "title": "Field Test Pager Entities",
+                "createLabel": "建立一筆新的 Field Test Pager Entity",
+                "createOrEditLabel": "建立或編輯 Field Test Pager Entity",
+                "search": "搜尋 Field Test Pager Entity"
+            },
+            "created": "新的 Field Test Pager Entity 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Field Test Pager Entity 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Field Test Pager Entity 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Field Test Pager Entity {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Field Test Pager Entity"
+            },
+            "stringJade": "String Jade",
+            "stringRequiredJade": "String Required Jade",
+            "stringMinlengthJade": "String Minlength Jade",
+            "stringMaxlengthJade": "String Maxlength Jade",
+            "stringPatternJade": "String Pattern Jade",
+            "integerJade": "Integer Jade",
+            "integerRequiredJade": "Integer Required Jade",
+            "integerMinJade": "Integer Min Jade",
+            "integerMaxJade": "Integer Max Jade",
+            "longJade": "Long Jade",
+            "longRequiredJade": "Long Required Jade",
+            "longMinJade": "Long Min Jade",
+            "longMaxJade": "Long Max Jade",
+            "floatJade": "Float Jade",
+            "floatRequiredJade": "Float Required Jade",
+            "floatMinJade": "Float Min Jade",
+            "floatMaxJade": "Float Max Jade",
+            "doubleRequiredJade": "Double Required Jade",
+            "doubleMinJade": "Double Min Jade",
+            "doubleMaxJade": "Double Max Jade",
+            "bigDecimalRequiredJade": "Big Decimal Required Jade",
+            "bigDecimalMinJade": "Big Decimal Min Jade",
+            "bigDecimalMaxJade": "Big Decimal Max Jade",
+            "localDateJade": "Local Date Jade",
+            "localDateRequiredJade": "Local Date Required Jade",
+            "instantJade": "Instant Jade",
+            "instanteRequiredJade": "Instante Required Jade",
+            "zonedDateTimeJade": "Zoned Date Time Jade",
+            "zonedDateTimeRequiredJade": "Zoned Date Time Required Jade",
+            "booleanJade": "Boolean Jade",
+            "booleanRequiredJade": "Boolean Required Jade",
+            "enumJade": "Enum Jade",
+            "enumRequiredJade": "Enum Required Jade",
+            "byteImageJade": "Byte Image Jade",
+            "byteImageRequiredJade": "Byte Image Required Jade",
+            "byteImageMinbytesJade": "Byte Image Minbytes Jade",
+            "byteImageMaxbytesJade": "Byte Image Maxbytes Jade",
+            "byteAnyJade": "Byte Any Jade",
+            "byteAnyRequiredJade": "Byte Any Required Jade",
+            "byteAnyMinbytesJade": "Byte Any Minbytes Jade",
+            "byteAnyMaxbytesJade": "Byte Any Maxbytes Jade",
+            "byteTextJade": "Byte Text Jade",
+            "byteTextRequiredJade": "Byte Text Required Jade",
+            "byteTextMinbytesJade": "Byte Text Minbytes Jade",
+            "byteTextMaxbytesJade": "Byte Text Maxbytes Jade"
+        }
+    }
+}

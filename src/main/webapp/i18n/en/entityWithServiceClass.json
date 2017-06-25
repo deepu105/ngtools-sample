@@ -1,0 +1,22 @@
+{
+    "jh4TestApp": {
+        "entityWithServiceClass" : {
+            "home": {
+                "title": "Entity With Service Classes",
+                "createLabel": "Create a new Entity With Service Class",
+                "createOrEditLabel": "Create or edit a Entity With Service Class",
+                "search": "Search for Entity With Service Class"
+            },
+            "created": "A new Entity With Service Class is created with identifier {{ param }}",
+            "updated": "A Entity With Service Class is updated with identifier {{ param }}",
+            "deleted": "A Entity With Service Class is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Entity With Service Class {{ id }}?"
+            },
+            "detail": {
+                "title": "Entity With Service Class"
+            },
+            "zoe": "Zoe"
+        }
+    }
+}

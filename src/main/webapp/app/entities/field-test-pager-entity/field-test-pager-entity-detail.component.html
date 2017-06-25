@@ -1,0 +1,233 @@
+
+<div *ngIf="fieldTestPagerEntity">
+    <h2><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.detail.title">Field Test Pager Entity</span> {{fieldTestPagerEntity.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringJade">String Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.stringJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringRequiredJade">String Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.stringRequiredJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringMinlengthJade">String Minlength Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.stringMinlengthJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringMaxlengthJade">String Maxlength Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.stringMaxlengthJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringPatternJade">String Pattern Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.stringPatternJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerJade">Integer Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.integerJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerRequiredJade">Integer Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.integerRequiredJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerMinJade">Integer Min Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.integerMinJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerMaxJade">Integer Max Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.integerMaxJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.longJade">Long Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.longJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.longRequiredJade">Long Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.longRequiredJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.longMinJade">Long Min Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.longMinJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.longMaxJade">Long Max Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.longMaxJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatJade">Float Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.floatJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatRequiredJade">Float Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.floatRequiredJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatMinJade">Float Min Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.floatMinJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatMaxJade">Float Max Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.floatMaxJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.doubleRequiredJade">Double Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.doubleRequiredJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.doubleMinJade">Double Min Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.doubleMinJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.doubleMaxJade">Double Max Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.doubleMaxJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.bigDecimalRequiredJade">Big Decimal Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.bigDecimalRequiredJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.bigDecimalMinJade">Big Decimal Min Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.bigDecimalMinJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.bigDecimalMaxJade">Big Decimal Max Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.bigDecimalMaxJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.localDateJade">Local Date Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.localDateJade | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.localDateRequiredJade">Local Date Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.localDateRequiredJade | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.instantJade">Instant Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.instantJade | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.instanteRequiredJade">Instante Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.instanteRequiredJade | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.zonedDateTimeJade">Zoned Date Time Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.zonedDateTimeJade | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.zonedDateTimeRequiredJade">Zoned Date Time Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.zonedDateTimeRequiredJade | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.booleanJade">Boolean Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.booleanJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.booleanRequiredJade">Boolean Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.booleanRequiredJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.enumJade">Enum Jade</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.EnumFieldClass.' + fieldTestPagerEntity.enumJade}}">{{fieldTestPagerEntity.enumJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.enumRequiredJade">Enum Required Jade</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.EnumRequiredFieldClass.' + fieldTestPagerEntity.enumRequiredJade}}">{{fieldTestPagerEntity.enumRequiredJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageJade">Byte Image Jade</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPagerEntity.byteImageJade">
+                <a (click)="openFile(fieldTestPagerEntity.byteImageJadeContentType, fieldTestPagerEntity.byteImageJade)">
+                    <img [src]="'data:' + fieldTestPagerEntity.byteImageJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageJade" style="max-width: 100%;" alt="fieldTestPagerEntity image"/>
+                </a>
+                {{fieldTestPagerEntity.byteImageJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageJade)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageRequiredJade">Byte Image Required Jade</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPagerEntity.byteImageRequiredJade">
+                <a (click)="openFile(fieldTestPagerEntity.byteImageRequiredJadeContentType, fieldTestPagerEntity.byteImageRequiredJade)">
+                    <img [src]="'data:' + fieldTestPagerEntity.byteImageRequiredJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageRequiredJade" style="max-width: 100%;" alt="fieldTestPagerEntity image"/>
+                </a>
+                {{fieldTestPagerEntity.byteImageRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageRequiredJade)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageMinbytesJade">Byte Image Minbytes Jade</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPagerEntity.byteImageMinbytesJade">
+                <a (click)="openFile(fieldTestPagerEntity.byteImageMinbytesJadeContentType, fieldTestPagerEntity.byteImageMinbytesJade)">
+                    <img [src]="'data:' + fieldTestPagerEntity.byteImageMinbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMinbytesJade" style="max-width: 100%;" alt="fieldTestPagerEntity image"/>
+                </a>
+                {{fieldTestPagerEntity.byteImageMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMinbytesJade)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageMaxbytesJade">Byte Image Maxbytes Jade</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPagerEntity.byteImageMaxbytesJade">
+                <a (click)="openFile(fieldTestPagerEntity.byteImageMaxbytesJadeContentType, fieldTestPagerEntity.byteImageMaxbytesJade)">
+                    <img [src]="'data:' + fieldTestPagerEntity.byteImageMaxbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMaxbytesJade" style="max-width: 100%;" alt="fieldTestPagerEntity image"/>
+                </a>
+                {{fieldTestPagerEntity.byteImageMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMaxbytesJade)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyJade">Byte Any Jade</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPagerEntity.byteAnyJade">
+                <a (click)="openFile(fieldTestPagerEntity.byteAnyJadeContentType, fieldTestPagerEntity.byteAnyJade)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestPagerEntity.byteAnyJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyJade)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyRequiredJade">Byte Any Required Jade</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPagerEntity.byteAnyRequiredJade">
+                <a (click)="openFile(fieldTestPagerEntity.byteAnyRequiredJadeContentType, fieldTestPagerEntity.byteAnyRequiredJade)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestPagerEntity.byteAnyRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyRequiredJade)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyMinbytesJade">Byte Any Minbytes Jade</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPagerEntity.byteAnyMinbytesJade">
+                <a (click)="openFile(fieldTestPagerEntity.byteAnyMinbytesJadeContentType, fieldTestPagerEntity.byteAnyMinbytesJade)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestPagerEntity.byteAnyMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMinbytesJade)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyMaxbytesJade">Byte Any Maxbytes Jade</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPagerEntity.byteAnyMaxbytesJade">
+                <a (click)="openFile(fieldTestPagerEntity.byteAnyMaxbytesJadeContentType, fieldTestPagerEntity.byteAnyMaxbytesJade)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestPagerEntity.byteAnyMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMaxbytesJade)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextJade">Byte Text Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.byteTextJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextRequiredJade">Byte Text Required Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.byteTextRequiredJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextMinbytesJade">Byte Text Minbytes Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.byteTextMinbytesJade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextMaxbytesJade">Byte Text Maxbytes Jade</span></dt>
+        <dd>
+            <span>{{fieldTestPagerEntity.byteTextMaxbytesJade}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'field-test-pager-entity/'+ fieldTestPagerEntity.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

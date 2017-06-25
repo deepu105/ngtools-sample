@@ -1,0 +1,640 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFieldTestServiceImplEntityLabel" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.home.createOrEditLabel">Create or edit a Field Test Service Impl Entity</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!fieldTestServiceImplEntity.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="fieldTestServiceImplEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringMika" for="field_stringMika">String Mika</label>
+            <input type="text" class="form-control" name="stringMika" id="field_stringMika"
+                [(ngModel)]="fieldTestServiceImplEntity.stringMika"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringRequiredMika" for="field_stringRequiredMika">String Required Mika</label>
+            <input type="text" class="form-control" name="stringRequiredMika" id="field_stringRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.stringRequiredMika" required />
+            <div [hidden]="!(editForm.controls.stringRequiredMika?.dirty && editForm.controls.stringRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringMinlengthMika" for="field_stringMinlengthMika">String Minlength Mika</label>
+            <input type="text" class="form-control" name="stringMinlengthMika" id="field_stringMinlengthMika"
+                [(ngModel)]="fieldTestServiceImplEntity.stringMinlengthMika" minlength="0" />
+            <div [hidden]="!(editForm.controls.stringMinlengthMika?.dirty && editForm.controls.stringMinlengthMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMinlengthMika?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 0 }">
+                   This field is required to be at least 0 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringMaxlengthMika" for="field_stringMaxlengthMika">String Maxlength Mika</label>
+            <input type="text" class="form-control" name="stringMaxlengthMika" id="field_stringMaxlengthMika"
+                [(ngModel)]="fieldTestServiceImplEntity.stringMaxlengthMika" maxlength="20" />
+            <div [hidden]="!(editForm.controls.stringMaxlengthMika?.dirty && editForm.controls.stringMaxlengthMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMaxlengthMika?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringPatternMika" for="field_stringPatternMika">String Pattern Mika</label>
+            <input type="text" class="form-control" name="stringPatternMika" id="field_stringPatternMika"
+                [(ngModel)]="fieldTestServiceImplEntity.stringPatternMika" pattern="^[a-zA-Z0-9]*$" />
+            <div [hidden]="!(editForm.controls.stringPatternMika?.dirty && editForm.controls.stringPatternMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.stringPatternMika?.errors?.pattern" jhiTranslate="entity.validation.pattern" translateValues="{ pattern: 'String Pattern Mika' }">
+                    This field should follow pattern for "String Pattern Mika".
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.integerMika" for="field_integerMika">Integer Mika</label>
+            <input type="number" class="form-control" name="integerMika" id="field_integerMika"
+                [(ngModel)]="fieldTestServiceImplEntity.integerMika"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.integerRequiredMika" for="field_integerRequiredMika">Integer Required Mika</label>
+            <input type="number" class="form-control" name="integerRequiredMika" id="field_integerRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.integerRequiredMika" required />
+            <div [hidden]="!(editForm.controls.integerRequiredMika?.dirty && editForm.controls.integerRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.integerRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerRequiredMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.integerMinMika" for="field_integerMinMika">Integer Min Mika</label>
+            <input type="number" class="form-control" name="integerMinMika" id="field_integerMinMika"
+                [(ngModel)]="fieldTestServiceImplEntity.integerMinMika" min="0" />
+            <div [hidden]="!(editForm.controls.integerMinMika?.dirty && editForm.controls.integerMinMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinMika?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.integerMaxMika" for="field_integerMaxMika">Integer Max Mika</label>
+            <input type="number" class="form-control" name="integerMaxMika" id="field_integerMaxMika"
+                [(ngModel)]="fieldTestServiceImplEntity.integerMaxMika" max="100" />
+            <div [hidden]="!(editForm.controls.integerMaxMika?.dirty && editForm.controls.integerMaxMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxMika?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.longMika" for="field_longMika">Long Mika</label>
+            <input type="number" class="form-control" name="longMika" id="field_longMika"
+                [(ngModel)]="fieldTestServiceImplEntity.longMika"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.longRequiredMika" for="field_longRequiredMika">Long Required Mika</label>
+            <input type="number" class="form-control" name="longRequiredMika" id="field_longRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.longRequiredMika" required />
+            <div [hidden]="!(editForm.controls.longRequiredMika?.dirty && editForm.controls.longRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.longRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longRequiredMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.longMinMika" for="field_longMinMika">Long Min Mika</label>
+            <input type="number" class="form-control" name="longMinMika" id="field_longMinMika"
+                [(ngModel)]="fieldTestServiceImplEntity.longMinMika" min="0" />
+            <div [hidden]="!(editForm.controls.longMinMika?.dirty && editForm.controls.longMinMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinMika?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.longMaxMika" for="field_longMaxMika">Long Max Mika</label>
+            <input type="number" class="form-control" name="longMaxMika" id="field_longMaxMika"
+                [(ngModel)]="fieldTestServiceImplEntity.longMaxMika" max="100" />
+            <div [hidden]="!(editForm.controls.longMaxMika?.dirty && editForm.controls.longMaxMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxMika?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.floatMika" for="field_floatMika">Float Mika</label>
+            <input type="number" class="form-control" name="floatMika" id="field_floatMika"
+                [(ngModel)]="fieldTestServiceImplEntity.floatMika"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.floatRequiredMika" for="field_floatRequiredMika">Float Required Mika</label>
+            <input type="number" class="form-control" name="floatRequiredMika" id="field_floatRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.floatRequiredMika" required />
+            <div [hidden]="!(editForm.controls.floatRequiredMika?.dirty && editForm.controls.floatRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.floatRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatRequiredMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.floatMinMika" for="field_floatMinMika">Float Min Mika</label>
+            <input type="number" class="form-control" name="floatMinMika" id="field_floatMinMika"
+                [(ngModel)]="fieldTestServiceImplEntity.floatMinMika" min="0" />
+            <div [hidden]="!(editForm.controls.floatMinMika?.dirty && editForm.controls.floatMinMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinMika?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.floatMaxMika" for="field_floatMaxMika">Float Max Mika</label>
+            <input type="number" class="form-control" name="floatMaxMika" id="field_floatMaxMika"
+                [(ngModel)]="fieldTestServiceImplEntity.floatMaxMika" max="100" />
+            <div [hidden]="!(editForm.controls.floatMaxMika?.dirty && editForm.controls.floatMaxMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxMika?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.doubleRequiredMika" for="field_doubleRequiredMika">Double Required Mika</label>
+            <input type="number" class="form-control" name="doubleRequiredMika" id="field_doubleRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.doubleRequiredMika" required />
+            <div [hidden]="!(editForm.controls.doubleRequiredMika?.dirty && editForm.controls.doubleRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.doubleRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleRequiredMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.doubleMinMika" for="field_doubleMinMika">Double Min Mika</label>
+            <input type="number" class="form-control" name="doubleMinMika" id="field_doubleMinMika"
+                [(ngModel)]="fieldTestServiceImplEntity.doubleMinMika" min="0" />
+            <div [hidden]="!(editForm.controls.doubleMinMika?.dirty && editForm.controls.doubleMinMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinMika?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.doubleMaxMika" for="field_doubleMaxMika">Double Max Mika</label>
+            <input type="number" class="form-control" name="doubleMaxMika" id="field_doubleMaxMika"
+                [(ngModel)]="fieldTestServiceImplEntity.doubleMaxMika" max="100" />
+            <div [hidden]="!(editForm.controls.doubleMaxMika?.dirty && editForm.controls.doubleMaxMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxMika?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.bigDecimalRequiredMika" for="field_bigDecimalRequiredMika">Big Decimal Required Mika</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredMika" id="field_bigDecimalRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.bigDecimalRequiredMika" required />
+            <div [hidden]="!(editForm.controls.bigDecimalRequiredMika?.dirty && editForm.controls.bigDecimalRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.bigDecimalRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalRequiredMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.bigDecimalMinMika" for="field_bigDecimalMinMika">Big Decimal Min Mika</label>
+            <input type="number" class="form-control" name="bigDecimalMinMika" id="field_bigDecimalMinMika"
+                [(ngModel)]="fieldTestServiceImplEntity.bigDecimalMinMika" min="0" />
+            <div [hidden]="!(editForm.controls.bigDecimalMinMika?.dirty && editForm.controls.bigDecimalMinMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinMika?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.bigDecimalMaxMika" for="field_bigDecimalMaxMika">Big Decimal Max Mika</label>
+            <input type="number" class="form-control" name="bigDecimalMaxMika" id="field_bigDecimalMaxMika"
+                [(ngModel)]="fieldTestServiceImplEntity.bigDecimalMaxMika" max="100" />
+            <div [hidden]="!(editForm.controls.bigDecimalMaxMika?.dirty && editForm.controls.bigDecimalMaxMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxMika?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxMika?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.localDateMika" for="field_localDateMika">Local Date Mika</label>
+            <div class="input-group">
+                <input id="field_localDateMika" type="text" class="form-control" name="localDateMika" ngbDatepicker  #localDateMikaDp="ngbDatepicker" [(ngModel)]="fieldTestServiceImplEntity.localDateMika"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateMikaDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.localDateRequiredMika" for="field_localDateRequiredMika">Local Date Required Mika</label>
+            <div class="input-group">
+                <input id="field_localDateRequiredMika" type="text" class="form-control" name="localDateRequiredMika" ngbDatepicker  #localDateRequiredMikaDp="ngbDatepicker" [(ngModel)]="fieldTestServiceImplEntity.localDateRequiredMika"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateRequiredMikaDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.localDateRequiredMika?.dirty && editForm.controls.localDateRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.localDateRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.instantMika" for="field_instantMika">Instant Mika</label>
+            <div class="d-flex">
+                <input id="field_instantMika" type="datetime-local" class="form-control" name="instantMika" [(ngModel)]="fieldTestServiceImplEntity.instantMika"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.instanteRequiredMika" for="field_instanteRequiredMika">Instante Required Mika</label>
+            <div class="d-flex">
+                <input id="field_instanteRequiredMika" type="datetime-local" class="form-control" name="instanteRequiredMika" [(ngModel)]="fieldTestServiceImplEntity.instanteRequiredMika"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.instanteRequiredMika?.dirty && editForm.controls.instanteRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.instanteRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.instanteRequiredMika?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.zonedDateTimeMika" for="field_zonedDateTimeMika">Zoned Date Time Mika</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeMika" type="datetime-local" class="form-control" name="zonedDateTimeMika" [(ngModel)]="fieldTestServiceImplEntity.zonedDateTimeMika"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.zonedDateTimeRequiredMika" for="field_zonedDateTimeRequiredMika">Zoned Date Time Required Mika</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeRequiredMika" type="datetime-local" class="form-control" name="zonedDateTimeRequiredMika" [(ngModel)]="fieldTestServiceImplEntity.zonedDateTimeRequiredMika"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.zonedDateTimeRequiredMika?.dirty && editForm.controls.zonedDateTimeRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.zonedDateTimeRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.zonedDateTimeRequiredMika?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.booleanMika" for="field_booleanMika">Boolean Mika</label>
+            <input type="checkbox" class="form-control" name="booleanMika" id="field_booleanMika"
+                [(ngModel)]="fieldTestServiceImplEntity.booleanMika"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.booleanRequiredMika" for="field_booleanRequiredMika">Boolean Required Mika</label>
+            <input type="checkbox" class="form-control" name="booleanRequiredMika" id="field_booleanRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.booleanRequiredMika"  />
+            <div [hidden]="!(editForm.controls.booleanRequiredMika?.dirty && editForm.controls.booleanRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.booleanRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.enumMika" for="field_enumMika">Enum Mika</label>
+            <select class="form-control" name="enumMika" [(ngModel)]="fieldTestServiceImplEntity.enumMika" id="field_enumMika" >
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.enumRequiredMika" for="field_enumRequiredMika">Enum Required Mika</label>
+            <select class="form-control" name="enumRequiredMika" [(ngModel)]="fieldTestServiceImplEntity.enumRequiredMika" id="field_enumRequiredMika"  required>
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div [hidden]="!(editForm.controls.enumRequiredMika?.dirty && editForm.controls.enumRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.enumRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteImageMika" for="field_byteImageMika">Byte Image Mika</label>
+            <div>
+                <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMika" style="max-height: 100px;" *ngIf="fieldTestServiceImplEntity.byteImageMika" alt="fieldTestServiceImplEntity image"/>
+                <div *ngIf="fieldTestServiceImplEntity.byteImageMika" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestServiceImplEntity.byteImageMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMika)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMika', 'byteImageMikaContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestServiceImplEntity, 'byteImageMika', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMika" id="field_byteImageMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteImageMika"  />
+            <input type="hidden" class="form-control" name="byteImageMikaContentType" id="field_byteImageMikaContentType"
+                [(ngModel)]="fieldTestServiceImplEntity.byteImageMikaContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteImageRequiredMika" for="field_byteImageRequiredMika">Byte Image Required Mika</label>
+            <div>
+                <img [src]="'data:' + fieldTestServiceImplEntity.byteImageRequiredMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageRequiredMika" style="max-height: 100px;" *ngIf="fieldTestServiceImplEntity.byteImageRequiredMika" alt="fieldTestServiceImplEntity image"/>
+                <div *ngIf="fieldTestServiceImplEntity.byteImageRequiredMika" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestServiceImplEntity.byteImageRequiredMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageRequiredMika)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageRequiredMika', 'byteImageRequiredMikaContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestServiceImplEntity, 'byteImageRequiredMika', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredMika" id="field_byteImageRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteImageRequiredMika" required />
+            <input type="hidden" class="form-control" name="byteImageRequiredMikaContentType" id="field_byteImageRequiredMikaContentType"
+                [(ngModel)]="fieldTestServiceImplEntity.byteImageRequiredMikaContentType" />
+            <div [hidden]="!(editForm.controls.byteImageRequiredMika?.dirty && editForm.controls.byteImageRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteImageRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteImageMinbytesMika" for="field_byteImageMinbytesMika">Byte Image Minbytes Mika</label>
+            <div>
+                <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMinbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMinbytesMika" style="max-height: 100px;" *ngIf="fieldTestServiceImplEntity.byteImageMinbytesMika" alt="fieldTestServiceImplEntity image"/>
+                <div *ngIf="fieldTestServiceImplEntity.byteImageMinbytesMika" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestServiceImplEntity.byteImageMinbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMinbytesMika)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMinbytesMika', 'byteImageMinbytesMikaContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestServiceImplEntity, 'byteImageMinbytesMika', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesMika" id="field_byteImageMinbytesMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteImageMinbytesMika" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteImageMinbytesMikaContentType" id="field_byteImageMinbytesMikaContentType"
+                [(ngModel)]="fieldTestServiceImplEntity.byteImageMinbytesMikaContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMinbytesMika?.dirty && editForm.controls.byteImageMinbytesMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMinbytesMika?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteImageMaxbytesMika" for="field_byteImageMaxbytesMika">Byte Image Maxbytes Mika</label>
+            <div>
+                <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMaxbytesMika" style="max-height: 100px;" *ngIf="fieldTestServiceImplEntity.byteImageMaxbytesMika" alt="fieldTestServiceImplEntity image"/>
+                <div *ngIf="fieldTestServiceImplEntity.byteImageMaxbytesMika" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMaxbytesMika)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMaxbytesMika', 'byteImageMaxbytesMikaContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestServiceImplEntity, 'byteImageMaxbytesMika', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesMika" id="field_byteImageMaxbytesMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteImageMaxbytesMika" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteImageMaxbytesMikaContentType" id="field_byteImageMaxbytesMikaContentType"
+                [(ngModel)]="fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMaxbytesMika?.dirty && editForm.controls.byteImageMaxbytesMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMaxbytesMika?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteAnyMika" for="field_byteAnyMika">Byte Any Mika</label>
+            <div>
+                <div *ngIf="fieldTestServiceImplEntity.byteAnyMika" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestServiceImplEntity.byteAnyMikaContentType, fieldTestServiceImplEntity.byteAnyMika)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestServiceImplEntity.byteAnyMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMika)}}</span>
+                    <button type="button" (click)="fieldTestServiceImplEntity.byteAnyMika=null;fieldTestServiceImplEntity.byteAnyMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestServiceImplEntity, 'byteAnyMika', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMika" id="field_byteAnyMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteAnyMika"  />
+            <input type="hidden" class="form-control" name="byteAnyMikaContentType" id="field_byteAnyMikaContentType"
+                [(ngModel)]="fieldTestServiceImplEntity.byteAnyMikaContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteAnyRequiredMika" for="field_byteAnyRequiredMika">Byte Any Required Mika</label>
+            <div>
+                <div *ngIf="fieldTestServiceImplEntity.byteAnyRequiredMika" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestServiceImplEntity.byteAnyRequiredMikaContentType, fieldTestServiceImplEntity.byteAnyRequiredMika)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestServiceImplEntity.byteAnyRequiredMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyRequiredMika)}}</span>
+                    <button type="button" (click)="fieldTestServiceImplEntity.byteAnyRequiredMika=null;fieldTestServiceImplEntity.byteAnyRequiredMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestServiceImplEntity, 'byteAnyRequiredMika', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredMika" id="field_byteAnyRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteAnyRequiredMika" required />
+            <input type="hidden" class="form-control" name="byteAnyRequiredMikaContentType" id="field_byteAnyRequiredMikaContentType"
+                [(ngModel)]="fieldTestServiceImplEntity.byteAnyRequiredMikaContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyRequiredMika?.dirty && editForm.controls.byteAnyRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteAnyRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteAnyMinbytesMika" for="field_byteAnyMinbytesMika">Byte Any Minbytes Mika</label>
+            <div>
+                <div *ngIf="fieldTestServiceImplEntity.byteAnyMinbytesMika" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMinbytesMika)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMinbytesMika)}}</span>
+                    <button type="button" (click)="fieldTestServiceImplEntity.byteAnyMinbytesMika=null;fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestServiceImplEntity, 'byteAnyMinbytesMika', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesMika" id="field_byteAnyMinbytesMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteAnyMinbytesMika" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteAnyMinbytesMikaContentType" id="field_byteAnyMinbytesMikaContentType"
+                [(ngModel)]="fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMinbytesMika?.dirty && editForm.controls.byteAnyMinbytesMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMinbytesMika?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteAnyMaxbytesMika" for="field_byteAnyMaxbytesMika">Byte Any Maxbytes Mika</label>
+            <div>
+                <div *ngIf="fieldTestServiceImplEntity.byteAnyMaxbytesMika" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMaxbytesMika)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMaxbytesMika)}}</span>
+                    <button type="button" (click)="fieldTestServiceImplEntity.byteAnyMaxbytesMika=null;fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestServiceImplEntity, 'byteAnyMaxbytesMika', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesMika" id="field_byteAnyMaxbytesMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteAnyMaxbytesMika" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesMikaContentType" id="field_byteAnyMaxbytesMikaContentType"
+                [(ngModel)]="fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMaxbytesMika?.dirty && editForm.controls.byteAnyMaxbytesMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMaxbytesMika?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteTextMika" for="field_byteTextMika">Byte Text Mika</label>
+            <textarea class="form-control" name="byteTextMika" id="field_byteTextMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteTextMika"  ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteTextRequiredMika" for="field_byteTextRequiredMika">Byte Text Required Mika</label>
+            <textarea class="form-control" name="byteTextRequiredMika" id="field_byteTextRequiredMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteTextRequiredMika" required ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextRequiredMika?.dirty && editForm.controls.byteTextRequiredMika?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteTextRequiredMika?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteTextMinbytesMika" for="field_byteTextMinbytesMika">Byte Text Minbytes Mika</label>
+            <textarea class="form-control" name="byteTextMinbytesMika" id="field_byteTextMinbytesMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteTextMinbytesMika" minbytes="0" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMinbytesMika?.dirty && editForm.controls.byteTextMinbytesMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMinbytesMika?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteTextMaxbytesMika" for="field_byteTextMaxbytesMika">Byte Text Maxbytes Mika</label>
+            <textarea class="form-control" name="byteTextMaxbytesMika" id="field_byteTextMaxbytesMika"
+                [(ngModel)]="fieldTestServiceImplEntity.byteTextMaxbytesMika" maxbytes="10000" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMaxbytesMika?.dirty && editForm.controls.byteTextMaxbytesMika?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMaxbytesMika?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

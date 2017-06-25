@@ -1,0 +1,640 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFieldTestPagerEntityLabel" jhiTranslate="jh4TestApp.fieldTestPagerEntity.home.createOrEditLabel">Create or edit a Field Test Pager Entity</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!fieldTestPagerEntity.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="fieldTestPagerEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringJade" for="field_stringJade">String Jade</label>
+            <input type="text" class="form-control" name="stringJade" id="field_stringJade"
+                [(ngModel)]="fieldTestPagerEntity.stringJade"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringRequiredJade" for="field_stringRequiredJade">String Required Jade</label>
+            <input type="text" class="form-control" name="stringRequiredJade" id="field_stringRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.stringRequiredJade" required />
+            <div [hidden]="!(editForm.controls.stringRequiredJade?.dirty && editForm.controls.stringRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringMinlengthJade" for="field_stringMinlengthJade">String Minlength Jade</label>
+            <input type="text" class="form-control" name="stringMinlengthJade" id="field_stringMinlengthJade"
+                [(ngModel)]="fieldTestPagerEntity.stringMinlengthJade" minlength="0" />
+            <div [hidden]="!(editForm.controls.stringMinlengthJade?.dirty && editForm.controls.stringMinlengthJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMinlengthJade?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 0 }">
+                   This field is required to be at least 0 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringMaxlengthJade" for="field_stringMaxlengthJade">String Maxlength Jade</label>
+            <input type="text" class="form-control" name="stringMaxlengthJade" id="field_stringMaxlengthJade"
+                [(ngModel)]="fieldTestPagerEntity.stringMaxlengthJade" maxlength="20" />
+            <div [hidden]="!(editForm.controls.stringMaxlengthJade?.dirty && editForm.controls.stringMaxlengthJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMaxlengthJade?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringPatternJade" for="field_stringPatternJade">String Pattern Jade</label>
+            <input type="text" class="form-control" name="stringPatternJade" id="field_stringPatternJade"
+                [(ngModel)]="fieldTestPagerEntity.stringPatternJade" pattern="^[a-zA-Z0-9]*$" />
+            <div [hidden]="!(editForm.controls.stringPatternJade?.dirty && editForm.controls.stringPatternJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.stringPatternJade?.errors?.pattern" jhiTranslate="entity.validation.pattern" translateValues="{ pattern: 'String Pattern Jade' }">
+                    This field should follow pattern for "String Pattern Jade".
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerJade" for="field_integerJade">Integer Jade</label>
+            <input type="number" class="form-control" name="integerJade" id="field_integerJade"
+                [(ngModel)]="fieldTestPagerEntity.integerJade"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerRequiredJade" for="field_integerRequiredJade">Integer Required Jade</label>
+            <input type="number" class="form-control" name="integerRequiredJade" id="field_integerRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.integerRequiredJade" required />
+            <div [hidden]="!(editForm.controls.integerRequiredJade?.dirty && editForm.controls.integerRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.integerRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerRequiredJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerMinJade" for="field_integerMinJade">Integer Min Jade</label>
+            <input type="number" class="form-control" name="integerMinJade" id="field_integerMinJade"
+                [(ngModel)]="fieldTestPagerEntity.integerMinJade" min="0" />
+            <div [hidden]="!(editForm.controls.integerMinJade?.dirty && editForm.controls.integerMinJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinJade?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerMaxJade" for="field_integerMaxJade">Integer Max Jade</label>
+            <input type="number" class="form-control" name="integerMaxJade" id="field_integerMaxJade"
+                [(ngModel)]="fieldTestPagerEntity.integerMaxJade" max="100" />
+            <div [hidden]="!(editForm.controls.integerMaxJade?.dirty && editForm.controls.integerMaxJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxJade?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.longJade" for="field_longJade">Long Jade</label>
+            <input type="number" class="form-control" name="longJade" id="field_longJade"
+                [(ngModel)]="fieldTestPagerEntity.longJade"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.longRequiredJade" for="field_longRequiredJade">Long Required Jade</label>
+            <input type="number" class="form-control" name="longRequiredJade" id="field_longRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.longRequiredJade" required />
+            <div [hidden]="!(editForm.controls.longRequiredJade?.dirty && editForm.controls.longRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.longRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longRequiredJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.longMinJade" for="field_longMinJade">Long Min Jade</label>
+            <input type="number" class="form-control" name="longMinJade" id="field_longMinJade"
+                [(ngModel)]="fieldTestPagerEntity.longMinJade" min="0" />
+            <div [hidden]="!(editForm.controls.longMinJade?.dirty && editForm.controls.longMinJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinJade?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.longMaxJade" for="field_longMaxJade">Long Max Jade</label>
+            <input type="number" class="form-control" name="longMaxJade" id="field_longMaxJade"
+                [(ngModel)]="fieldTestPagerEntity.longMaxJade" max="100" />
+            <div [hidden]="!(editForm.controls.longMaxJade?.dirty && editForm.controls.longMaxJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxJade?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatJade" for="field_floatJade">Float Jade</label>
+            <input type="number" class="form-control" name="floatJade" id="field_floatJade"
+                [(ngModel)]="fieldTestPagerEntity.floatJade"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatRequiredJade" for="field_floatRequiredJade">Float Required Jade</label>
+            <input type="number" class="form-control" name="floatRequiredJade" id="field_floatRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.floatRequiredJade" required />
+            <div [hidden]="!(editForm.controls.floatRequiredJade?.dirty && editForm.controls.floatRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.floatRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatRequiredJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatMinJade" for="field_floatMinJade">Float Min Jade</label>
+            <input type="number" class="form-control" name="floatMinJade" id="field_floatMinJade"
+                [(ngModel)]="fieldTestPagerEntity.floatMinJade" min="0" />
+            <div [hidden]="!(editForm.controls.floatMinJade?.dirty && editForm.controls.floatMinJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinJade?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatMaxJade" for="field_floatMaxJade">Float Max Jade</label>
+            <input type="number" class="form-control" name="floatMaxJade" id="field_floatMaxJade"
+                [(ngModel)]="fieldTestPagerEntity.floatMaxJade" max="100" />
+            <div [hidden]="!(editForm.controls.floatMaxJade?.dirty && editForm.controls.floatMaxJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxJade?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.doubleRequiredJade" for="field_doubleRequiredJade">Double Required Jade</label>
+            <input type="number" class="form-control" name="doubleRequiredJade" id="field_doubleRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.doubleRequiredJade" required />
+            <div [hidden]="!(editForm.controls.doubleRequiredJade?.dirty && editForm.controls.doubleRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.doubleRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleRequiredJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.doubleMinJade" for="field_doubleMinJade">Double Min Jade</label>
+            <input type="number" class="form-control" name="doubleMinJade" id="field_doubleMinJade"
+                [(ngModel)]="fieldTestPagerEntity.doubleMinJade" min="0" />
+            <div [hidden]="!(editForm.controls.doubleMinJade?.dirty && editForm.controls.doubleMinJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinJade?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.doubleMaxJade" for="field_doubleMaxJade">Double Max Jade</label>
+            <input type="number" class="form-control" name="doubleMaxJade" id="field_doubleMaxJade"
+                [(ngModel)]="fieldTestPagerEntity.doubleMaxJade" max="100" />
+            <div [hidden]="!(editForm.controls.doubleMaxJade?.dirty && editForm.controls.doubleMaxJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxJade?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.bigDecimalRequiredJade" for="field_bigDecimalRequiredJade">Big Decimal Required Jade</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredJade" id="field_bigDecimalRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.bigDecimalRequiredJade" required />
+            <div [hidden]="!(editForm.controls.bigDecimalRequiredJade?.dirty && editForm.controls.bigDecimalRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.bigDecimalRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalRequiredJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.bigDecimalMinJade" for="field_bigDecimalMinJade">Big Decimal Min Jade</label>
+            <input type="number" class="form-control" name="bigDecimalMinJade" id="field_bigDecimalMinJade"
+                [(ngModel)]="fieldTestPagerEntity.bigDecimalMinJade" min="0" />
+            <div [hidden]="!(editForm.controls.bigDecimalMinJade?.dirty && editForm.controls.bigDecimalMinJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinJade?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.bigDecimalMaxJade" for="field_bigDecimalMaxJade">Big Decimal Max Jade</label>
+            <input type="number" class="form-control" name="bigDecimalMaxJade" id="field_bigDecimalMaxJade"
+                [(ngModel)]="fieldTestPagerEntity.bigDecimalMaxJade" max="100" />
+            <div [hidden]="!(editForm.controls.bigDecimalMaxJade?.dirty && editForm.controls.bigDecimalMaxJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxJade?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxJade?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.localDateJade" for="field_localDateJade">Local Date Jade</label>
+            <div class="input-group">
+                <input id="field_localDateJade" type="text" class="form-control" name="localDateJade" ngbDatepicker  #localDateJadeDp="ngbDatepicker" [(ngModel)]="fieldTestPagerEntity.localDateJade"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateJadeDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.localDateRequiredJade" for="field_localDateRequiredJade">Local Date Required Jade</label>
+            <div class="input-group">
+                <input id="field_localDateRequiredJade" type="text" class="form-control" name="localDateRequiredJade" ngbDatepicker  #localDateRequiredJadeDp="ngbDatepicker" [(ngModel)]="fieldTestPagerEntity.localDateRequiredJade"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateRequiredJadeDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.localDateRequiredJade?.dirty && editForm.controls.localDateRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.localDateRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.instantJade" for="field_instantJade">Instant Jade</label>
+            <div class="d-flex">
+                <input id="field_instantJade" type="datetime-local" class="form-control" name="instantJade" [(ngModel)]="fieldTestPagerEntity.instantJade"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.instanteRequiredJade" for="field_instanteRequiredJade">Instante Required Jade</label>
+            <div class="d-flex">
+                <input id="field_instanteRequiredJade" type="datetime-local" class="form-control" name="instanteRequiredJade" [(ngModel)]="fieldTestPagerEntity.instanteRequiredJade"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.instanteRequiredJade?.dirty && editForm.controls.instanteRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.instanteRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.instanteRequiredJade?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.zonedDateTimeJade" for="field_zonedDateTimeJade">Zoned Date Time Jade</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeJade" type="datetime-local" class="form-control" name="zonedDateTimeJade" [(ngModel)]="fieldTestPagerEntity.zonedDateTimeJade"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.zonedDateTimeRequiredJade" for="field_zonedDateTimeRequiredJade">Zoned Date Time Required Jade</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeRequiredJade" type="datetime-local" class="form-control" name="zonedDateTimeRequiredJade" [(ngModel)]="fieldTestPagerEntity.zonedDateTimeRequiredJade"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.zonedDateTimeRequiredJade?.dirty && editForm.controls.zonedDateTimeRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.zonedDateTimeRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.zonedDateTimeRequiredJade?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.booleanJade" for="field_booleanJade">Boolean Jade</label>
+            <input type="checkbox" class="form-control" name="booleanJade" id="field_booleanJade"
+                [(ngModel)]="fieldTestPagerEntity.booleanJade"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.booleanRequiredJade" for="field_booleanRequiredJade">Boolean Required Jade</label>
+            <input type="checkbox" class="form-control" name="booleanRequiredJade" id="field_booleanRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.booleanRequiredJade"  />
+            <div [hidden]="!(editForm.controls.booleanRequiredJade?.dirty && editForm.controls.booleanRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.booleanRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.enumJade" for="field_enumJade">Enum Jade</label>
+            <select class="form-control" name="enumJade" [(ngModel)]="fieldTestPagerEntity.enumJade" id="field_enumJade" >
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.enumRequiredJade" for="field_enumRequiredJade">Enum Required Jade</label>
+            <select class="form-control" name="enumRequiredJade" [(ngModel)]="fieldTestPagerEntity.enumRequiredJade" id="field_enumRequiredJade"  required>
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div [hidden]="!(editForm.controls.enumRequiredJade?.dirty && editForm.controls.enumRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.enumRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageJade" for="field_byteImageJade">Byte Image Jade</label>
+            <div>
+                <img [src]="'data:' + fieldTestPagerEntity.byteImageJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageJade" style="max-height: 100px;" *ngIf="fieldTestPagerEntity.byteImageJade" alt="fieldTestPagerEntity image"/>
+                <div *ngIf="fieldTestPagerEntity.byteImageJade" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestPagerEntity.byteImageJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageJade)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageJade', 'byteImageJadeContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestPagerEntity, 'byteImageJade', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageJade" id="field_byteImageJade"
+                [(ngModel)]="fieldTestPagerEntity.byteImageJade"  />
+            <input type="hidden" class="form-control" name="byteImageJadeContentType" id="field_byteImageJadeContentType"
+                [(ngModel)]="fieldTestPagerEntity.byteImageJadeContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageRequiredJade" for="field_byteImageRequiredJade">Byte Image Required Jade</label>
+            <div>
+                <img [src]="'data:' + fieldTestPagerEntity.byteImageRequiredJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageRequiredJade" style="max-height: 100px;" *ngIf="fieldTestPagerEntity.byteImageRequiredJade" alt="fieldTestPagerEntity image"/>
+                <div *ngIf="fieldTestPagerEntity.byteImageRequiredJade" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestPagerEntity.byteImageRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageRequiredJade)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageRequiredJade', 'byteImageRequiredJadeContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestPagerEntity, 'byteImageRequiredJade', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredJade" id="field_byteImageRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.byteImageRequiredJade" required />
+            <input type="hidden" class="form-control" name="byteImageRequiredJadeContentType" id="field_byteImageRequiredJadeContentType"
+                [(ngModel)]="fieldTestPagerEntity.byteImageRequiredJadeContentType" />
+            <div [hidden]="!(editForm.controls.byteImageRequiredJade?.dirty && editForm.controls.byteImageRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteImageRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageMinbytesJade" for="field_byteImageMinbytesJade">Byte Image Minbytes Jade</label>
+            <div>
+                <img [src]="'data:' + fieldTestPagerEntity.byteImageMinbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMinbytesJade" style="max-height: 100px;" *ngIf="fieldTestPagerEntity.byteImageMinbytesJade" alt="fieldTestPagerEntity image"/>
+                <div *ngIf="fieldTestPagerEntity.byteImageMinbytesJade" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestPagerEntity.byteImageMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMinbytesJade)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMinbytesJade', 'byteImageMinbytesJadeContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestPagerEntity, 'byteImageMinbytesJade', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesJade" id="field_byteImageMinbytesJade"
+                [(ngModel)]="fieldTestPagerEntity.byteImageMinbytesJade" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteImageMinbytesJadeContentType" id="field_byteImageMinbytesJadeContentType"
+                [(ngModel)]="fieldTestPagerEntity.byteImageMinbytesJadeContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMinbytesJade?.dirty && editForm.controls.byteImageMinbytesJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMinbytesJade?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageMaxbytesJade" for="field_byteImageMaxbytesJade">Byte Image Maxbytes Jade</label>
+            <div>
+                <img [src]="'data:' + fieldTestPagerEntity.byteImageMaxbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMaxbytesJade" style="max-height: 100px;" *ngIf="fieldTestPagerEntity.byteImageMaxbytesJade" alt="fieldTestPagerEntity image"/>
+                <div *ngIf="fieldTestPagerEntity.byteImageMaxbytesJade" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestPagerEntity.byteImageMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMaxbytesJade)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMaxbytesJade', 'byteImageMaxbytesJadeContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestPagerEntity, 'byteImageMaxbytesJade', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesJade" id="field_byteImageMaxbytesJade"
+                [(ngModel)]="fieldTestPagerEntity.byteImageMaxbytesJade" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteImageMaxbytesJadeContentType" id="field_byteImageMaxbytesJadeContentType"
+                [(ngModel)]="fieldTestPagerEntity.byteImageMaxbytesJadeContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMaxbytesJade?.dirty && editForm.controls.byteImageMaxbytesJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMaxbytesJade?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyJade" for="field_byteAnyJade">Byte Any Jade</label>
+            <div>
+                <div *ngIf="fieldTestPagerEntity.byteAnyJade" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestPagerEntity.byteAnyJadeContentType, fieldTestPagerEntity.byteAnyJade)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestPagerEntity.byteAnyJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyJade)}}</span>
+                    <button type="button" (click)="fieldTestPagerEntity.byteAnyJade=null;fieldTestPagerEntity.byteAnyJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestPagerEntity, 'byteAnyJade', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyJade" id="field_byteAnyJade"
+                [(ngModel)]="fieldTestPagerEntity.byteAnyJade"  />
+            <input type="hidden" class="form-control" name="byteAnyJadeContentType" id="field_byteAnyJadeContentType"
+                [(ngModel)]="fieldTestPagerEntity.byteAnyJadeContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyRequiredJade" for="field_byteAnyRequiredJade">Byte Any Required Jade</label>
+            <div>
+                <div *ngIf="fieldTestPagerEntity.byteAnyRequiredJade" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestPagerEntity.byteAnyRequiredJadeContentType, fieldTestPagerEntity.byteAnyRequiredJade)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestPagerEntity.byteAnyRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyRequiredJade)}}</span>
+                    <button type="button" (click)="fieldTestPagerEntity.byteAnyRequiredJade=null;fieldTestPagerEntity.byteAnyRequiredJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestPagerEntity, 'byteAnyRequiredJade', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredJade" id="field_byteAnyRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.byteAnyRequiredJade" required />
+            <input type="hidden" class="form-control" name="byteAnyRequiredJadeContentType" id="field_byteAnyRequiredJadeContentType"
+                [(ngModel)]="fieldTestPagerEntity.byteAnyRequiredJadeContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyRequiredJade?.dirty && editForm.controls.byteAnyRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteAnyRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyMinbytesJade" for="field_byteAnyMinbytesJade">Byte Any Minbytes Jade</label>
+            <div>
+                <div *ngIf="fieldTestPagerEntity.byteAnyMinbytesJade" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestPagerEntity.byteAnyMinbytesJadeContentType, fieldTestPagerEntity.byteAnyMinbytesJade)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestPagerEntity.byteAnyMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMinbytesJade)}}</span>
+                    <button type="button" (click)="fieldTestPagerEntity.byteAnyMinbytesJade=null;fieldTestPagerEntity.byteAnyMinbytesJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestPagerEntity, 'byteAnyMinbytesJade', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesJade" id="field_byteAnyMinbytesJade"
+                [(ngModel)]="fieldTestPagerEntity.byteAnyMinbytesJade" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteAnyMinbytesJadeContentType" id="field_byteAnyMinbytesJadeContentType"
+                [(ngModel)]="fieldTestPagerEntity.byteAnyMinbytesJadeContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMinbytesJade?.dirty && editForm.controls.byteAnyMinbytesJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMinbytesJade?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyMaxbytesJade" for="field_byteAnyMaxbytesJade">Byte Any Maxbytes Jade</label>
+            <div>
+                <div *ngIf="fieldTestPagerEntity.byteAnyMaxbytesJade" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestPagerEntity.byteAnyMaxbytesJadeContentType, fieldTestPagerEntity.byteAnyMaxbytesJade)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestPagerEntity.byteAnyMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMaxbytesJade)}}</span>
+                    <button type="button" (click)="fieldTestPagerEntity.byteAnyMaxbytesJade=null;fieldTestPagerEntity.byteAnyMaxbytesJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestPagerEntity, 'byteAnyMaxbytesJade', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesJade" id="field_byteAnyMaxbytesJade"
+                [(ngModel)]="fieldTestPagerEntity.byteAnyMaxbytesJade" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesJadeContentType" id="field_byteAnyMaxbytesJadeContentType"
+                [(ngModel)]="fieldTestPagerEntity.byteAnyMaxbytesJadeContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMaxbytesJade?.dirty && editForm.controls.byteAnyMaxbytesJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMaxbytesJade?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextJade" for="field_byteTextJade">Byte Text Jade</label>
+            <textarea class="form-control" name="byteTextJade" id="field_byteTextJade"
+                [(ngModel)]="fieldTestPagerEntity.byteTextJade"  ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextRequiredJade" for="field_byteTextRequiredJade">Byte Text Required Jade</label>
+            <textarea class="form-control" name="byteTextRequiredJade" id="field_byteTextRequiredJade"
+                [(ngModel)]="fieldTestPagerEntity.byteTextRequiredJade" required ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextRequiredJade?.dirty && editForm.controls.byteTextRequiredJade?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteTextRequiredJade?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextMinbytesJade" for="field_byteTextMinbytesJade">Byte Text Minbytes Jade</label>
+            <textarea class="form-control" name="byteTextMinbytesJade" id="field_byteTextMinbytesJade"
+                [(ngModel)]="fieldTestPagerEntity.byteTextMinbytesJade" minbytes="0" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMinbytesJade?.dirty && editForm.controls.byteTextMinbytesJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMinbytesJade?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextMaxbytesJade" for="field_byteTextMaxbytesJade">Byte Text Maxbytes Jade</label>
+            <textarea class="form-control" name="byteTextMaxbytesJade" id="field_byteTextMaxbytesJade"
+                [(ngModel)]="fieldTestPagerEntity.byteTextMaxbytesJade" maxbytes="10000" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMaxbytesJade?.dirty && editForm.controls.byteTextMaxbytesJade?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMaxbytesJade?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,640 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFieldTestInfiniteScrollEntityLabel" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.home.createOrEditLabel">Create or edit a Field Test Infinite Scroll Entity</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!fieldTestInfiniteScrollEntity.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="fieldTestInfiniteScrollEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringHugo" for="field_stringHugo">String Hugo</label>
+            <input type="text" class="form-control" name="stringHugo" id="field_stringHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.stringHugo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringRequiredHugo" for="field_stringRequiredHugo">String Required Hugo</label>
+            <input type="text" class="form-control" name="stringRequiredHugo" id="field_stringRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.stringRequiredHugo" required />
+            <div [hidden]="!(editForm.controls.stringRequiredHugo?.dirty && editForm.controls.stringRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringMinlengthHugo" for="field_stringMinlengthHugo">String Minlength Hugo</label>
+            <input type="text" class="form-control" name="stringMinlengthHugo" id="field_stringMinlengthHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.stringMinlengthHugo" minlength="0" />
+            <div [hidden]="!(editForm.controls.stringMinlengthHugo?.dirty && editForm.controls.stringMinlengthHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMinlengthHugo?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 0 }">
+                   This field is required to be at least 0 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringMaxlengthHugo" for="field_stringMaxlengthHugo">String Maxlength Hugo</label>
+            <input type="text" class="form-control" name="stringMaxlengthHugo" id="field_stringMaxlengthHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.stringMaxlengthHugo" maxlength="20" />
+            <div [hidden]="!(editForm.controls.stringMaxlengthHugo?.dirty && editForm.controls.stringMaxlengthHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMaxlengthHugo?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringPatternHugo" for="field_stringPatternHugo">String Pattern Hugo</label>
+            <input type="text" class="form-control" name="stringPatternHugo" id="field_stringPatternHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.stringPatternHugo" pattern="^[a-zA-Z0-9]*$" />
+            <div [hidden]="!(editForm.controls.stringPatternHugo?.dirty && editForm.controls.stringPatternHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.stringPatternHugo?.errors?.pattern" jhiTranslate="entity.validation.pattern" translateValues="{ pattern: 'String Pattern Hugo' }">
+                    This field should follow pattern for "String Pattern Hugo".
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.integerHugo" for="field_integerHugo">Integer Hugo</label>
+            <input type="number" class="form-control" name="integerHugo" id="field_integerHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.integerHugo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.integerRequiredHugo" for="field_integerRequiredHugo">Integer Required Hugo</label>
+            <input type="number" class="form-control" name="integerRequiredHugo" id="field_integerRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.integerRequiredHugo" required />
+            <div [hidden]="!(editForm.controls.integerRequiredHugo?.dirty && editForm.controls.integerRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.integerRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerRequiredHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.integerMinHugo" for="field_integerMinHugo">Integer Min Hugo</label>
+            <input type="number" class="form-control" name="integerMinHugo" id="field_integerMinHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.integerMinHugo" min="0" />
+            <div [hidden]="!(editForm.controls.integerMinHugo?.dirty && editForm.controls.integerMinHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinHugo?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.integerMaxHugo" for="field_integerMaxHugo">Integer Max Hugo</label>
+            <input type="number" class="form-control" name="integerMaxHugo" id="field_integerMaxHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.integerMaxHugo" max="100" />
+            <div [hidden]="!(editForm.controls.integerMaxHugo?.dirty && editForm.controls.integerMaxHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxHugo?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.longHugo" for="field_longHugo">Long Hugo</label>
+            <input type="number" class="form-control" name="longHugo" id="field_longHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.longHugo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.longRequiredHugo" for="field_longRequiredHugo">Long Required Hugo</label>
+            <input type="number" class="form-control" name="longRequiredHugo" id="field_longRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.longRequiredHugo" required />
+            <div [hidden]="!(editForm.controls.longRequiredHugo?.dirty && editForm.controls.longRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.longRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longRequiredHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.longMinHugo" for="field_longMinHugo">Long Min Hugo</label>
+            <input type="number" class="form-control" name="longMinHugo" id="field_longMinHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.longMinHugo" min="0" />
+            <div [hidden]="!(editForm.controls.longMinHugo?.dirty && editForm.controls.longMinHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinHugo?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.longMaxHugo" for="field_longMaxHugo">Long Max Hugo</label>
+            <input type="number" class="form-control" name="longMaxHugo" id="field_longMaxHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.longMaxHugo" max="100" />
+            <div [hidden]="!(editForm.controls.longMaxHugo?.dirty && editForm.controls.longMaxHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxHugo?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.floatHugo" for="field_floatHugo">Float Hugo</label>
+            <input type="number" class="form-control" name="floatHugo" id="field_floatHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.floatHugo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.floatRequiredHugo" for="field_floatRequiredHugo">Float Required Hugo</label>
+            <input type="number" class="form-control" name="floatRequiredHugo" id="field_floatRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.floatRequiredHugo" required />
+            <div [hidden]="!(editForm.controls.floatRequiredHugo?.dirty && editForm.controls.floatRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.floatRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatRequiredHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.floatMinHugo" for="field_floatMinHugo">Float Min Hugo</label>
+            <input type="number" class="form-control" name="floatMinHugo" id="field_floatMinHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.floatMinHugo" min="0" />
+            <div [hidden]="!(editForm.controls.floatMinHugo?.dirty && editForm.controls.floatMinHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinHugo?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.floatMaxHugo" for="field_floatMaxHugo">Float Max Hugo</label>
+            <input type="number" class="form-control" name="floatMaxHugo" id="field_floatMaxHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.floatMaxHugo" max="100" />
+            <div [hidden]="!(editForm.controls.floatMaxHugo?.dirty && editForm.controls.floatMaxHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxHugo?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.doubleRequiredHugo" for="field_doubleRequiredHugo">Double Required Hugo</label>
+            <input type="number" class="form-control" name="doubleRequiredHugo" id="field_doubleRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.doubleRequiredHugo" required />
+            <div [hidden]="!(editForm.controls.doubleRequiredHugo?.dirty && editForm.controls.doubleRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.doubleRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleRequiredHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.doubleMinHugo" for="field_doubleMinHugo">Double Min Hugo</label>
+            <input type="number" class="form-control" name="doubleMinHugo" id="field_doubleMinHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.doubleMinHugo" min="0" />
+            <div [hidden]="!(editForm.controls.doubleMinHugo?.dirty && editForm.controls.doubleMinHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinHugo?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.doubleMaxHugo" for="field_doubleMaxHugo">Double Max Hugo</label>
+            <input type="number" class="form-control" name="doubleMaxHugo" id="field_doubleMaxHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.doubleMaxHugo" max="100" />
+            <div [hidden]="!(editForm.controls.doubleMaxHugo?.dirty && editForm.controls.doubleMaxHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxHugo?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.bigDecimalRequiredHugo" for="field_bigDecimalRequiredHugo">Big Decimal Required Hugo</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredHugo" id="field_bigDecimalRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.bigDecimalRequiredHugo" required />
+            <div [hidden]="!(editForm.controls.bigDecimalRequiredHugo?.dirty && editForm.controls.bigDecimalRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.bigDecimalRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalRequiredHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.bigDecimalMinHugo" for="field_bigDecimalMinHugo">Big Decimal Min Hugo</label>
+            <input type="number" class="form-control" name="bigDecimalMinHugo" id="field_bigDecimalMinHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.bigDecimalMinHugo" min="0" />
+            <div [hidden]="!(editForm.controls.bigDecimalMinHugo?.dirty && editForm.controls.bigDecimalMinHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinHugo?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.bigDecimalMaxHugo" for="field_bigDecimalMaxHugo">Big Decimal Max Hugo</label>
+            <input type="number" class="form-control" name="bigDecimalMaxHugo" id="field_bigDecimalMaxHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.bigDecimalMaxHugo" max="100" />
+            <div [hidden]="!(editForm.controls.bigDecimalMaxHugo?.dirty && editForm.controls.bigDecimalMaxHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxHugo?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxHugo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.localDateHugo" for="field_localDateHugo">Local Date Hugo</label>
+            <div class="input-group">
+                <input id="field_localDateHugo" type="text" class="form-control" name="localDateHugo" ngbDatepicker  #localDateHugoDp="ngbDatepicker" [(ngModel)]="fieldTestInfiniteScrollEntity.localDateHugo"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateHugoDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.localDateRequiredHugo" for="field_localDateRequiredHugo">Local Date Required Hugo</label>
+            <div class="input-group">
+                <input id="field_localDateRequiredHugo" type="text" class="form-control" name="localDateRequiredHugo" ngbDatepicker  #localDateRequiredHugoDp="ngbDatepicker" [(ngModel)]="fieldTestInfiniteScrollEntity.localDateRequiredHugo"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateRequiredHugoDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.localDateRequiredHugo?.dirty && editForm.controls.localDateRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.localDateRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.instantHugo" for="field_instantHugo">Instant Hugo</label>
+            <div class="d-flex">
+                <input id="field_instantHugo" type="datetime-local" class="form-control" name="instantHugo" [(ngModel)]="fieldTestInfiniteScrollEntity.instantHugo"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.instanteRequiredHugo" for="field_instanteRequiredHugo">Instante Required Hugo</label>
+            <div class="d-flex">
+                <input id="field_instanteRequiredHugo" type="datetime-local" class="form-control" name="instanteRequiredHugo" [(ngModel)]="fieldTestInfiniteScrollEntity.instanteRequiredHugo"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.instanteRequiredHugo?.dirty && editForm.controls.instanteRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.instanteRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.instanteRequiredHugo?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.zonedDateTimeHugo" for="field_zonedDateTimeHugo">Zoned Date Time Hugo</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeHugo" type="datetime-local" class="form-control" name="zonedDateTimeHugo" [(ngModel)]="fieldTestInfiniteScrollEntity.zonedDateTimeHugo"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.zonedDateTimeRequiredHugo" for="field_zonedDateTimeRequiredHugo">Zoned Date Time Required Hugo</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeRequiredHugo" type="datetime-local" class="form-control" name="zonedDateTimeRequiredHugo" [(ngModel)]="fieldTestInfiniteScrollEntity.zonedDateTimeRequiredHugo"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.zonedDateTimeRequiredHugo?.dirty && editForm.controls.zonedDateTimeRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.zonedDateTimeRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.zonedDateTimeRequiredHugo?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.booleanHugo" for="field_booleanHugo">Boolean Hugo</label>
+            <input type="checkbox" class="form-control" name="booleanHugo" id="field_booleanHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.booleanHugo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.booleanRequiredHugo" for="field_booleanRequiredHugo">Boolean Required Hugo</label>
+            <input type="checkbox" class="form-control" name="booleanRequiredHugo" id="field_booleanRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.booleanRequiredHugo"  />
+            <div [hidden]="!(editForm.controls.booleanRequiredHugo?.dirty && editForm.controls.booleanRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.booleanRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.enumHugo" for="field_enumHugo">Enum Hugo</label>
+            <select class="form-control" name="enumHugo" [(ngModel)]="fieldTestInfiniteScrollEntity.enumHugo" id="field_enumHugo" >
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.enumRequiredHugo" for="field_enumRequiredHugo">Enum Required Hugo</label>
+            <select class="form-control" name="enumRequiredHugo" [(ngModel)]="fieldTestInfiniteScrollEntity.enumRequiredHugo" id="field_enumRequiredHugo"  required>
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div [hidden]="!(editForm.controls.enumRequiredHugo?.dirty && editForm.controls.enumRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.enumRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteImageHugo" for="field_byteImageHugo">Byte Image Hugo</label>
+            <div>
+                <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageHugo" style="max-height: 100px;" *ngIf="fieldTestInfiniteScrollEntity.byteImageHugo" alt="fieldTestInfiniteScrollEntity image"/>
+                <div *ngIf="fieldTestInfiniteScrollEntity.byteImageHugo" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestInfiniteScrollEntity.byteImageHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageHugo)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageHugo', 'byteImageHugoContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestInfiniteScrollEntity, 'byteImageHugo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageHugo" id="field_byteImageHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteImageHugo"  />
+            <input type="hidden" class="form-control" name="byteImageHugoContentType" id="field_byteImageHugoContentType"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteImageHugoContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteImageRequiredHugo" for="field_byteImageRequiredHugo">Byte Image Required Hugo</label>
+            <div>
+                <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageRequiredHugo" style="max-height: 100px;" *ngIf="fieldTestInfiniteScrollEntity.byteImageRequiredHugo" alt="fieldTestInfiniteScrollEntity image"/>
+                <div *ngIf="fieldTestInfiniteScrollEntity.byteImageRequiredHugo" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageRequiredHugo)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageRequiredHugo', 'byteImageRequiredHugoContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestInfiniteScrollEntity, 'byteImageRequiredHugo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredHugo" id="field_byteImageRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteImageRequiredHugo" required />
+            <input type="hidden" class="form-control" name="byteImageRequiredHugoContentType" id="field_byteImageRequiredHugoContentType"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType" />
+            <div [hidden]="!(editForm.controls.byteImageRequiredHugo?.dirty && editForm.controls.byteImageRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteImageRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" for="field_byteImageMinbytesHugo">Byte Image Minbytes Hugo</label>
+            <div>
+                <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" style="max-height: 100px;" *ngIf="fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" alt="fieldTestInfiniteScrollEntity image"/>
+                <div *ngIf="fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageMinbytesHugo)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMinbytesHugo', 'byteImageMinbytesHugoContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestInfiniteScrollEntity, 'byteImageMinbytesHugo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesHugo" id="field_byteImageMinbytesHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteImageMinbytesHugoContentType" id="field_byteImageMinbytesHugoContentType"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMinbytesHugo?.dirty && editForm.controls.byteImageMinbytesHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMinbytesHugo?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" for="field_byteImageMaxbytesHugo">Byte Image Maxbytes Hugo</label>
+            <div>
+                <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" style="max-height: 100px;" *ngIf="fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" alt="fieldTestInfiniteScrollEntity image"/>
+                <div *ngIf="fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMaxbytesHugo', 'byteImageMaxbytesHugoContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestInfiniteScrollEntity, 'byteImageMaxbytesHugo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesHugo" id="field_byteImageMaxbytesHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteImageMaxbytesHugoContentType" id="field_byteImageMaxbytesHugoContentType"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMaxbytesHugo?.dirty && editForm.controls.byteImageMaxbytesHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMaxbytesHugo?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteAnyHugo" for="field_byteAnyHugo">Byte Any Hugo</label>
+            <div>
+                <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyHugo" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyHugoContentType, fieldTestInfiniteScrollEntity.byteAnyHugo)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestInfiniteScrollEntity.byteAnyHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyHugo)}}</span>
+                    <button type="button" (click)="fieldTestInfiniteScrollEntity.byteAnyHugo=null;fieldTestInfiniteScrollEntity.byteAnyHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestInfiniteScrollEntity, 'byteAnyHugo', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyHugo" id="field_byteAnyHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteAnyHugo"  />
+            <input type="hidden" class="form-control" name="byteAnyHugoContentType" id="field_byteAnyHugoContentType"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteAnyHugoContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteAnyRequiredHugo" for="field_byteAnyRequiredHugo">Byte Any Required Hugo</label>
+            <div>
+                <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyRequiredHugo" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType, fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)}}</span>
+                    <button type="button" (click)="fieldTestInfiniteScrollEntity.byteAnyRequiredHugo=null;fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestInfiniteScrollEntity, 'byteAnyRequiredHugo', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredHugo" id="field_byteAnyRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteAnyRequiredHugo" required />
+            <input type="hidden" class="form-control" name="byteAnyRequiredHugoContentType" id="field_byteAnyRequiredHugoContentType"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyRequiredHugo?.dirty && editForm.controls.byteAnyRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteAnyRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo" for="field_byteAnyMinbytesHugo">Byte Any Minbytes Hugo</label>
+            <div>
+                <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType, fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)}}</span>
+                    <button type="button" (click)="fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo=null;fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestInfiniteScrollEntity, 'byteAnyMinbytesHugo', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesHugo" id="field_byteAnyMinbytesHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteAnyMinbytesHugoContentType" id="field_byteAnyMinbytesHugoContentType"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMinbytesHugo?.dirty && editForm.controls.byteAnyMinbytesHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMinbytesHugo?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo" for="field_byteAnyMaxbytesHugo">Byte Any Maxbytes Hugo</label>
+            <div>
+                <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType, fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)}}</span>
+                    <button type="button" (click)="fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo=null;fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestInfiniteScrollEntity, 'byteAnyMaxbytesHugo', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesHugo" id="field_byteAnyMaxbytesHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesHugoContentType" id="field_byteAnyMaxbytesHugoContentType"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMaxbytesHugo?.dirty && editForm.controls.byteAnyMaxbytesHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMaxbytesHugo?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteTextHugo" for="field_byteTextHugo">Byte Text Hugo</label>
+            <textarea class="form-control" name="byteTextHugo" id="field_byteTextHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteTextHugo"  ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteTextRequiredHugo" for="field_byteTextRequiredHugo">Byte Text Required Hugo</label>
+            <textarea class="form-control" name="byteTextRequiredHugo" id="field_byteTextRequiredHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteTextRequiredHugo" required ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextRequiredHugo?.dirty && editForm.controls.byteTextRequiredHugo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteTextRequiredHugo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteTextMinbytesHugo" for="field_byteTextMinbytesHugo">Byte Text Minbytes Hugo</label>
+            <textarea class="form-control" name="byteTextMinbytesHugo" id="field_byteTextMinbytesHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteTextMinbytesHugo" minbytes="0" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMinbytesHugo?.dirty && editForm.controls.byteTextMinbytesHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMinbytesHugo?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteTextMaxbytesHugo" for="field_byteTextMaxbytesHugo">Byte Text Maxbytes Hugo</label>
+            <textarea class="form-control" name="byteTextMaxbytesHugo" id="field_byteTextMaxbytesHugo"
+                [(ngModel)]="fieldTestInfiniteScrollEntity.byteTextMaxbytesHugo" maxbytes="10000" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMaxbytesHugo?.dirty && editForm.controls.byteTextMaxbytesHugo?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMaxbytesHugo?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

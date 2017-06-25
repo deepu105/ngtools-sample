@@ -1,0 +1,25 @@
+
+<div *ngIf="entityWithServiceClass">
+    <h2><span jhiTranslate="jh4TestApp.entityWithServiceClass.detail.title">Entity With Service Class</span> {{entityWithServiceClass.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.entityWithServiceClass.zoe">Zoe</span></dt>
+        <dd>
+            <span>{{entityWithServiceClass.zoe}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'entity-with-service-class/'+ entityWithServiceClass.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

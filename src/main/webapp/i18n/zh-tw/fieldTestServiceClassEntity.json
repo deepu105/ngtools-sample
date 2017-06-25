@@ -1,0 +1,66 @@
+{
+    "jh4TestApp": {
+        "fieldTestServiceClassEntity" : {
+            "home": {
+                "title": "Field Test Service Class Entities",
+                "createLabel": "建立一筆新的 Field Test Service Class Entity",
+                "createOrEditLabel": "建立或編輯 Field Test Service Class Entity",
+                "search": "搜尋 Field Test Service Class Entity"
+            },
+            "created": "新的 Field Test Service Class Entity 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Field Test Service Class Entity 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Field Test Service Class Entity 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Field Test Service Class Entity {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Field Test Service Class Entity"
+            },
+            "stringBob": "String Bob",
+            "stringRequiredBob": "String Required Bob",
+            "stringMinlengthBob": "String Minlength Bob",
+            "stringMaxlengthBob": "String Maxlength Bob",
+            "stringPatternBob": "String Pattern Bob",
+            "integerBob": "Integer Bob",
+            "integerRequiredBob": "Integer Required Bob",
+            "integerMinBob": "Integer Min Bob",
+            "integerMaxBob": "Integer Max Bob",
+            "longBob": "Long Bob",
+            "longRequiredBob": "Long Required Bob",
+            "longMinBob": "Long Min Bob",
+            "longMaxBob": "Long Max Bob",
+            "floatBob": "Float Bob",
+            "floatRequiredBob": "Float Required Bob",
+            "floatMinBob": "Float Min Bob",
+            "floatMaxBob": "Float Max Bob",
+            "doubleRequiredBob": "Double Required Bob",
+            "doubleMinBob": "Double Min Bob",
+            "doubleMaxBob": "Double Max Bob",
+            "bigDecimalRequiredBob": "Big Decimal Required Bob",
+            "bigDecimalMinBob": "Big Decimal Min Bob",
+            "bigDecimalMaxBob": "Big Decimal Max Bob",
+            "localDateBob": "Local Date Bob",
+            "localDateRequiredBob": "Local Date Required Bob",
+            "instantBob": "Instant Bob",
+            "instanteRequiredBob": "Instante Required Bob",
+            "zonedDateTimeBob": "Zoned Date Time Bob",
+            "zonedDateTimeRequiredBob": "Zoned Date Time Required Bob",
+            "booleanBob": "Boolean Bob",
+            "booleanRequiredBob": "Boolean Required Bob",
+            "enumBob": "Enum Bob",
+            "enumRequiredBob": "Enum Required Bob",
+            "byteImageBob": "Byte Image Bob",
+            "byteImageRequiredBob": "Byte Image Required Bob",
+            "byteImageMinbytesBob": "Byte Image Minbytes Bob",
+            "byteImageMaxbytesBob": "Byte Image Maxbytes Bob",
+            "byteAnyBob": "Byte Any Bob",
+            "byteAnyRequiredBob": "Byte Any Required Bob",
+            "byteAnyMinbytesBob": "Byte Any Minbytes Bob",
+            "byteAnyMaxbytesBob": "Byte Any Maxbytes Bob",
+            "byteTextBob": "Byte Text Bob",
+            "byteTextRequiredBob": "Byte Text Required Bob",
+            "byteTextMinbytesBob": "Byte Text Minbytes Bob",
+            "byteTextMaxbytesBob": "Byte Text Maxbytes Bob"
+        }
+    }
+}

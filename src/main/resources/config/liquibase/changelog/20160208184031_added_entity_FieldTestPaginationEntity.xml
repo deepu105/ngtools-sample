@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity FieldTestPaginationEntity.
+    -->
+    <changeSet id="20160208184031-1" author="jhipster">
+        <createTable tableName="field_test_pagination_entity">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="string_alice" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="string_required_alice" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="string_minlength_alice" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="string_maxlength_alice" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="string_pattern_alice" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="integer_alice" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="integer_required_alice" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="integer_min_alice" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="integer_max_alice" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_alice" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_required_alice" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="long_min_alice" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_max_alice" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="float_alice" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="float_required_alice" type="${floatType}">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="float_min_alice" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="float_max_alice" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="double_required_alice" type="double">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="double_min_alice" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="double_max_alice" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="big_decimal_required_alice" type="decimal(10,2)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="big_decimal_min_alice" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="big_decimal_max_alice" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="local_date_alice" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="local_date_required_alice" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="instant_alice" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="instante_required_alice" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="zoned_date_time_alice" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="zoned_date_time_required_alice" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="boolean_alice" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="boolean_required_alice" type="bit">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="enum_alice" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="enum_required_alice" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_image_alice" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_image_alice_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_image_required_alice" type="longblob">
+                <constraints nullable="false" />
+            </column>
+            <column name="byte_image_required_alice_content_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_image_minbytes_alice" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_image_minbytes_alice_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_image_maxbytes_alice" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_image_maxbytes_alice_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_any_alice" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_any_alice_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_any_required_alice" type="longblob">
+                <constraints nullable="false" />
+            </column>
+            <column name="byte_any_required_alice_content_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_any_minbytes_alice" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_any_minbytes_alice_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_any_maxbytes_alice" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_any_maxbytes_alice_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_text_alice" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_text_required_alice" type="clob">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_text_minbytes_alice" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_text_maxbytes_alice" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="field_test_pagination_entity" columnName="instant_alice" columnDataType="datetime"/>
+        <dropDefaultValue tableName="field_test_pagination_entity" columnName="instante_required_alice" columnDataType="datetime"/>
+        <dropDefaultValue tableName="field_test_pagination_entity" columnName="zoned_date_time_alice" columnDataType="datetime"/>
+        <dropDefaultValue tableName="field_test_pagination_entity" columnName="zoned_date_time_required_alice" columnDataType="datetime"/>
+        
+    </changeSet>
+</databaseChangeLog>

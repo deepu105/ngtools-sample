@@ -1,0 +1,66 @@
+{
+    "jh4TestApp": {
+        "fieldTestServiceImplEntity" : {
+            "home": {
+                "title": "Field Test Service Impl Entities",
+                "createLabel": "Create a new Field Test Service Impl Entity",
+                "createOrEditLabel": "Create or edit a Field Test Service Impl Entity",
+                "search": "Search for Field Test Service Impl Entity"
+            },
+            "created": "A new Field Test Service Impl Entity is created with identifier {{ param }}",
+            "updated": "A Field Test Service Impl Entity is updated with identifier {{ param }}",
+            "deleted": "A Field Test Service Impl Entity is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Field Test Service Impl Entity {{ id }}?"
+            },
+            "detail": {
+                "title": "Field Test Service Impl Entity"
+            },
+            "stringMika": "String Mika",
+            "stringRequiredMika": "String Required Mika",
+            "stringMinlengthMika": "String Minlength Mika",
+            "stringMaxlengthMika": "String Maxlength Mika",
+            "stringPatternMika": "String Pattern Mika",
+            "integerMika": "Integer Mika",
+            "integerRequiredMika": "Integer Required Mika",
+            "integerMinMika": "Integer Min Mika",
+            "integerMaxMika": "Integer Max Mika",
+            "longMika": "Long Mika",
+            "longRequiredMika": "Long Required Mika",
+            "longMinMika": "Long Min Mika",
+            "longMaxMika": "Long Max Mika",
+            "floatMika": "Float Mika",
+            "floatRequiredMika": "Float Required Mika",
+            "floatMinMika": "Float Min Mika",
+            "floatMaxMika": "Float Max Mika",
+            "doubleRequiredMika": "Double Required Mika",
+            "doubleMinMika": "Double Min Mika",
+            "doubleMaxMika": "Double Max Mika",
+            "bigDecimalRequiredMika": "Big Decimal Required Mika",
+            "bigDecimalMinMika": "Big Decimal Min Mika",
+            "bigDecimalMaxMika": "Big Decimal Max Mika",
+            "localDateMika": "Local Date Mika",
+            "localDateRequiredMika": "Local Date Required Mika",
+            "instantMika": "Instant Mika",
+            "instanteRequiredMika": "Instante Required Mika",
+            "zonedDateTimeMika": "Zoned Date Time Mika",
+            "zonedDateTimeRequiredMika": "Zoned Date Time Required Mika",
+            "booleanMika": "Boolean Mika",
+            "booleanRequiredMika": "Boolean Required Mika",
+            "enumMika": "Enum Mika",
+            "enumRequiredMika": "Enum Required Mika",
+            "byteImageMika": "Byte Image Mika",
+            "byteImageRequiredMika": "Byte Image Required Mika",
+            "byteImageMinbytesMika": "Byte Image Minbytes Mika",
+            "byteImageMaxbytesMika": "Byte Image Maxbytes Mika",
+            "byteAnyMika": "Byte Any Mika",
+            "byteAnyRequiredMika": "Byte Any Required Mika",
+            "byteAnyMinbytesMika": "Byte Any Minbytes Mika",
+            "byteAnyMaxbytesMika": "Byte Any Maxbytes Mika",
+            "byteTextMika": "Byte Text Mika",
+            "byteTextRequiredMika": "Byte Text Required Mika",
+            "byteTextMinbytesMika": "Byte Text Minbytes Mika",
+            "byteTextMaxbytesMika": "Byte Text Maxbytes Mika"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "jh4TestApp": {
+        "bankAccount" : {
+            "home": {
+                "title": "Bank Accounts",
+                "createLabel": "建立一筆新的 Bank Account",
+                "createOrEditLabel": "建立或編輯 Bank Account",
+                "search": "搜尋 Bank Account"
+            },
+            "created": "新的 Bank Account 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Bank Account 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Bank Account 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Bank Account {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Bank Account"
+            },
+            "name": "Name",
+            "bankNumber": "Bank Number",
+            "agencyNumber": "Agency Number",
+            "lastOperationDuration": "Last Operation Duration",
+            "meanOperationDuration": "Mean Operation Duration",
+            "balance": "Balance",
+            "openingDay": "Opening Day",
+            "lastOperationDate": "Last Operation Date",
+            "active": "Active",
+            "accountType": "Account Type",
+            "attachment": "Attachment",
+            "description": "Description",
+            "user": "User",
+            "operation": "Operation"
+        }
+    }
+}

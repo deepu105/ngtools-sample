@@ -1,0 +1,233 @@
+
+<div *ngIf="fieldTestPaginationEntity">
+    <h2><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.detail.title">Field Test Pagination Entity</span> {{fieldTestPaginationEntity.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringAlice">String Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.stringAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringRequiredAlice">String Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.stringRequiredAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringMinlengthAlice">String Minlength Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.stringMinlengthAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringMaxlengthAlice">String Maxlength Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.stringMaxlengthAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringPatternAlice">String Pattern Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.stringPatternAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerAlice">Integer Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.integerAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerRequiredAlice">Integer Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.integerRequiredAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerMinAlice">Integer Min Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.integerMinAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerMaxAlice">Integer Max Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.integerMaxAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longAlice">Long Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.longAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longRequiredAlice">Long Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.longRequiredAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longMinAlice">Long Min Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.longMinAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longMaxAlice">Long Max Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.longMaxAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatAlice">Float Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.floatAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatRequiredAlice">Float Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.floatRequiredAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatMinAlice">Float Min Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.floatMinAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatMaxAlice">Float Max Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.floatMaxAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.doubleRequiredAlice">Double Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.doubleRequiredAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.doubleMinAlice">Double Min Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.doubleMinAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.doubleMaxAlice">Double Max Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.doubleMaxAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.bigDecimalRequiredAlice">Big Decimal Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.bigDecimalRequiredAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.bigDecimalMinAlice">Big Decimal Min Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.bigDecimalMinAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.bigDecimalMaxAlice">Big Decimal Max Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.bigDecimalMaxAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.localDateAlice">Local Date Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.localDateAlice | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.localDateRequiredAlice">Local Date Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.localDateRequiredAlice | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.instantAlice">Instant Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.instantAlice | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.instanteRequiredAlice">Instante Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.instanteRequiredAlice | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.zonedDateTimeAlice">Zoned Date Time Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.zonedDateTimeAlice | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.zonedDateTimeRequiredAlice">Zoned Date Time Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.zonedDateTimeRequiredAlice | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.booleanAlice">Boolean Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.booleanAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.booleanRequiredAlice">Boolean Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.booleanRequiredAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.enumAlice">Enum Alice</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.EnumFieldClass.' + fieldTestPaginationEntity.enumAlice}}">{{fieldTestPaginationEntity.enumAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.enumRequiredAlice">Enum Required Alice</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.EnumRequiredFieldClass.' + fieldTestPaginationEntity.enumRequiredAlice}}">{{fieldTestPaginationEntity.enumRequiredAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageAlice">Byte Image Alice</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPaginationEntity.byteImageAlice">
+                <a (click)="openFile(fieldTestPaginationEntity.byteImageAliceContentType, fieldTestPaginationEntity.byteImageAlice)">
+                    <img [src]="'data:' + fieldTestPaginationEntity.byteImageAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageAlice" style="max-width: 100%;" alt="fieldTestPaginationEntity image"/>
+                </a>
+                {{fieldTestPaginationEntity.byteImageAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageAlice)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageRequiredAlice">Byte Image Required Alice</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPaginationEntity.byteImageRequiredAlice">
+                <a (click)="openFile(fieldTestPaginationEntity.byteImageRequiredAliceContentType, fieldTestPaginationEntity.byteImageRequiredAlice)">
+                    <img [src]="'data:' + fieldTestPaginationEntity.byteImageRequiredAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageRequiredAlice" style="max-width: 100%;" alt="fieldTestPaginationEntity image"/>
+                </a>
+                {{fieldTestPaginationEntity.byteImageRequiredAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageRequiredAlice)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageMinbytesAlice">Byte Image Minbytes Alice</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPaginationEntity.byteImageMinbytesAlice">
+                <a (click)="openFile(fieldTestPaginationEntity.byteImageMinbytesAliceContentType, fieldTestPaginationEntity.byteImageMinbytesAlice)">
+                    <img [src]="'data:' + fieldTestPaginationEntity.byteImageMinbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMinbytesAlice" style="max-width: 100%;" alt="fieldTestPaginationEntity image"/>
+                </a>
+                {{fieldTestPaginationEntity.byteImageMinbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageMinbytesAlice)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageMaxbytesAlice">Byte Image Maxbytes Alice</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPaginationEntity.byteImageMaxbytesAlice">
+                <a (click)="openFile(fieldTestPaginationEntity.byteImageMaxbytesAliceContentType, fieldTestPaginationEntity.byteImageMaxbytesAlice)">
+                    <img [src]="'data:' + fieldTestPaginationEntity.byteImageMaxbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMaxbytesAlice" style="max-width: 100%;" alt="fieldTestPaginationEntity image"/>
+                </a>
+                {{fieldTestPaginationEntity.byteImageMaxbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageMaxbytesAlice)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyAlice">Byte Any Alice</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPaginationEntity.byteAnyAlice">
+                <a (click)="openFile(fieldTestPaginationEntity.byteAnyAliceContentType, fieldTestPaginationEntity.byteAnyAlice)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestPaginationEntity.byteAnyAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyAlice)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyRequiredAlice">Byte Any Required Alice</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPaginationEntity.byteAnyRequiredAlice">
+                <a (click)="openFile(fieldTestPaginationEntity.byteAnyRequiredAliceContentType, fieldTestPaginationEntity.byteAnyRequiredAlice)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestPaginationEntity.byteAnyRequiredAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyRequiredAlice)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyMinbytesAlice">Byte Any Minbytes Alice</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPaginationEntity.byteAnyMinbytesAlice">
+                <a (click)="openFile(fieldTestPaginationEntity.byteAnyMinbytesAliceContentType, fieldTestPaginationEntity.byteAnyMinbytesAlice)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestPaginationEntity.byteAnyMinbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyMinbytesAlice)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyMaxbytesAlice">Byte Any Maxbytes Alice</span></dt>
+        <dd>
+            <div *ngIf="fieldTestPaginationEntity.byteAnyMaxbytesAlice">
+                <a (click)="openFile(fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType, fieldTestPaginationEntity.byteAnyMaxbytesAlice)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyMaxbytesAlice)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextAlice">Byte Text Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.byteTextAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextRequiredAlice">Byte Text Required Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.byteTextRequiredAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextMinbytesAlice">Byte Text Minbytes Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.byteTextMinbytesAlice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextMaxbytesAlice">Byte Text Maxbytes Alice</span></dt>
+        <dd>
+            <span>{{fieldTestPaginationEntity.byteTextMaxbytesAlice}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'field-test-pagination-entity/'+ fieldTestPaginationEntity.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,25 @@
+
+<div *ngIf="entityWithPagination">
+    <h2><span jhiTranslate="jh4TestApp.entityWithPagination.detail.title">Entity With Pagination</span> {{entityWithPagination.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.entityWithPagination.nathan">Nathan</span></dt>
+        <dd>
+            <span>{{entityWithPagination.nathan}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'entity-with-pagination/'+ entityWithPagination.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

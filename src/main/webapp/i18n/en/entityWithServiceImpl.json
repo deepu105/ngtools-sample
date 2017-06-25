@@ -1,0 +1,22 @@
+{
+    "jh4TestApp": {
+        "entityWithServiceImpl" : {
+            "home": {
+                "title": "Entity With Service Impls",
+                "createLabel": "Create a new Entity With Service Impl",
+                "createOrEditLabel": "Create or edit a Entity With Service Impl",
+                "search": "Search for Entity With Service Impl"
+            },
+            "created": "A new Entity With Service Impl is created with identifier {{ param }}",
+            "updated": "A Entity With Service Impl is updated with identifier {{ param }}",
+            "deleted": "A Entity With Service Impl is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Entity With Service Impl {{ id }}?"
+            },
+            "detail": {
+                "title": "Entity With Service Impl"
+            },
+            "clara": "Clara"
+        }
+    }
+}

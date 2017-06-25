@@ -1,0 +1,640 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFieldTestPaginationEntityLabel" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.home.createOrEditLabel">Create or edit a Field Test Pagination Entity</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!fieldTestPaginationEntity.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="fieldTestPaginationEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringAlice" for="field_stringAlice">String Alice</label>
+            <input type="text" class="form-control" name="stringAlice" id="field_stringAlice"
+                [(ngModel)]="fieldTestPaginationEntity.stringAlice"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringRequiredAlice" for="field_stringRequiredAlice">String Required Alice</label>
+            <input type="text" class="form-control" name="stringRequiredAlice" id="field_stringRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.stringRequiredAlice" required />
+            <div [hidden]="!(editForm.controls.stringRequiredAlice?.dirty && editForm.controls.stringRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringMinlengthAlice" for="field_stringMinlengthAlice">String Minlength Alice</label>
+            <input type="text" class="form-control" name="stringMinlengthAlice" id="field_stringMinlengthAlice"
+                [(ngModel)]="fieldTestPaginationEntity.stringMinlengthAlice" minlength="0" />
+            <div [hidden]="!(editForm.controls.stringMinlengthAlice?.dirty && editForm.controls.stringMinlengthAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMinlengthAlice?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 0 }">
+                   This field is required to be at least 0 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringMaxlengthAlice" for="field_stringMaxlengthAlice">String Maxlength Alice</label>
+            <input type="text" class="form-control" name="stringMaxlengthAlice" id="field_stringMaxlengthAlice"
+                [(ngModel)]="fieldTestPaginationEntity.stringMaxlengthAlice" maxlength="20" />
+            <div [hidden]="!(editForm.controls.stringMaxlengthAlice?.dirty && editForm.controls.stringMaxlengthAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMaxlengthAlice?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.stringPatternAlice" for="field_stringPatternAlice">String Pattern Alice</label>
+            <input type="text" class="form-control" name="stringPatternAlice" id="field_stringPatternAlice"
+                [(ngModel)]="fieldTestPaginationEntity.stringPatternAlice" pattern="^[a-zA-Z0-9]*$" />
+            <div [hidden]="!(editForm.controls.stringPatternAlice?.dirty && editForm.controls.stringPatternAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.stringPatternAlice?.errors?.pattern" jhiTranslate="entity.validation.pattern" translateValues="{ pattern: 'String Pattern Alice' }">
+                    This field should follow pattern for "String Pattern Alice".
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerAlice" for="field_integerAlice">Integer Alice</label>
+            <input type="number" class="form-control" name="integerAlice" id="field_integerAlice"
+                [(ngModel)]="fieldTestPaginationEntity.integerAlice"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerRequiredAlice" for="field_integerRequiredAlice">Integer Required Alice</label>
+            <input type="number" class="form-control" name="integerRequiredAlice" id="field_integerRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.integerRequiredAlice" required />
+            <div [hidden]="!(editForm.controls.integerRequiredAlice?.dirty && editForm.controls.integerRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.integerRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerRequiredAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerMinAlice" for="field_integerMinAlice">Integer Min Alice</label>
+            <input type="number" class="form-control" name="integerMinAlice" id="field_integerMinAlice"
+                [(ngModel)]="fieldTestPaginationEntity.integerMinAlice" min="0" />
+            <div [hidden]="!(editForm.controls.integerMinAlice?.dirty && editForm.controls.integerMinAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinAlice?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.integerMaxAlice" for="field_integerMaxAlice">Integer Max Alice</label>
+            <input type="number" class="form-control" name="integerMaxAlice" id="field_integerMaxAlice"
+                [(ngModel)]="fieldTestPaginationEntity.integerMaxAlice" max="100" />
+            <div [hidden]="!(editForm.controls.integerMaxAlice?.dirty && editForm.controls.integerMaxAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxAlice?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longAlice" for="field_longAlice">Long Alice</label>
+            <input type="number" class="form-control" name="longAlice" id="field_longAlice"
+                [(ngModel)]="fieldTestPaginationEntity.longAlice"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longRequiredAlice" for="field_longRequiredAlice">Long Required Alice</label>
+            <input type="number" class="form-control" name="longRequiredAlice" id="field_longRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.longRequiredAlice" required />
+            <div [hidden]="!(editForm.controls.longRequiredAlice?.dirty && editForm.controls.longRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.longRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longRequiredAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longMinAlice" for="field_longMinAlice">Long Min Alice</label>
+            <input type="number" class="form-control" name="longMinAlice" id="field_longMinAlice"
+                [(ngModel)]="fieldTestPaginationEntity.longMinAlice" min="0" />
+            <div [hidden]="!(editForm.controls.longMinAlice?.dirty && editForm.controls.longMinAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinAlice?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.longMaxAlice" for="field_longMaxAlice">Long Max Alice</label>
+            <input type="number" class="form-control" name="longMaxAlice" id="field_longMaxAlice"
+                [(ngModel)]="fieldTestPaginationEntity.longMaxAlice" max="100" />
+            <div [hidden]="!(editForm.controls.longMaxAlice?.dirty && editForm.controls.longMaxAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxAlice?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatAlice" for="field_floatAlice">Float Alice</label>
+            <input type="number" class="form-control" name="floatAlice" id="field_floatAlice"
+                [(ngModel)]="fieldTestPaginationEntity.floatAlice"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatRequiredAlice" for="field_floatRequiredAlice">Float Required Alice</label>
+            <input type="number" class="form-control" name="floatRequiredAlice" id="field_floatRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.floatRequiredAlice" required />
+            <div [hidden]="!(editForm.controls.floatRequiredAlice?.dirty && editForm.controls.floatRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.floatRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatRequiredAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatMinAlice" for="field_floatMinAlice">Float Min Alice</label>
+            <input type="number" class="form-control" name="floatMinAlice" id="field_floatMinAlice"
+                [(ngModel)]="fieldTestPaginationEntity.floatMinAlice" min="0" />
+            <div [hidden]="!(editForm.controls.floatMinAlice?.dirty && editForm.controls.floatMinAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinAlice?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.floatMaxAlice" for="field_floatMaxAlice">Float Max Alice</label>
+            <input type="number" class="form-control" name="floatMaxAlice" id="field_floatMaxAlice"
+                [(ngModel)]="fieldTestPaginationEntity.floatMaxAlice" max="100" />
+            <div [hidden]="!(editForm.controls.floatMaxAlice?.dirty && editForm.controls.floatMaxAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxAlice?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.doubleRequiredAlice" for="field_doubleRequiredAlice">Double Required Alice</label>
+            <input type="number" class="form-control" name="doubleRequiredAlice" id="field_doubleRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.doubleRequiredAlice" required />
+            <div [hidden]="!(editForm.controls.doubleRequiredAlice?.dirty && editForm.controls.doubleRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.doubleRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleRequiredAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.doubleMinAlice" for="field_doubleMinAlice">Double Min Alice</label>
+            <input type="number" class="form-control" name="doubleMinAlice" id="field_doubleMinAlice"
+                [(ngModel)]="fieldTestPaginationEntity.doubleMinAlice" min="0" />
+            <div [hidden]="!(editForm.controls.doubleMinAlice?.dirty && editForm.controls.doubleMinAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinAlice?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.doubleMaxAlice" for="field_doubleMaxAlice">Double Max Alice</label>
+            <input type="number" class="form-control" name="doubleMaxAlice" id="field_doubleMaxAlice"
+                [(ngModel)]="fieldTestPaginationEntity.doubleMaxAlice" max="100" />
+            <div [hidden]="!(editForm.controls.doubleMaxAlice?.dirty && editForm.controls.doubleMaxAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxAlice?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.bigDecimalRequiredAlice" for="field_bigDecimalRequiredAlice">Big Decimal Required Alice</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredAlice" id="field_bigDecimalRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.bigDecimalRequiredAlice" required />
+            <div [hidden]="!(editForm.controls.bigDecimalRequiredAlice?.dirty && editForm.controls.bigDecimalRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.bigDecimalRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalRequiredAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.bigDecimalMinAlice" for="field_bigDecimalMinAlice">Big Decimal Min Alice</label>
+            <input type="number" class="form-control" name="bigDecimalMinAlice" id="field_bigDecimalMinAlice"
+                [(ngModel)]="fieldTestPaginationEntity.bigDecimalMinAlice" min="0" />
+            <div [hidden]="!(editForm.controls.bigDecimalMinAlice?.dirty && editForm.controls.bigDecimalMinAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinAlice?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.bigDecimalMaxAlice" for="field_bigDecimalMaxAlice">Big Decimal Max Alice</label>
+            <input type="number" class="form-control" name="bigDecimalMaxAlice" id="field_bigDecimalMaxAlice"
+                [(ngModel)]="fieldTestPaginationEntity.bigDecimalMaxAlice" max="100" />
+            <div [hidden]="!(editForm.controls.bigDecimalMaxAlice?.dirty && editForm.controls.bigDecimalMaxAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxAlice?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxAlice?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.localDateAlice" for="field_localDateAlice">Local Date Alice</label>
+            <div class="input-group">
+                <input id="field_localDateAlice" type="text" class="form-control" name="localDateAlice" ngbDatepicker  #localDateAliceDp="ngbDatepicker" [(ngModel)]="fieldTestPaginationEntity.localDateAlice"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateAliceDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.localDateRequiredAlice" for="field_localDateRequiredAlice">Local Date Required Alice</label>
+            <div class="input-group">
+                <input id="field_localDateRequiredAlice" type="text" class="form-control" name="localDateRequiredAlice" ngbDatepicker  #localDateRequiredAliceDp="ngbDatepicker" [(ngModel)]="fieldTestPaginationEntity.localDateRequiredAlice"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateRequiredAliceDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.localDateRequiredAlice?.dirty && editForm.controls.localDateRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.localDateRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.instantAlice" for="field_instantAlice">Instant Alice</label>
+            <div class="d-flex">
+                <input id="field_instantAlice" type="datetime-local" class="form-control" name="instantAlice" [(ngModel)]="fieldTestPaginationEntity.instantAlice"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.instanteRequiredAlice" for="field_instanteRequiredAlice">Instante Required Alice</label>
+            <div class="d-flex">
+                <input id="field_instanteRequiredAlice" type="datetime-local" class="form-control" name="instanteRequiredAlice" [(ngModel)]="fieldTestPaginationEntity.instanteRequiredAlice"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.instanteRequiredAlice?.dirty && editForm.controls.instanteRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.instanteRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.instanteRequiredAlice?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.zonedDateTimeAlice" for="field_zonedDateTimeAlice">Zoned Date Time Alice</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeAlice" type="datetime-local" class="form-control" name="zonedDateTimeAlice" [(ngModel)]="fieldTestPaginationEntity.zonedDateTimeAlice"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.zonedDateTimeRequiredAlice" for="field_zonedDateTimeRequiredAlice">Zoned Date Time Required Alice</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeRequiredAlice" type="datetime-local" class="form-control" name="zonedDateTimeRequiredAlice" [(ngModel)]="fieldTestPaginationEntity.zonedDateTimeRequiredAlice"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.zonedDateTimeRequiredAlice?.dirty && editForm.controls.zonedDateTimeRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.zonedDateTimeRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.zonedDateTimeRequiredAlice?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.booleanAlice" for="field_booleanAlice">Boolean Alice</label>
+            <input type="checkbox" class="form-control" name="booleanAlice" id="field_booleanAlice"
+                [(ngModel)]="fieldTestPaginationEntity.booleanAlice"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.booleanRequiredAlice" for="field_booleanRequiredAlice">Boolean Required Alice</label>
+            <input type="checkbox" class="form-control" name="booleanRequiredAlice" id="field_booleanRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.booleanRequiredAlice"  />
+            <div [hidden]="!(editForm.controls.booleanRequiredAlice?.dirty && editForm.controls.booleanRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.booleanRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.enumAlice" for="field_enumAlice">Enum Alice</label>
+            <select class="form-control" name="enumAlice" [(ngModel)]="fieldTestPaginationEntity.enumAlice" id="field_enumAlice" >
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.enumRequiredAlice" for="field_enumRequiredAlice">Enum Required Alice</label>
+            <select class="form-control" name="enumRequiredAlice" [(ngModel)]="fieldTestPaginationEntity.enumRequiredAlice" id="field_enumRequiredAlice"  required>
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div [hidden]="!(editForm.controls.enumRequiredAlice?.dirty && editForm.controls.enumRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.enumRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageAlice" for="field_byteImageAlice">Byte Image Alice</label>
+            <div>
+                <img [src]="'data:' + fieldTestPaginationEntity.byteImageAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageAlice" style="max-height: 100px;" *ngIf="fieldTestPaginationEntity.byteImageAlice" alt="fieldTestPaginationEntity image"/>
+                <div *ngIf="fieldTestPaginationEntity.byteImageAlice" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestPaginationEntity.byteImageAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageAlice)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageAlice', 'byteImageAliceContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestPaginationEntity, 'byteImageAlice', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageAlice" id="field_byteImageAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteImageAlice"  />
+            <input type="hidden" class="form-control" name="byteImageAliceContentType" id="field_byteImageAliceContentType"
+                [(ngModel)]="fieldTestPaginationEntity.byteImageAliceContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageRequiredAlice" for="field_byteImageRequiredAlice">Byte Image Required Alice</label>
+            <div>
+                <img [src]="'data:' + fieldTestPaginationEntity.byteImageRequiredAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageRequiredAlice" style="max-height: 100px;" *ngIf="fieldTestPaginationEntity.byteImageRequiredAlice" alt="fieldTestPaginationEntity image"/>
+                <div *ngIf="fieldTestPaginationEntity.byteImageRequiredAlice" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestPaginationEntity.byteImageRequiredAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageRequiredAlice)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageRequiredAlice', 'byteImageRequiredAliceContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestPaginationEntity, 'byteImageRequiredAlice', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredAlice" id="field_byteImageRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteImageRequiredAlice" required />
+            <input type="hidden" class="form-control" name="byteImageRequiredAliceContentType" id="field_byteImageRequiredAliceContentType"
+                [(ngModel)]="fieldTestPaginationEntity.byteImageRequiredAliceContentType" />
+            <div [hidden]="!(editForm.controls.byteImageRequiredAlice?.dirty && editForm.controls.byteImageRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteImageRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageMinbytesAlice" for="field_byteImageMinbytesAlice">Byte Image Minbytes Alice</label>
+            <div>
+                <img [src]="'data:' + fieldTestPaginationEntity.byteImageMinbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMinbytesAlice" style="max-height: 100px;" *ngIf="fieldTestPaginationEntity.byteImageMinbytesAlice" alt="fieldTestPaginationEntity image"/>
+                <div *ngIf="fieldTestPaginationEntity.byteImageMinbytesAlice" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestPaginationEntity.byteImageMinbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageMinbytesAlice)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMinbytesAlice', 'byteImageMinbytesAliceContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestPaginationEntity, 'byteImageMinbytesAlice', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesAlice" id="field_byteImageMinbytesAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteImageMinbytesAlice" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteImageMinbytesAliceContentType" id="field_byteImageMinbytesAliceContentType"
+                [(ngModel)]="fieldTestPaginationEntity.byteImageMinbytesAliceContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMinbytesAlice?.dirty && editForm.controls.byteImageMinbytesAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMinbytesAlice?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteImageMaxbytesAlice" for="field_byteImageMaxbytesAlice">Byte Image Maxbytes Alice</label>
+            <div>
+                <img [src]="'data:' + fieldTestPaginationEntity.byteImageMaxbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMaxbytesAlice" style="max-height: 100px;" *ngIf="fieldTestPaginationEntity.byteImageMaxbytesAlice" alt="fieldTestPaginationEntity image"/>
+                <div *ngIf="fieldTestPaginationEntity.byteImageMaxbytesAlice" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestPaginationEntity.byteImageMaxbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageMaxbytesAlice)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMaxbytesAlice', 'byteImageMaxbytesAliceContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestPaginationEntity, 'byteImageMaxbytesAlice', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesAlice" id="field_byteImageMaxbytesAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteImageMaxbytesAlice" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteImageMaxbytesAliceContentType" id="field_byteImageMaxbytesAliceContentType"
+                [(ngModel)]="fieldTestPaginationEntity.byteImageMaxbytesAliceContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMaxbytesAlice?.dirty && editForm.controls.byteImageMaxbytesAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMaxbytesAlice?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyAlice" for="field_byteAnyAlice">Byte Any Alice</label>
+            <div>
+                <div *ngIf="fieldTestPaginationEntity.byteAnyAlice" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestPaginationEntity.byteAnyAliceContentType, fieldTestPaginationEntity.byteAnyAlice)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestPaginationEntity.byteAnyAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyAlice)}}</span>
+                    <button type="button" (click)="fieldTestPaginationEntity.byteAnyAlice=null;fieldTestPaginationEntity.byteAnyAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestPaginationEntity, 'byteAnyAlice', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyAlice" id="field_byteAnyAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteAnyAlice"  />
+            <input type="hidden" class="form-control" name="byteAnyAliceContentType" id="field_byteAnyAliceContentType"
+                [(ngModel)]="fieldTestPaginationEntity.byteAnyAliceContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyRequiredAlice" for="field_byteAnyRequiredAlice">Byte Any Required Alice</label>
+            <div>
+                <div *ngIf="fieldTestPaginationEntity.byteAnyRequiredAlice" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestPaginationEntity.byteAnyRequiredAliceContentType, fieldTestPaginationEntity.byteAnyRequiredAlice)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestPaginationEntity.byteAnyRequiredAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyRequiredAlice)}}</span>
+                    <button type="button" (click)="fieldTestPaginationEntity.byteAnyRequiredAlice=null;fieldTestPaginationEntity.byteAnyRequiredAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestPaginationEntity, 'byteAnyRequiredAlice', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredAlice" id="field_byteAnyRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteAnyRequiredAlice" required />
+            <input type="hidden" class="form-control" name="byteAnyRequiredAliceContentType" id="field_byteAnyRequiredAliceContentType"
+                [(ngModel)]="fieldTestPaginationEntity.byteAnyRequiredAliceContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyRequiredAlice?.dirty && editForm.controls.byteAnyRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteAnyRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyMinbytesAlice" for="field_byteAnyMinbytesAlice">Byte Any Minbytes Alice</label>
+            <div>
+                <div *ngIf="fieldTestPaginationEntity.byteAnyMinbytesAlice" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestPaginationEntity.byteAnyMinbytesAliceContentType, fieldTestPaginationEntity.byteAnyMinbytesAlice)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestPaginationEntity.byteAnyMinbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyMinbytesAlice)}}</span>
+                    <button type="button" (click)="fieldTestPaginationEntity.byteAnyMinbytesAlice=null;fieldTestPaginationEntity.byteAnyMinbytesAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestPaginationEntity, 'byteAnyMinbytesAlice', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesAlice" id="field_byteAnyMinbytesAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteAnyMinbytesAlice" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteAnyMinbytesAliceContentType" id="field_byteAnyMinbytesAliceContentType"
+                [(ngModel)]="fieldTestPaginationEntity.byteAnyMinbytesAliceContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMinbytesAlice?.dirty && editForm.controls.byteAnyMinbytesAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMinbytesAlice?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteAnyMaxbytesAlice" for="field_byteAnyMaxbytesAlice">Byte Any Maxbytes Alice</label>
+            <div>
+                <div *ngIf="fieldTestPaginationEntity.byteAnyMaxbytesAlice" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType, fieldTestPaginationEntity.byteAnyMaxbytesAlice)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyMaxbytesAlice)}}</span>
+                    <button type="button" (click)="fieldTestPaginationEntity.byteAnyMaxbytesAlice=null;fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestPaginationEntity, 'byteAnyMaxbytesAlice', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesAlice" id="field_byteAnyMaxbytesAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteAnyMaxbytesAlice" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesAliceContentType" id="field_byteAnyMaxbytesAliceContentType"
+                [(ngModel)]="fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMaxbytesAlice?.dirty && editForm.controls.byteAnyMaxbytesAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMaxbytesAlice?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextAlice" for="field_byteTextAlice">Byte Text Alice</label>
+            <textarea class="form-control" name="byteTextAlice" id="field_byteTextAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteTextAlice"  ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextRequiredAlice" for="field_byteTextRequiredAlice">Byte Text Required Alice</label>
+            <textarea class="form-control" name="byteTextRequiredAlice" id="field_byteTextRequiredAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteTextRequiredAlice" required ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextRequiredAlice?.dirty && editForm.controls.byteTextRequiredAlice?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteTextRequiredAlice?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextMinbytesAlice" for="field_byteTextMinbytesAlice">Byte Text Minbytes Alice</label>
+            <textarea class="form-control" name="byteTextMinbytesAlice" id="field_byteTextMinbytesAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteTextMinbytesAlice" minbytes="0" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMinbytesAlice?.dirty && editForm.controls.byteTextMinbytesAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMinbytesAlice?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestPaginationEntity.byteTextMaxbytesAlice" for="field_byteTextMaxbytesAlice">Byte Text Maxbytes Alice</label>
+            <textarea class="form-control" name="byteTextMaxbytesAlice" id="field_byteTextMaxbytesAlice"
+                [(ngModel)]="fieldTestPaginationEntity.byteTextMaxbytesAlice" maxbytes="10000" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMaxbytesAlice?.dirty && editForm.controls.byteTextMaxbytesAlice?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMaxbytesAlice?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

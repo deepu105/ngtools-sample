@@ -1,0 +1,233 @@
+
+<div *ngIf="fieldTestInfiniteScrollEntity">
+    <h2><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.detail.title">Field Test Infinite Scroll Entity</span> {{fieldTestInfiniteScrollEntity.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringHugo">String Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.stringHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringRequiredHugo">String Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.stringRequiredHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringMinlengthHugo">String Minlength Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.stringMinlengthHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringMaxlengthHugo">String Maxlength Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.stringMaxlengthHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.stringPatternHugo">String Pattern Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.stringPatternHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.integerHugo">Integer Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.integerHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.integerRequiredHugo">Integer Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.integerRequiredHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.integerMinHugo">Integer Min Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.integerMinHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.integerMaxHugo">Integer Max Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.integerMaxHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.longHugo">Long Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.longHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.longRequiredHugo">Long Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.longRequiredHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.longMinHugo">Long Min Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.longMinHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.longMaxHugo">Long Max Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.longMaxHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.floatHugo">Float Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.floatHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.floatRequiredHugo">Float Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.floatRequiredHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.floatMinHugo">Float Min Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.floatMinHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.floatMaxHugo">Float Max Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.floatMaxHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.doubleRequiredHugo">Double Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.doubleRequiredHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.doubleMinHugo">Double Min Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.doubleMinHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.doubleMaxHugo">Double Max Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.doubleMaxHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.bigDecimalRequiredHugo">Big Decimal Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.bigDecimalRequiredHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.bigDecimalMinHugo">Big Decimal Min Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.bigDecimalMinHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.bigDecimalMaxHugo">Big Decimal Max Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.bigDecimalMaxHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.localDateHugo">Local Date Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.localDateHugo | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.localDateRequiredHugo">Local Date Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.localDateRequiredHugo | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.instantHugo">Instant Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.instantHugo | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.instanteRequiredHugo">Instante Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.instanteRequiredHugo | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.zonedDateTimeHugo">Zoned Date Time Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.zonedDateTimeHugo | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.zonedDateTimeRequiredHugo">Zoned Date Time Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.zonedDateTimeRequiredHugo | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.booleanHugo">Boolean Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.booleanHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.booleanRequiredHugo">Boolean Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.booleanRequiredHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.enumHugo">Enum Hugo</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.EnumFieldClass.' + fieldTestInfiniteScrollEntity.enumHugo}}">{{fieldTestInfiniteScrollEntity.enumHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.enumRequiredHugo">Enum Required Hugo</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.EnumRequiredFieldClass.' + fieldTestInfiniteScrollEntity.enumRequiredHugo}}">{{fieldTestInfiniteScrollEntity.enumRequiredHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteImageHugo">Byte Image Hugo</span></dt>
+        <dd>
+            <div *ngIf="fieldTestInfiniteScrollEntity.byteImageHugo">
+                <a (click)="openFile(fieldTestInfiniteScrollEntity.byteImageHugoContentType, fieldTestInfiniteScrollEntity.byteImageHugo)">
+                    <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageHugo" style="max-width: 100%;" alt="fieldTestInfiniteScrollEntity image"/>
+                </a>
+                {{fieldTestInfiniteScrollEntity.byteImageHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageHugo)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteImageRequiredHugo">Byte Image Required Hugo</span></dt>
+        <dd>
+            <div *ngIf="fieldTestInfiniteScrollEntity.byteImageRequiredHugo">
+                <a (click)="openFile(fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType, fieldTestInfiniteScrollEntity.byteImageRequiredHugo)">
+                    <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageRequiredHugo" style="max-width: 100%;" alt="fieldTestInfiniteScrollEntity image"/>
+                </a>
+                {{fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageRequiredHugo)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo">Byte Image Minbytes Hugo</span></dt>
+        <dd>
+            <div *ngIf="fieldTestInfiniteScrollEntity.byteImageMinbytesHugo">
+                <a (click)="openFile(fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType, fieldTestInfiniteScrollEntity.byteImageMinbytesHugo)">
+                    <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" style="max-width: 100%;" alt="fieldTestInfiniteScrollEntity image"/>
+                </a>
+                {{fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageMinbytesHugo)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo">Byte Image Maxbytes Hugo</span></dt>
+        <dd>
+            <div *ngIf="fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo">
+                <a (click)="openFile(fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType, fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo)">
+                    <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" style="max-width: 100%;" alt="fieldTestInfiniteScrollEntity image"/>
+                </a>
+                {{fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteAnyHugo">Byte Any Hugo</span></dt>
+        <dd>
+            <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyHugo">
+                <a (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyHugoContentType, fieldTestInfiniteScrollEntity.byteAnyHugo)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestInfiniteScrollEntity.byteAnyHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyHugo)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteAnyRequiredHugo">Byte Any Required Hugo</span></dt>
+        <dd>
+            <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyRequiredHugo">
+                <a (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType, fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo">Byte Any Minbytes Hugo</span></dt>
+        <dd>
+            <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo">
+                <a (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType, fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo">Byte Any Maxbytes Hugo</span></dt>
+        <dd>
+            <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo">
+                <a (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType, fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteTextHugo">Byte Text Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.byteTextHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteTextRequiredHugo">Byte Text Required Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.byteTextRequiredHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteTextMinbytesHugo">Byte Text Minbytes Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.byteTextMinbytesHugo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestInfiniteScrollEntity.byteTextMaxbytesHugo">Byte Text Maxbytes Hugo</span></dt>
+        <dd>
+            <span>{{fieldTestInfiniteScrollEntity.byteTextMaxbytesHugo}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'field-test-infinite-scroll-entity/'+ fieldTestInfiniteScrollEntity.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

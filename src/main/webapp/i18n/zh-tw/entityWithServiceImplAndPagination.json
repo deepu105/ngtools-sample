@@ -1,0 +1,22 @@
+{
+    "jh4TestApp": {
+        "entityWithServiceImplAndPagination" : {
+            "home": {
+                "title": "Entity With Service Impl And Paginations",
+                "createLabel": "建立一筆新的 Entity With Service Impl And Pagination",
+                "createOrEditLabel": "建立或編輯 Entity With Service Impl And Pagination",
+                "search": "搜尋 Entity With Service Impl And Pagination"
+            },
+            "created": "新的 Entity With Service Impl And Pagination 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Entity With Service Impl And Pagination 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Entity With Service Impl And Pagination 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Entity With Service Impl And Pagination {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Entity With Service Impl And Pagination"
+            },
+            "hugo": "Hugo"
+        }
+    }
+}

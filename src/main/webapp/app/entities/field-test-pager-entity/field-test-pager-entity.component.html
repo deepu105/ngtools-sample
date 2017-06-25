@@ -1,0 +1,198 @@
+<div>
+    <h2>
+        <span jhiTranslate="jh4TestApp.fieldTestPagerEntity.home.title">Field Test Pager Entities</span>
+        <button class="btn btn-primary float-right create-field-test-pager-entity" [routerLink]="['/', { outlets: { popup: ['field-test-pager-entity-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="jh4TestApp.fieldTestPagerEntity.home.createLabel">
+            Create new Field Test Pager Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jh4TestApp.fieldTestPagerEntity.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="fieldTestPagerEntities">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringJade">String Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringRequiredJade">String Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringMinlengthJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringMinlengthJade">String Minlength Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringMaxlengthJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringMaxlengthJade">String Maxlength Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stringPatternJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.stringPatternJade">String Pattern Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="integerJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerJade">Integer Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="integerRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerRequiredJade">Integer Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="integerMinJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerMinJade">Integer Min Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="integerMaxJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.integerMaxJade">Integer Max Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="longJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.longJade">Long Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="longRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.longRequiredJade">Long Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="longMinJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.longMinJade">Long Min Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="longMaxJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.longMaxJade">Long Max Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="floatJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatJade">Float Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="floatRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatRequiredJade">Float Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="floatMinJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatMinJade">Float Min Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="floatMaxJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.floatMaxJade">Float Max Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="doubleRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.doubleRequiredJade">Double Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="doubleMinJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.doubleMinJade">Double Min Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="doubleMaxJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.doubleMaxJade">Double Max Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bigDecimalRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.bigDecimalRequiredJade">Big Decimal Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bigDecimalMinJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.bigDecimalMinJade">Big Decimal Min Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bigDecimalMaxJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.bigDecimalMaxJade">Big Decimal Max Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="localDateJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.localDateJade">Local Date Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="localDateRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.localDateRequiredJade">Local Date Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="instantJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.instantJade">Instant Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="instanteRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.instanteRequiredJade">Instante Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="zonedDateTimeJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.zonedDateTimeJade">Zoned Date Time Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="zonedDateTimeRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.zonedDateTimeRequiredJade">Zoned Date Time Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="booleanJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.booleanJade">Boolean Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="booleanRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.booleanRequiredJade">Boolean Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="enumJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.enumJade">Enum Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="enumRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.enumRequiredJade">Enum Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteImageJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageJade">Byte Image Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteImageRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageRequiredJade">Byte Image Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteImageMinbytesJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageMinbytesJade">Byte Image Minbytes Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteImageMaxbytesJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteImageMaxbytesJade">Byte Image Maxbytes Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteAnyJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyJade">Byte Any Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteAnyRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyRequiredJade">Byte Any Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteAnyMinbytesJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyMinbytesJade">Byte Any Minbytes Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteAnyMaxbytesJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteAnyMaxbytesJade">Byte Any Maxbytes Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteTextJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextJade">Byte Text Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteTextRequiredJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextRequiredJade">Byte Text Required Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteTextMinbytesJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextMinbytesJade">Byte Text Minbytes Jade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="byteTextMaxbytesJade"><span jhiTranslate="jh4TestApp.fieldTestPagerEntity.byteTextMaxbytesJade">Byte Text Maxbytes Jade</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fieldTestPagerEntity of fieldTestPagerEntities ;trackBy: trackId">
+                <td><a [routerLink]="['../field-test-pager-entity', fieldTestPagerEntity.id ]">{{fieldTestPagerEntity.id}}</a></td>
+                <td>{{fieldTestPagerEntity.stringJade}}</td>
+                <td>{{fieldTestPagerEntity.stringRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.stringMinlengthJade}}</td>
+                <td>{{fieldTestPagerEntity.stringMaxlengthJade}}</td>
+                <td>{{fieldTestPagerEntity.stringPatternJade}}</td>
+                <td>{{fieldTestPagerEntity.integerJade}}</td>
+                <td>{{fieldTestPagerEntity.integerRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.integerMinJade}}</td>
+                <td>{{fieldTestPagerEntity.integerMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.longJade}}</td>
+                <td>{{fieldTestPagerEntity.longRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.longMinJade}}</td>
+                <td>{{fieldTestPagerEntity.longMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.floatJade}}</td>
+                <td>{{fieldTestPagerEntity.floatRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.floatMinJade}}</td>
+                <td>{{fieldTestPagerEntity.floatMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.doubleRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.doubleMinJade}}</td>
+                <td>{{fieldTestPagerEntity.doubleMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.bigDecimalRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.bigDecimalMinJade}}</td>
+                <td>{{fieldTestPagerEntity.bigDecimalMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.localDateJade | date:'mediumDate'}}</td>
+                <td>{{fieldTestPagerEntity.localDateRequiredJade | date:'mediumDate'}}</td>
+                <td>{{fieldTestPagerEntity.instantJade | date:'medium'}}</td>
+                <td>{{fieldTestPagerEntity.instanteRequiredJade | date:'medium'}}</td>
+                <td>{{fieldTestPagerEntity.zonedDateTimeJade | date:'medium'}}</td>
+                <td>{{fieldTestPagerEntity.zonedDateTimeRequiredJade | date:'medium'}}</td>
+                <td>{{fieldTestPagerEntity.booleanJade}}</td>
+                <td>{{fieldTestPagerEntity.booleanRequiredJade}}</td>
+                <td jhiTranslate="{{'jh4TestApp.EnumFieldClass.' + fieldTestPagerEntity.enumJade}}">{{fieldTestPagerEntity.enumJade}}</td>
+                <td jhiTranslate="{{'jh4TestApp.EnumRequiredFieldClass.' + fieldTestPagerEntity.enumRequiredJade}}">{{fieldTestPagerEntity.enumRequiredJade}}</td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteImageJade" (click)="openFile(fieldTestPagerEntity.byteImageJadeContentType, fieldTestPagerEntity.byteImageJade)">
+                        <img [src]="'data:' + fieldTestPagerEntity.byteImageJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageJade" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPagerEntity.byteImageJade">{{fieldTestPagerEntity.byteImageJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteImageRequiredJade" (click)="openFile(fieldTestPagerEntity.byteImageRequiredJadeContentType, fieldTestPagerEntity.byteImageRequiredJade)">
+                        <img [src]="'data:' + fieldTestPagerEntity.byteImageRequiredJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageRequiredJade" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPagerEntity.byteImageRequiredJade">{{fieldTestPagerEntity.byteImageRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageRequiredJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteImageMinbytesJade" (click)="openFile(fieldTestPagerEntity.byteImageMinbytesJadeContentType, fieldTestPagerEntity.byteImageMinbytesJade)">
+                        <img [src]="'data:' + fieldTestPagerEntity.byteImageMinbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMinbytesJade" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPagerEntity.byteImageMinbytesJade">{{fieldTestPagerEntity.byteImageMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMinbytesJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteImageMaxbytesJade" (click)="openFile(fieldTestPagerEntity.byteImageMaxbytesJadeContentType, fieldTestPagerEntity.byteImageMaxbytesJade)">
+                        <img [src]="'data:' + fieldTestPagerEntity.byteImageMaxbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMaxbytesJade" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPagerEntity.byteImageMaxbytesJade">{{fieldTestPagerEntity.byteImageMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMaxbytesJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteAnyJade" (click)="openFile(fieldTestPagerEntity.byteAnyJadeContentType, fieldTestPagerEntity.byteAnyJade)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestPagerEntity.byteAnyJade">{{fieldTestPagerEntity.byteAnyJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteAnyRequiredJade" (click)="openFile(fieldTestPagerEntity.byteAnyRequiredJadeContentType, fieldTestPagerEntity.byteAnyRequiredJade)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestPagerEntity.byteAnyRequiredJade">{{fieldTestPagerEntity.byteAnyRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyRequiredJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteAnyMinbytesJade" (click)="openFile(fieldTestPagerEntity.byteAnyMinbytesJadeContentType, fieldTestPagerEntity.byteAnyMinbytesJade)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestPagerEntity.byteAnyMinbytesJade">{{fieldTestPagerEntity.byteAnyMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMinbytesJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteAnyMaxbytesJade" (click)="openFile(fieldTestPagerEntity.byteAnyMaxbytesJadeContentType, fieldTestPagerEntity.byteAnyMaxbytesJade)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestPagerEntity.byteAnyMaxbytesJade">{{fieldTestPagerEntity.byteAnyMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMaxbytesJade)}}</span>
+                </td>
+                <td>{{fieldTestPagerEntity.byteTextJade}}</td>
+                <td>{{fieldTestPagerEntity.byteTextRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.byteTextMinbytesJade}}</td>
+                <td>{{fieldTestPagerEntity.byteTextMaxbytesJade}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../field-test-pager-entity', fieldTestPagerEntity.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-pager-entity/'+ fieldTestPagerEntity.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-pager-entity/'+ fieldTestPagerEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <!-- Pager is not implemented yet, so this is normal pagination instead -->
+        <div *ngIf="fieldTestPagerEntities && fieldTestPagerEntities.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page"  (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

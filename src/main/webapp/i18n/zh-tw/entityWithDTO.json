@@ -1,0 +1,22 @@
+{
+    "jh4TestApp": {
+        "entityWithDTO" : {
+            "home": {
+                "title": "Entity With DTOS",
+                "createLabel": "建立一筆新的 Entity With DTO",
+                "createOrEditLabel": "建立或編輯 Entity With DTO",
+                "search": "搜尋 Entity With DTO"
+            },
+            "created": "新的 Entity With DTO 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Entity With DTO 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Entity With DTO 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Entity With DTO {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Entity With DTO"
+            },
+            "emma": "Emma"
+        }
+    }
+}

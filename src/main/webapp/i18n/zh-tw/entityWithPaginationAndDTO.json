@@ -1,0 +1,22 @@
+{
+    "jh4TestApp": {
+        "entityWithPaginationAndDTO" : {
+            "home": {
+                "title": "Entity With Pagination And DTOS",
+                "createLabel": "建立一筆新的 Entity With Pagination And DTO",
+                "createOrEditLabel": "建立或編輯 Entity With Pagination And DTO",
+                "search": "搜尋 Entity With Pagination And DTO"
+            },
+            "created": "新的 Entity With Pagination And DTO 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Entity With Pagination And DTO 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Entity With Pagination And DTO 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Entity With Pagination And DTO {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Entity With Pagination And DTO"
+            },
+            "lea": "Lea"
+        }
+    }
+}

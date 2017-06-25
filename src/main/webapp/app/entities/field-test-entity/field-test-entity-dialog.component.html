@@ -1,0 +1,640 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFieldTestEntityLabel" jhiTranslate="jh4TestApp.fieldTestEntity.home.createOrEditLabel">Create or edit a Field Test Entity</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!fieldTestEntity.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="fieldTestEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.stringTom" for="field_stringTom">String Tom</label>
+            <input type="text" class="form-control" name="stringTom" id="field_stringTom"
+                [(ngModel)]="fieldTestEntity.stringTom"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.stringRequiredTom" for="field_stringRequiredTom">String Required Tom</label>
+            <input type="text" class="form-control" name="stringRequiredTom" id="field_stringRequiredTom"
+                [(ngModel)]="fieldTestEntity.stringRequiredTom" required />
+            <div [hidden]="!(editForm.controls.stringRequiredTom?.dirty && editForm.controls.stringRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.stringMinlengthTom" for="field_stringMinlengthTom">String Minlength Tom</label>
+            <input type="text" class="form-control" name="stringMinlengthTom" id="field_stringMinlengthTom"
+                [(ngModel)]="fieldTestEntity.stringMinlengthTom" minlength="0" />
+            <div [hidden]="!(editForm.controls.stringMinlengthTom?.dirty && editForm.controls.stringMinlengthTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMinlengthTom?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 0 }">
+                   This field is required to be at least 0 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.stringMaxlengthTom" for="field_stringMaxlengthTom">String Maxlength Tom</label>
+            <input type="text" class="form-control" name="stringMaxlengthTom" id="field_stringMaxlengthTom"
+                [(ngModel)]="fieldTestEntity.stringMaxlengthTom" maxlength="20" />
+            <div [hidden]="!(editForm.controls.stringMaxlengthTom?.dirty && editForm.controls.stringMaxlengthTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMaxlengthTom?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.stringPatternTom" for="field_stringPatternTom">String Pattern Tom</label>
+            <input type="text" class="form-control" name="stringPatternTom" id="field_stringPatternTom"
+                [(ngModel)]="fieldTestEntity.stringPatternTom" pattern="^[a-zA-Z0-9]*$" />
+            <div [hidden]="!(editForm.controls.stringPatternTom?.dirty && editForm.controls.stringPatternTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.stringPatternTom?.errors?.pattern" jhiTranslate="entity.validation.pattern" translateValues="{ pattern: 'String Pattern Tom' }">
+                    This field should follow pattern for "String Pattern Tom".
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.integerTom" for="field_integerTom">Integer Tom</label>
+            <input type="number" class="form-control" name="integerTom" id="field_integerTom"
+                [(ngModel)]="fieldTestEntity.integerTom"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.integerRequiredTom" for="field_integerRequiredTom">Integer Required Tom</label>
+            <input type="number" class="form-control" name="integerRequiredTom" id="field_integerRequiredTom"
+                [(ngModel)]="fieldTestEntity.integerRequiredTom" required />
+            <div [hidden]="!(editForm.controls.integerRequiredTom?.dirty && editForm.controls.integerRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.integerRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerRequiredTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.integerMinTom" for="field_integerMinTom">Integer Min Tom</label>
+            <input type="number" class="form-control" name="integerMinTom" id="field_integerMinTom"
+                [(ngModel)]="fieldTestEntity.integerMinTom" min="0" />
+            <div [hidden]="!(editForm.controls.integerMinTom?.dirty && editForm.controls.integerMinTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinTom?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.integerMaxTom" for="field_integerMaxTom">Integer Max Tom</label>
+            <input type="number" class="form-control" name="integerMaxTom" id="field_integerMaxTom"
+                [(ngModel)]="fieldTestEntity.integerMaxTom" max="100" />
+            <div [hidden]="!(editForm.controls.integerMaxTom?.dirty && editForm.controls.integerMaxTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxTom?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.longTom" for="field_longTom">Long Tom</label>
+            <input type="number" class="form-control" name="longTom" id="field_longTom"
+                [(ngModel)]="fieldTestEntity.longTom"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.longRequiredTom" for="field_longRequiredTom">Long Required Tom</label>
+            <input type="number" class="form-control" name="longRequiredTom" id="field_longRequiredTom"
+                [(ngModel)]="fieldTestEntity.longRequiredTom" required />
+            <div [hidden]="!(editForm.controls.longRequiredTom?.dirty && editForm.controls.longRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.longRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longRequiredTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.longMinTom" for="field_longMinTom">Long Min Tom</label>
+            <input type="number" class="form-control" name="longMinTom" id="field_longMinTom"
+                [(ngModel)]="fieldTestEntity.longMinTom" min="0" />
+            <div [hidden]="!(editForm.controls.longMinTom?.dirty && editForm.controls.longMinTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinTom?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.longMaxTom" for="field_longMaxTom">Long Max Tom</label>
+            <input type="number" class="form-control" name="longMaxTom" id="field_longMaxTom"
+                [(ngModel)]="fieldTestEntity.longMaxTom" max="100" />
+            <div [hidden]="!(editForm.controls.longMaxTom?.dirty && editForm.controls.longMaxTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxTom?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.floatTom" for="field_floatTom">Float Tom</label>
+            <input type="number" class="form-control" name="floatTom" id="field_floatTom"
+                [(ngModel)]="fieldTestEntity.floatTom"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.floatRequiredTom" for="field_floatRequiredTom">Float Required Tom</label>
+            <input type="number" class="form-control" name="floatRequiredTom" id="field_floatRequiredTom"
+                [(ngModel)]="fieldTestEntity.floatRequiredTom" required />
+            <div [hidden]="!(editForm.controls.floatRequiredTom?.dirty && editForm.controls.floatRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.floatRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatRequiredTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.floatMinTom" for="field_floatMinTom">Float Min Tom</label>
+            <input type="number" class="form-control" name="floatMinTom" id="field_floatMinTom"
+                [(ngModel)]="fieldTestEntity.floatMinTom" min="0" />
+            <div [hidden]="!(editForm.controls.floatMinTom?.dirty && editForm.controls.floatMinTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinTom?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.floatMaxTom" for="field_floatMaxTom">Float Max Tom</label>
+            <input type="number" class="form-control" name="floatMaxTom" id="field_floatMaxTom"
+                [(ngModel)]="fieldTestEntity.floatMaxTom" max="100" />
+            <div [hidden]="!(editForm.controls.floatMaxTom?.dirty && editForm.controls.floatMaxTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxTom?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.doubleRequiredTom" for="field_doubleRequiredTom">Double Required Tom</label>
+            <input type="number" class="form-control" name="doubleRequiredTom" id="field_doubleRequiredTom"
+                [(ngModel)]="fieldTestEntity.doubleRequiredTom" required />
+            <div [hidden]="!(editForm.controls.doubleRequiredTom?.dirty && editForm.controls.doubleRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.doubleRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleRequiredTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.doubleMinTom" for="field_doubleMinTom">Double Min Tom</label>
+            <input type="number" class="form-control" name="doubleMinTom" id="field_doubleMinTom"
+                [(ngModel)]="fieldTestEntity.doubleMinTom" min="0" />
+            <div [hidden]="!(editForm.controls.doubleMinTom?.dirty && editForm.controls.doubleMinTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinTom?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.doubleMaxTom" for="field_doubleMaxTom">Double Max Tom</label>
+            <input type="number" class="form-control" name="doubleMaxTom" id="field_doubleMaxTom"
+                [(ngModel)]="fieldTestEntity.doubleMaxTom" max="100" />
+            <div [hidden]="!(editForm.controls.doubleMaxTom?.dirty && editForm.controls.doubleMaxTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxTom?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.bigDecimalRequiredTom" for="field_bigDecimalRequiredTom">Big Decimal Required Tom</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredTom" id="field_bigDecimalRequiredTom"
+                [(ngModel)]="fieldTestEntity.bigDecimalRequiredTom" required />
+            <div [hidden]="!(editForm.controls.bigDecimalRequiredTom?.dirty && editForm.controls.bigDecimalRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.bigDecimalRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalRequiredTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.bigDecimalMinTom" for="field_bigDecimalMinTom">Big Decimal Min Tom</label>
+            <input type="number" class="form-control" name="bigDecimalMinTom" id="field_bigDecimalMinTom"
+                [(ngModel)]="fieldTestEntity.bigDecimalMinTom" min="0" />
+            <div [hidden]="!(editForm.controls.bigDecimalMinTom?.dirty && editForm.controls.bigDecimalMinTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinTom?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.bigDecimalMaxTom" for="field_bigDecimalMaxTom">Big Decimal Max Tom</label>
+            <input type="number" class="form-control" name="bigDecimalMaxTom" id="field_bigDecimalMaxTom"
+                [(ngModel)]="fieldTestEntity.bigDecimalMaxTom" max="100" />
+            <div [hidden]="!(editForm.controls.bigDecimalMaxTom?.dirty && editForm.controls.bigDecimalMaxTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxTom?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxTom?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.localDateTom" for="field_localDateTom">Local Date Tom</label>
+            <div class="input-group">
+                <input id="field_localDateTom" type="text" class="form-control" name="localDateTom" ngbDatepicker  #localDateTomDp="ngbDatepicker" [(ngModel)]="fieldTestEntity.localDateTom"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateTomDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.localDateRequiredTom" for="field_localDateRequiredTom">Local Date Required Tom</label>
+            <div class="input-group">
+                <input id="field_localDateRequiredTom" type="text" class="form-control" name="localDateRequiredTom" ngbDatepicker  #localDateRequiredTomDp="ngbDatepicker" [(ngModel)]="fieldTestEntity.localDateRequiredTom"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateRequiredTomDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.localDateRequiredTom?.dirty && editForm.controls.localDateRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.localDateRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.instantTom" for="field_instantTom">Instant Tom</label>
+            <div class="d-flex">
+                <input id="field_instantTom" type="datetime-local" class="form-control" name="instantTom" [(ngModel)]="fieldTestEntity.instantTom"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.instanteRequiredTom" for="field_instanteRequiredTom">Instante Required Tom</label>
+            <div class="d-flex">
+                <input id="field_instanteRequiredTom" type="datetime-local" class="form-control" name="instanteRequiredTom" [(ngModel)]="fieldTestEntity.instanteRequiredTom"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.instanteRequiredTom?.dirty && editForm.controls.instanteRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.instanteRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.instanteRequiredTom?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.zonedDateTimeTom" for="field_zonedDateTimeTom">Zoned Date Time Tom</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeTom" type="datetime-local" class="form-control" name="zonedDateTimeTom" [(ngModel)]="fieldTestEntity.zonedDateTimeTom"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.zonedDateTimeRequiredTom" for="field_zonedDateTimeRequiredTom">Zoned Date Time Required Tom</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeRequiredTom" type="datetime-local" class="form-control" name="zonedDateTimeRequiredTom" [(ngModel)]="fieldTestEntity.zonedDateTimeRequiredTom"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.zonedDateTimeRequiredTom?.dirty && editForm.controls.zonedDateTimeRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.zonedDateTimeRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.zonedDateTimeRequiredTom?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.booleanTom" for="field_booleanTom">Boolean Tom</label>
+            <input type="checkbox" class="form-control" name="booleanTom" id="field_booleanTom"
+                [(ngModel)]="fieldTestEntity.booleanTom"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.booleanRequiredTom" for="field_booleanRequiredTom">Boolean Required Tom</label>
+            <input type="checkbox" class="form-control" name="booleanRequiredTom" id="field_booleanRequiredTom"
+                [(ngModel)]="fieldTestEntity.booleanRequiredTom"  />
+            <div [hidden]="!(editForm.controls.booleanRequiredTom?.dirty && editForm.controls.booleanRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.booleanRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.enumTom" for="field_enumTom">Enum Tom</label>
+            <select class="form-control" name="enumTom" [(ngModel)]="fieldTestEntity.enumTom" id="field_enumTom" >
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.enumRequiredTom" for="field_enumRequiredTom">Enum Required Tom</label>
+            <select class="form-control" name="enumRequiredTom" [(ngModel)]="fieldTestEntity.enumRequiredTom" id="field_enumRequiredTom"  required>
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div [hidden]="!(editForm.controls.enumRequiredTom?.dirty && editForm.controls.enumRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.enumRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteImageTom" for="field_byteImageTom">Byte Image Tom</label>
+            <div>
+                <img [src]="'data:' + fieldTestEntity.byteImageTomContentType + ';base64,' + fieldTestEntity.byteImageTom" style="max-height: 100px;" *ngIf="fieldTestEntity.byteImageTom" alt="fieldTestEntity image"/>
+                <div *ngIf="fieldTestEntity.byteImageTom" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestEntity.byteImageTomContentType}}, {{byteSize(fieldTestEntity.byteImageTom)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageTom', 'byteImageTomContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestEntity, 'byteImageTom', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageTom" id="field_byteImageTom"
+                [(ngModel)]="fieldTestEntity.byteImageTom"  />
+            <input type="hidden" class="form-control" name="byteImageTomContentType" id="field_byteImageTomContentType"
+                [(ngModel)]="fieldTestEntity.byteImageTomContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteImageRequiredTom" for="field_byteImageRequiredTom">Byte Image Required Tom</label>
+            <div>
+                <img [src]="'data:' + fieldTestEntity.byteImageRequiredTomContentType + ';base64,' + fieldTestEntity.byteImageRequiredTom" style="max-height: 100px;" *ngIf="fieldTestEntity.byteImageRequiredTom" alt="fieldTestEntity image"/>
+                <div *ngIf="fieldTestEntity.byteImageRequiredTom" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestEntity.byteImageRequiredTomContentType}}, {{byteSize(fieldTestEntity.byteImageRequiredTom)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageRequiredTom', 'byteImageRequiredTomContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestEntity, 'byteImageRequiredTom', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredTom" id="field_byteImageRequiredTom"
+                [(ngModel)]="fieldTestEntity.byteImageRequiredTom" required />
+            <input type="hidden" class="form-control" name="byteImageRequiredTomContentType" id="field_byteImageRequiredTomContentType"
+                [(ngModel)]="fieldTestEntity.byteImageRequiredTomContentType" />
+            <div [hidden]="!(editForm.controls.byteImageRequiredTom?.dirty && editForm.controls.byteImageRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteImageRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteImageMinbytesTom" for="field_byteImageMinbytesTom">Byte Image Minbytes Tom</label>
+            <div>
+                <img [src]="'data:' + fieldTestEntity.byteImageMinbytesTomContentType + ';base64,' + fieldTestEntity.byteImageMinbytesTom" style="max-height: 100px;" *ngIf="fieldTestEntity.byteImageMinbytesTom" alt="fieldTestEntity image"/>
+                <div *ngIf="fieldTestEntity.byteImageMinbytesTom" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestEntity.byteImageMinbytesTomContentType}}, {{byteSize(fieldTestEntity.byteImageMinbytesTom)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMinbytesTom', 'byteImageMinbytesTomContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestEntity, 'byteImageMinbytesTom', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesTom" id="field_byteImageMinbytesTom"
+                [(ngModel)]="fieldTestEntity.byteImageMinbytesTom" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteImageMinbytesTomContentType" id="field_byteImageMinbytesTomContentType"
+                [(ngModel)]="fieldTestEntity.byteImageMinbytesTomContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMinbytesTom?.dirty && editForm.controls.byteImageMinbytesTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMinbytesTom?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteImageMaxbytesTom" for="field_byteImageMaxbytesTom">Byte Image Maxbytes Tom</label>
+            <div>
+                <img [src]="'data:' + fieldTestEntity.byteImageMaxbytesTomContentType + ';base64,' + fieldTestEntity.byteImageMaxbytesTom" style="max-height: 100px;" *ngIf="fieldTestEntity.byteImageMaxbytesTom" alt="fieldTestEntity image"/>
+                <div *ngIf="fieldTestEntity.byteImageMaxbytesTom" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestEntity.byteImageMaxbytesTomContentType}}, {{byteSize(fieldTestEntity.byteImageMaxbytesTom)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMaxbytesTom', 'byteImageMaxbytesTomContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestEntity, 'byteImageMaxbytesTom', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesTom" id="field_byteImageMaxbytesTom"
+                [(ngModel)]="fieldTestEntity.byteImageMaxbytesTom" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteImageMaxbytesTomContentType" id="field_byteImageMaxbytesTomContentType"
+                [(ngModel)]="fieldTestEntity.byteImageMaxbytesTomContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMaxbytesTom?.dirty && editForm.controls.byteImageMaxbytesTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMaxbytesTom?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteAnyTom" for="field_byteAnyTom">Byte Any Tom</label>
+            <div>
+                <div *ngIf="fieldTestEntity.byteAnyTom" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestEntity.byteAnyTomContentType, fieldTestEntity.byteAnyTom)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestEntity.byteAnyTomContentType}}, {{byteSize(fieldTestEntity.byteAnyTom)}}</span>
+                    <button type="button" (click)="fieldTestEntity.byteAnyTom=null;fieldTestEntity.byteAnyTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestEntity, 'byteAnyTom', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyTom" id="field_byteAnyTom"
+                [(ngModel)]="fieldTestEntity.byteAnyTom"  />
+            <input type="hidden" class="form-control" name="byteAnyTomContentType" id="field_byteAnyTomContentType"
+                [(ngModel)]="fieldTestEntity.byteAnyTomContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteAnyRequiredTom" for="field_byteAnyRequiredTom">Byte Any Required Tom</label>
+            <div>
+                <div *ngIf="fieldTestEntity.byteAnyRequiredTom" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestEntity.byteAnyRequiredTomContentType, fieldTestEntity.byteAnyRequiredTom)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestEntity.byteAnyRequiredTomContentType}}, {{byteSize(fieldTestEntity.byteAnyRequiredTom)}}</span>
+                    <button type="button" (click)="fieldTestEntity.byteAnyRequiredTom=null;fieldTestEntity.byteAnyRequiredTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestEntity, 'byteAnyRequiredTom', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredTom" id="field_byteAnyRequiredTom"
+                [(ngModel)]="fieldTestEntity.byteAnyRequiredTom" required />
+            <input type="hidden" class="form-control" name="byteAnyRequiredTomContentType" id="field_byteAnyRequiredTomContentType"
+                [(ngModel)]="fieldTestEntity.byteAnyRequiredTomContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyRequiredTom?.dirty && editForm.controls.byteAnyRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteAnyRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteAnyMinbytesTom" for="field_byteAnyMinbytesTom">Byte Any Minbytes Tom</label>
+            <div>
+                <div *ngIf="fieldTestEntity.byteAnyMinbytesTom" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestEntity.byteAnyMinbytesTomContentType, fieldTestEntity.byteAnyMinbytesTom)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestEntity.byteAnyMinbytesTomContentType}}, {{byteSize(fieldTestEntity.byteAnyMinbytesTom)}}</span>
+                    <button type="button" (click)="fieldTestEntity.byteAnyMinbytesTom=null;fieldTestEntity.byteAnyMinbytesTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestEntity, 'byteAnyMinbytesTom', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesTom" id="field_byteAnyMinbytesTom"
+                [(ngModel)]="fieldTestEntity.byteAnyMinbytesTom" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteAnyMinbytesTomContentType" id="field_byteAnyMinbytesTomContentType"
+                [(ngModel)]="fieldTestEntity.byteAnyMinbytesTomContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMinbytesTom?.dirty && editForm.controls.byteAnyMinbytesTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMinbytesTom?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteAnyMaxbytesTom" for="field_byteAnyMaxbytesTom">Byte Any Maxbytes Tom</label>
+            <div>
+                <div *ngIf="fieldTestEntity.byteAnyMaxbytesTom" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestEntity.byteAnyMaxbytesTomContentType, fieldTestEntity.byteAnyMaxbytesTom)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestEntity.byteAnyMaxbytesTomContentType}}, {{byteSize(fieldTestEntity.byteAnyMaxbytesTom)}}</span>
+                    <button type="button" (click)="fieldTestEntity.byteAnyMaxbytesTom=null;fieldTestEntity.byteAnyMaxbytesTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestEntity, 'byteAnyMaxbytesTom', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesTom" id="field_byteAnyMaxbytesTom"
+                [(ngModel)]="fieldTestEntity.byteAnyMaxbytesTom" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesTomContentType" id="field_byteAnyMaxbytesTomContentType"
+                [(ngModel)]="fieldTestEntity.byteAnyMaxbytesTomContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMaxbytesTom?.dirty && editForm.controls.byteAnyMaxbytesTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMaxbytesTom?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteTextTom" for="field_byteTextTom">Byte Text Tom</label>
+            <textarea class="form-control" name="byteTextTom" id="field_byteTextTom"
+                [(ngModel)]="fieldTestEntity.byteTextTom"  ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteTextRequiredTom" for="field_byteTextRequiredTom">Byte Text Required Tom</label>
+            <textarea class="form-control" name="byteTextRequiredTom" id="field_byteTextRequiredTom"
+                [(ngModel)]="fieldTestEntity.byteTextRequiredTom" required ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextRequiredTom?.dirty && editForm.controls.byteTextRequiredTom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteTextRequiredTom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteTextMinbytesTom" for="field_byteTextMinbytesTom">Byte Text Minbytes Tom</label>
+            <textarea class="form-control" name="byteTextMinbytesTom" id="field_byteTextMinbytesTom"
+                [(ngModel)]="fieldTestEntity.byteTextMinbytesTom" minbytes="0" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMinbytesTom?.dirty && editForm.controls.byteTextMinbytesTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMinbytesTom?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestEntity.byteTextMaxbytesTom" for="field_byteTextMaxbytesTom">Byte Text Maxbytes Tom</label>
+            <textarea class="form-control" name="byteTextMaxbytesTom" id="field_byteTextMaxbytesTom"
+                [(ngModel)]="fieldTestEntity.byteTextMaxbytesTom" maxbytes="10000" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMaxbytesTom?.dirty && editForm.controls.byteTextMaxbytesTom?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMaxbytesTom?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

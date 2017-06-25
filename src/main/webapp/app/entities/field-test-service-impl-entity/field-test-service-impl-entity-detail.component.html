@@ -1,0 +1,233 @@
+
+<div *ngIf="fieldTestServiceImplEntity">
+    <h2><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.detail.title">Field Test Service Impl Entity</span> {{fieldTestServiceImplEntity.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringMika">String Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.stringMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringRequiredMika">String Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.stringRequiredMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringMinlengthMika">String Minlength Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.stringMinlengthMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringMaxlengthMika">String Maxlength Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.stringMaxlengthMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.stringPatternMika">String Pattern Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.stringPatternMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.integerMika">Integer Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.integerMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.integerRequiredMika">Integer Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.integerRequiredMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.integerMinMika">Integer Min Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.integerMinMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.integerMaxMika">Integer Max Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.integerMaxMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.longMika">Long Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.longMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.longRequiredMika">Long Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.longRequiredMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.longMinMika">Long Min Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.longMinMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.longMaxMika">Long Max Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.longMaxMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.floatMika">Float Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.floatMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.floatRequiredMika">Float Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.floatRequiredMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.floatMinMika">Float Min Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.floatMinMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.floatMaxMika">Float Max Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.floatMaxMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.doubleRequiredMika">Double Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.doubleRequiredMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.doubleMinMika">Double Min Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.doubleMinMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.doubleMaxMika">Double Max Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.doubleMaxMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.bigDecimalRequiredMika">Big Decimal Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.bigDecimalRequiredMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.bigDecimalMinMika">Big Decimal Min Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.bigDecimalMinMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.bigDecimalMaxMika">Big Decimal Max Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.bigDecimalMaxMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.localDateMika">Local Date Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.localDateMika | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.localDateRequiredMika">Local Date Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.localDateRequiredMika | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.instantMika">Instant Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.instantMika | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.instanteRequiredMika">Instante Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.instanteRequiredMika | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.zonedDateTimeMika">Zoned Date Time Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.zonedDateTimeMika | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.zonedDateTimeRequiredMika">Zoned Date Time Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.zonedDateTimeRequiredMika | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.booleanMika">Boolean Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.booleanMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.booleanRequiredMika">Boolean Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.booleanRequiredMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.enumMika">Enum Mika</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.EnumFieldClass.' + fieldTestServiceImplEntity.enumMika}}">{{fieldTestServiceImplEntity.enumMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.enumRequiredMika">Enum Required Mika</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.EnumRequiredFieldClass.' + fieldTestServiceImplEntity.enumRequiredMika}}">{{fieldTestServiceImplEntity.enumRequiredMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteImageMika">Byte Image Mika</span></dt>
+        <dd>
+            <div *ngIf="fieldTestServiceImplEntity.byteImageMika">
+                <a (click)="openFile(fieldTestServiceImplEntity.byteImageMikaContentType, fieldTestServiceImplEntity.byteImageMika)">
+                    <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMika" style="max-width: 100%;" alt="fieldTestServiceImplEntity image"/>
+                </a>
+                {{fieldTestServiceImplEntity.byteImageMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMika)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteImageRequiredMika">Byte Image Required Mika</span></dt>
+        <dd>
+            <div *ngIf="fieldTestServiceImplEntity.byteImageRequiredMika">
+                <a (click)="openFile(fieldTestServiceImplEntity.byteImageRequiredMikaContentType, fieldTestServiceImplEntity.byteImageRequiredMika)">
+                    <img [src]="'data:' + fieldTestServiceImplEntity.byteImageRequiredMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageRequiredMika" style="max-width: 100%;" alt="fieldTestServiceImplEntity image"/>
+                </a>
+                {{fieldTestServiceImplEntity.byteImageRequiredMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageRequiredMika)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteImageMinbytesMika">Byte Image Minbytes Mika</span></dt>
+        <dd>
+            <div *ngIf="fieldTestServiceImplEntity.byteImageMinbytesMika">
+                <a (click)="openFile(fieldTestServiceImplEntity.byteImageMinbytesMikaContentType, fieldTestServiceImplEntity.byteImageMinbytesMika)">
+                    <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMinbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMinbytesMika" style="max-width: 100%;" alt="fieldTestServiceImplEntity image"/>
+                </a>
+                {{fieldTestServiceImplEntity.byteImageMinbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMinbytesMika)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteImageMaxbytesMika">Byte Image Maxbytes Mika</span></dt>
+        <dd>
+            <div *ngIf="fieldTestServiceImplEntity.byteImageMaxbytesMika">
+                <a (click)="openFile(fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType, fieldTestServiceImplEntity.byteImageMaxbytesMika)">
+                    <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMaxbytesMika" style="max-width: 100%;" alt="fieldTestServiceImplEntity image"/>
+                </a>
+                {{fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMaxbytesMika)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteAnyMika">Byte Any Mika</span></dt>
+        <dd>
+            <div *ngIf="fieldTestServiceImplEntity.byteAnyMika">
+                <a (click)="openFile(fieldTestServiceImplEntity.byteAnyMikaContentType, fieldTestServiceImplEntity.byteAnyMika)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestServiceImplEntity.byteAnyMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMika)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteAnyRequiredMika">Byte Any Required Mika</span></dt>
+        <dd>
+            <div *ngIf="fieldTestServiceImplEntity.byteAnyRequiredMika">
+                <a (click)="openFile(fieldTestServiceImplEntity.byteAnyRequiredMikaContentType, fieldTestServiceImplEntity.byteAnyRequiredMika)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestServiceImplEntity.byteAnyRequiredMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyRequiredMika)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteAnyMinbytesMika">Byte Any Minbytes Mika</span></dt>
+        <dd>
+            <div *ngIf="fieldTestServiceImplEntity.byteAnyMinbytesMika">
+                <a (click)="openFile(fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMinbytesMika)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMinbytesMika)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteAnyMaxbytesMika">Byte Any Maxbytes Mika</span></dt>
+        <dd>
+            <div *ngIf="fieldTestServiceImplEntity.byteAnyMaxbytesMika">
+                <a (click)="openFile(fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMaxbytesMika)" jhiTranslate="entity.action.open">open</a>
+                {{fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMaxbytesMika)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteTextMika">Byte Text Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.byteTextMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteTextRequiredMika">Byte Text Required Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.byteTextRequiredMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteTextMinbytesMika">Byte Text Minbytes Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.byteTextMinbytesMika}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.fieldTestServiceImplEntity.byteTextMaxbytesMika">Byte Text Maxbytes Mika</span></dt>
+        <dd>
+            <span>{{fieldTestServiceImplEntity.byteTextMaxbytesMika}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'field-test-service-impl-entity/'+ fieldTestServiceImplEntity.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

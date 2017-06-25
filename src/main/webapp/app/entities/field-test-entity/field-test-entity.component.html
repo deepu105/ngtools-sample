@@ -1,0 +1,189 @@
+<div>
+    <h2>
+        <span jhiTranslate="jh4TestApp.fieldTestEntity.home.title">Field Test Entities</span>
+        <button class="btn btn-primary float-right create-field-test-entity" [routerLink]="['/', { outlets: { popup: ['field-test-entity-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="jh4TestApp.fieldTestEntity.home.createLabel">
+            Create new Field Test Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jh4TestApp.fieldTestEntity.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="fieldTestEntities">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.stringTom">String Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.stringRequiredTom">String Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.stringMinlengthTom">String Minlength Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.stringMaxlengthTom">String Maxlength Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.stringPatternTom">String Pattern Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.integerTom">Integer Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.integerRequiredTom">Integer Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.integerMinTom">Integer Min Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.integerMaxTom">Integer Max Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.longTom">Long Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.longRequiredTom">Long Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.longMinTom">Long Min Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.longMaxTom">Long Max Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.floatTom">Float Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.floatRequiredTom">Float Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.floatMinTom">Float Min Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.floatMaxTom">Float Max Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.doubleRequiredTom">Double Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.doubleMinTom">Double Min Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.doubleMaxTom">Double Max Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.bigDecimalRequiredTom">Big Decimal Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.bigDecimalMinTom">Big Decimal Min Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.bigDecimalMaxTom">Big Decimal Max Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.localDateTom">Local Date Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.localDateRequiredTom">Local Date Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.instantTom">Instant Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.instanteRequiredTom">Instante Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.zonedDateTimeTom">Zoned Date Time Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.zonedDateTimeRequiredTom">Zoned Date Time Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.booleanTom">Boolean Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.booleanRequiredTom">Boolean Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.enumTom">Enum Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.enumRequiredTom">Enum Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteImageTom">Byte Image Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteImageRequiredTom">Byte Image Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteImageMinbytesTom">Byte Image Minbytes Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteImageMaxbytesTom">Byte Image Maxbytes Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteAnyTom">Byte Any Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteAnyRequiredTom">Byte Any Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteAnyMinbytesTom">Byte Any Minbytes Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteAnyMaxbytesTom">Byte Any Maxbytes Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteTextTom">Byte Text Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteTextRequiredTom">Byte Text Required Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteTextMinbytesTom">Byte Text Minbytes Tom</span></th>
+            <th><span jhiTranslate="jh4TestApp.fieldTestEntity.byteTextMaxbytesTom">Byte Text Maxbytes Tom</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fieldTestEntity of fieldTestEntities ;trackBy: trackId">
+                <td><a [routerLink]="['../field-test-entity', fieldTestEntity.id ]">{{fieldTestEntity.id}}</a></td>
+                <td>{{fieldTestEntity.stringTom}}</td>
+                <td>{{fieldTestEntity.stringRequiredTom}}</td>
+                <td>{{fieldTestEntity.stringMinlengthTom}}</td>
+                <td>{{fieldTestEntity.stringMaxlengthTom}}</td>
+                <td>{{fieldTestEntity.stringPatternTom}}</td>
+                <td>{{fieldTestEntity.integerTom}}</td>
+                <td>{{fieldTestEntity.integerRequiredTom}}</td>
+                <td>{{fieldTestEntity.integerMinTom}}</td>
+                <td>{{fieldTestEntity.integerMaxTom}}</td>
+                <td>{{fieldTestEntity.longTom}}</td>
+                <td>{{fieldTestEntity.longRequiredTom}}</td>
+                <td>{{fieldTestEntity.longMinTom}}</td>
+                <td>{{fieldTestEntity.longMaxTom}}</td>
+                <td>{{fieldTestEntity.floatTom}}</td>
+                <td>{{fieldTestEntity.floatRequiredTom}}</td>
+                <td>{{fieldTestEntity.floatMinTom}}</td>
+                <td>{{fieldTestEntity.floatMaxTom}}</td>
+                <td>{{fieldTestEntity.doubleRequiredTom}}</td>
+                <td>{{fieldTestEntity.doubleMinTom}}</td>
+                <td>{{fieldTestEntity.doubleMaxTom}}</td>
+                <td>{{fieldTestEntity.bigDecimalRequiredTom}}</td>
+                <td>{{fieldTestEntity.bigDecimalMinTom}}</td>
+                <td>{{fieldTestEntity.bigDecimalMaxTom}}</td>
+                <td>{{fieldTestEntity.localDateTom | date:'mediumDate'}}</td>
+                <td>{{fieldTestEntity.localDateRequiredTom | date:'mediumDate'}}</td>
+                <td>{{fieldTestEntity.instantTom | date:'medium'}}</td>
+                <td>{{fieldTestEntity.instanteRequiredTom | date:'medium'}}</td>
+                <td>{{fieldTestEntity.zonedDateTimeTom | date:'medium'}}</td>
+                <td>{{fieldTestEntity.zonedDateTimeRequiredTom | date:'medium'}}</td>
+                <td>{{fieldTestEntity.booleanTom}}</td>
+                <td>{{fieldTestEntity.booleanRequiredTom}}</td>
+                <td jhiTranslate="{{'jh4TestApp.EnumFieldClass.' + fieldTestEntity.enumTom}}">{{fieldTestEntity.enumTom}}</td>
+                <td jhiTranslate="{{'jh4TestApp.EnumRequiredFieldClass.' + fieldTestEntity.enumRequiredTom}}">{{fieldTestEntity.enumRequiredTom}}</td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteImageTom" (click)="openFile(fieldTestEntity.byteImageTomContentType, fieldTestEntity.byteImageTom)">
+                        <img [src]="'data:' + fieldTestEntity.byteImageTomContentType + ';base64,' + fieldTestEntity.byteImageTom" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestEntity.byteImageTom">{{fieldTestEntity.byteImageTomContentType}}, {{byteSize(fieldTestEntity.byteImageTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteImageRequiredTom" (click)="openFile(fieldTestEntity.byteImageRequiredTomContentType, fieldTestEntity.byteImageRequiredTom)">
+                        <img [src]="'data:' + fieldTestEntity.byteImageRequiredTomContentType + ';base64,' + fieldTestEntity.byteImageRequiredTom" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestEntity.byteImageRequiredTom">{{fieldTestEntity.byteImageRequiredTomContentType}}, {{byteSize(fieldTestEntity.byteImageRequiredTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteImageMinbytesTom" (click)="openFile(fieldTestEntity.byteImageMinbytesTomContentType, fieldTestEntity.byteImageMinbytesTom)">
+                        <img [src]="'data:' + fieldTestEntity.byteImageMinbytesTomContentType + ';base64,' + fieldTestEntity.byteImageMinbytesTom" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestEntity.byteImageMinbytesTom">{{fieldTestEntity.byteImageMinbytesTomContentType}}, {{byteSize(fieldTestEntity.byteImageMinbytesTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteImageMaxbytesTom" (click)="openFile(fieldTestEntity.byteImageMaxbytesTomContentType, fieldTestEntity.byteImageMaxbytesTom)">
+                        <img [src]="'data:' + fieldTestEntity.byteImageMaxbytesTomContentType + ';base64,' + fieldTestEntity.byteImageMaxbytesTom" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestEntity.byteImageMaxbytesTom">{{fieldTestEntity.byteImageMaxbytesTomContentType}}, {{byteSize(fieldTestEntity.byteImageMaxbytesTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteAnyTom" (click)="openFile(fieldTestEntity.byteAnyTomContentType, fieldTestEntity.byteAnyTom)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestEntity.byteAnyTom">{{fieldTestEntity.byteAnyTomContentType}}, {{byteSize(fieldTestEntity.byteAnyTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteAnyRequiredTom" (click)="openFile(fieldTestEntity.byteAnyRequiredTomContentType, fieldTestEntity.byteAnyRequiredTom)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestEntity.byteAnyRequiredTom">{{fieldTestEntity.byteAnyRequiredTomContentType}}, {{byteSize(fieldTestEntity.byteAnyRequiredTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteAnyMinbytesTom" (click)="openFile(fieldTestEntity.byteAnyMinbytesTomContentType, fieldTestEntity.byteAnyMinbytesTom)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestEntity.byteAnyMinbytesTom">{{fieldTestEntity.byteAnyMinbytesTomContentType}}, {{byteSize(fieldTestEntity.byteAnyMinbytesTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteAnyMaxbytesTom" (click)="openFile(fieldTestEntity.byteAnyMaxbytesTomContentType, fieldTestEntity.byteAnyMaxbytesTom)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="fieldTestEntity.byteAnyMaxbytesTom">{{fieldTestEntity.byteAnyMaxbytesTomContentType}}, {{byteSize(fieldTestEntity.byteAnyMaxbytesTom)}}</span>
+                </td>
+                <td>{{fieldTestEntity.byteTextTom}}</td>
+                <td>{{fieldTestEntity.byteTextRequiredTom}}</td>
+                <td>{{fieldTestEntity.byteTextMinbytesTom}}</td>
+                <td>{{fieldTestEntity.byteTextMaxbytesTom}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../field-test-entity', fieldTestEntity.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-entity/'+ fieldTestEntity.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-entity/'+ fieldTestEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

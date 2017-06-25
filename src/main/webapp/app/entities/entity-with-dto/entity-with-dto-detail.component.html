@@ -1,0 +1,25 @@
+
+<div *ngIf="entityWithDTO">
+    <h2><span jhiTranslate="jh4TestApp.entityWithDTO.detail.title">Entity With DTO</span> {{entityWithDTO.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.entityWithDTO.emma">Emma</span></dt>
+        <dd>
+            <span>{{entityWithDTO.emma}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'entity-with-dto/'+ entityWithDTO.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

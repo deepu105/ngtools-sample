@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity FieldTestEntity.
+    -->
+    <changeSet id="20160208184031-1" author="jhipster">
+        <createTable tableName="field_test_entity">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="string_tom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="string_required_tom" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="string_minlength_tom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="string_maxlength_tom" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="string_pattern_tom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="integer_tom" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="integer_required_tom" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="integer_min_tom" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="integer_max_tom" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_tom" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_required_tom" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="long_min_tom" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_max_tom" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="float_tom" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="float_required_tom" type="${floatType}">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="float_min_tom" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="float_max_tom" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="double_required_tom" type="double">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="double_min_tom" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="double_max_tom" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="big_decimal_required_tom" type="decimal(10,2)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="big_decimal_min_tom" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="big_decimal_max_tom" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="local_date_tom" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="local_date_required_tom" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="instant_tom" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="instante_required_tom" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="zoned_date_time_tom" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="zoned_date_time_required_tom" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="boolean_tom" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="boolean_required_tom" type="bit">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="enum_tom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="enum_required_tom" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_image_tom" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_image_tom_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_image_required_tom" type="longblob">
+                <constraints nullable="false" />
+            </column>
+            <column name="byte_image_required_tom_content_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_image_minbytes_tom" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_image_minbytes_tom_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_image_maxbytes_tom" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_image_maxbytes_tom_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_any_tom" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_any_tom_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_any_required_tom" type="longblob">
+                <constraints nullable="false" />
+            </column>
+            <column name="byte_any_required_tom_content_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_any_minbytes_tom" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_any_minbytes_tom_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_any_maxbytes_tom" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="byte_any_maxbytes_tom_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_text_tom" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_text_required_tom" type="clob">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="byte_text_minbytes_tom" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="byte_text_maxbytes_tom" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="field_test_entity" columnName="instant_tom" columnDataType="datetime"/>
+        <dropDefaultValue tableName="field_test_entity" columnName="instante_required_tom" columnDataType="datetime"/>
+        <dropDefaultValue tableName="field_test_entity" columnName="zoned_date_time_tom" columnDataType="datetime"/>
+        <dropDefaultValue tableName="field_test_entity" columnName="zoned_date_time_required_tom" columnDataType="datetime"/>
+        
+    </changeSet>
+</databaseChangeLog>

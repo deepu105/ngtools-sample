@@ -1,0 +1,640 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFieldTestMapstructEntityLabel" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.home.createOrEditLabel">Create or edit a Field Test Mapstruct Entity</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!fieldTestMapstructEntity.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="fieldTestMapstructEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringEva" for="field_stringEva">String Eva</label>
+            <input type="text" class="form-control" name="stringEva" id="field_stringEva"
+                [(ngModel)]="fieldTestMapstructEntity.stringEva"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringRequiredEva" for="field_stringRequiredEva">String Required Eva</label>
+            <input type="text" class="form-control" name="stringRequiredEva" id="field_stringRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.stringRequiredEva" required />
+            <div [hidden]="!(editForm.controls.stringRequiredEva?.dirty && editForm.controls.stringRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringMinlengthEva" for="field_stringMinlengthEva">String Minlength Eva</label>
+            <input type="text" class="form-control" name="stringMinlengthEva" id="field_stringMinlengthEva"
+                [(ngModel)]="fieldTestMapstructEntity.stringMinlengthEva" minlength="0" />
+            <div [hidden]="!(editForm.controls.stringMinlengthEva?.dirty && editForm.controls.stringMinlengthEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMinlengthEva?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 0 }">
+                   This field is required to be at least 0 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringMaxlengthEva" for="field_stringMaxlengthEva">String Maxlength Eva</label>
+            <input type="text" class="form-control" name="stringMaxlengthEva" id="field_stringMaxlengthEva"
+                [(ngModel)]="fieldTestMapstructEntity.stringMaxlengthEva" maxlength="20" />
+            <div [hidden]="!(editForm.controls.stringMaxlengthEva?.dirty && editForm.controls.stringMaxlengthEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.stringMaxlengthEva?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.stringPatternEva" for="field_stringPatternEva">String Pattern Eva</label>
+            <input type="text" class="form-control" name="stringPatternEva" id="field_stringPatternEva"
+                [(ngModel)]="fieldTestMapstructEntity.stringPatternEva" pattern="^[a-zA-Z0-9]*$" />
+            <div [hidden]="!(editForm.controls.stringPatternEva?.dirty && editForm.controls.stringPatternEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.stringPatternEva?.errors?.pattern" jhiTranslate="entity.validation.pattern" translateValues="{ pattern: 'String Pattern Eva' }">
+                    This field should follow pattern for "String Pattern Eva".
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.integerEva" for="field_integerEva">Integer Eva</label>
+            <input type="number" class="form-control" name="integerEva" id="field_integerEva"
+                [(ngModel)]="fieldTestMapstructEntity.integerEva"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.integerRequiredEva" for="field_integerRequiredEva">Integer Required Eva</label>
+            <input type="number" class="form-control" name="integerRequiredEva" id="field_integerRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.integerRequiredEva" required />
+            <div [hidden]="!(editForm.controls.integerRequiredEva?.dirty && editForm.controls.integerRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.integerRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerRequiredEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.integerMinEva" for="field_integerMinEva">Integer Min Eva</label>
+            <input type="number" class="form-control" name="integerMinEva" id="field_integerMinEva"
+                [(ngModel)]="fieldTestMapstructEntity.integerMinEva" min="0" />
+            <div [hidden]="!(editForm.controls.integerMinEva?.dirty && editForm.controls.integerMinEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinEva?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMinEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.integerMaxEva" for="field_integerMaxEva">Integer Max Eva</label>
+            <input type="number" class="form-control" name="integerMaxEva" id="field_integerMaxEva"
+                [(ngModel)]="fieldTestMapstructEntity.integerMaxEva" max="100" />
+            <div [hidden]="!(editForm.controls.integerMaxEva?.dirty && editForm.controls.integerMaxEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxEva?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.integerMaxEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.longEva" for="field_longEva">Long Eva</label>
+            <input type="number" class="form-control" name="longEva" id="field_longEva"
+                [(ngModel)]="fieldTestMapstructEntity.longEva"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.longRequiredEva" for="field_longRequiredEva">Long Required Eva</label>
+            <input type="number" class="form-control" name="longRequiredEva" id="field_longRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.longRequiredEva" required />
+            <div [hidden]="!(editForm.controls.longRequiredEva?.dirty && editForm.controls.longRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.longRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longRequiredEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.longMinEva" for="field_longMinEva">Long Min Eva</label>
+            <input type="number" class="form-control" name="longMinEva" id="field_longMinEva"
+                [(ngModel)]="fieldTestMapstructEntity.longMinEva" min="0" />
+            <div [hidden]="!(editForm.controls.longMinEva?.dirty && editForm.controls.longMinEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinEva?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMinEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.longMaxEva" for="field_longMaxEva">Long Max Eva</label>
+            <input type="number" class="form-control" name="longMaxEva" id="field_longMaxEva"
+                [(ngModel)]="fieldTestMapstructEntity.longMaxEva" max="100" />
+            <div [hidden]="!(editForm.controls.longMaxEva?.dirty && editForm.controls.longMaxEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxEva?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.longMaxEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.floatEva" for="field_floatEva">Float Eva</label>
+            <input type="number" class="form-control" name="floatEva" id="field_floatEva"
+                [(ngModel)]="fieldTestMapstructEntity.floatEva"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.floatRequiredEva" for="field_floatRequiredEva">Float Required Eva</label>
+            <input type="number" class="form-control" name="floatRequiredEva" id="field_floatRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.floatRequiredEva" required />
+            <div [hidden]="!(editForm.controls.floatRequiredEva?.dirty && editForm.controls.floatRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.floatRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatRequiredEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.floatMinEva" for="field_floatMinEva">Float Min Eva</label>
+            <input type="number" class="form-control" name="floatMinEva" id="field_floatMinEva"
+                [(ngModel)]="fieldTestMapstructEntity.floatMinEva" min="0" />
+            <div [hidden]="!(editForm.controls.floatMinEva?.dirty && editForm.controls.floatMinEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinEva?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMinEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.floatMaxEva" for="field_floatMaxEva">Float Max Eva</label>
+            <input type="number" class="form-control" name="floatMaxEva" id="field_floatMaxEva"
+                [(ngModel)]="fieldTestMapstructEntity.floatMaxEva" max="100" />
+            <div [hidden]="!(editForm.controls.floatMaxEva?.dirty && editForm.controls.floatMaxEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxEva?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.floatMaxEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.doubleRequiredEva" for="field_doubleRequiredEva">Double Required Eva</label>
+            <input type="number" class="form-control" name="doubleRequiredEva" id="field_doubleRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.doubleRequiredEva" required />
+            <div [hidden]="!(editForm.controls.doubleRequiredEva?.dirty && editForm.controls.doubleRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.doubleRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleRequiredEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.doubleMinEva" for="field_doubleMinEva">Double Min Eva</label>
+            <input type="number" class="form-control" name="doubleMinEva" id="field_doubleMinEva"
+                [(ngModel)]="fieldTestMapstructEntity.doubleMinEva" min="0" />
+            <div [hidden]="!(editForm.controls.doubleMinEva?.dirty && editForm.controls.doubleMinEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinEva?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMinEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.doubleMaxEva" for="field_doubleMaxEva">Double Max Eva</label>
+            <input type="number" class="form-control" name="doubleMaxEva" id="field_doubleMaxEva"
+                [(ngModel)]="fieldTestMapstructEntity.doubleMaxEva" max="100" />
+            <div [hidden]="!(editForm.controls.doubleMaxEva?.dirty && editForm.controls.doubleMaxEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxEva?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.doubleMaxEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.bigDecimalRequiredEva" for="field_bigDecimalRequiredEva">Big Decimal Required Eva</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredEva" id="field_bigDecimalRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.bigDecimalRequiredEva" required />
+            <div [hidden]="!(editForm.controls.bigDecimalRequiredEva?.dirty && editForm.controls.bigDecimalRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.bigDecimalRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalRequiredEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.bigDecimalMinEva" for="field_bigDecimalMinEva">Big Decimal Min Eva</label>
+            <input type="number" class="form-control" name="bigDecimalMinEva" id="field_bigDecimalMinEva"
+                [(ngModel)]="fieldTestMapstructEntity.bigDecimalMinEva" min="0" />
+            <div [hidden]="!(editForm.controls.bigDecimalMinEva?.dirty && editForm.controls.bigDecimalMinEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinEva?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMinEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.bigDecimalMaxEva" for="field_bigDecimalMaxEva">Big Decimal Max Eva</label>
+            <input type="number" class="form-control" name="bigDecimalMaxEva" id="field_bigDecimalMaxEva"
+                [(ngModel)]="fieldTestMapstructEntity.bigDecimalMaxEva" max="100" />
+            <div [hidden]="!(editForm.controls.bigDecimalMaxEva?.dirty && editForm.controls.bigDecimalMaxEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxEva?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 100 }">
+                    This field cannot be more than 100.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.bigDecimalMaxEva?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.localDateEva" for="field_localDateEva">Local Date Eva</label>
+            <div class="input-group">
+                <input id="field_localDateEva" type="text" class="form-control" name="localDateEva" ngbDatepicker  #localDateEvaDp="ngbDatepicker" [(ngModel)]="fieldTestMapstructEntity.localDateEva"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateEvaDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.localDateRequiredEva" for="field_localDateRequiredEva">Local Date Required Eva</label>
+            <div class="input-group">
+                <input id="field_localDateRequiredEva" type="text" class="form-control" name="localDateRequiredEva" ngbDatepicker  #localDateRequiredEvaDp="ngbDatepicker" [(ngModel)]="fieldTestMapstructEntity.localDateRequiredEva"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="localDateRequiredEvaDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.localDateRequiredEva?.dirty && editForm.controls.localDateRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.localDateRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.instantEva" for="field_instantEva">Instant Eva</label>
+            <div class="d-flex">
+                <input id="field_instantEva" type="datetime-local" class="form-control" name="instantEva" [(ngModel)]="fieldTestMapstructEntity.instantEva"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.instanteRequiredEva" for="field_instanteRequiredEva">Instante Required Eva</label>
+            <div class="d-flex">
+                <input id="field_instanteRequiredEva" type="datetime-local" class="form-control" name="instanteRequiredEva" [(ngModel)]="fieldTestMapstructEntity.instanteRequiredEva"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.instanteRequiredEva?.dirty && editForm.controls.instanteRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.instanteRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.instanteRequiredEva?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.zonedDateTimeEva" for="field_zonedDateTimeEva">Zoned Date Time Eva</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeEva" type="datetime-local" class="form-control" name="zonedDateTimeEva" [(ngModel)]="fieldTestMapstructEntity.zonedDateTimeEva"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.zonedDateTimeRequiredEva" for="field_zonedDateTimeRequiredEva">Zoned Date Time Required Eva</label>
+            <div class="d-flex">
+                <input id="field_zonedDateTimeRequiredEva" type="datetime-local" class="form-control" name="zonedDateTimeRequiredEva" [(ngModel)]="fieldTestMapstructEntity.zonedDateTimeRequiredEva"
+                required  />
+            </div>
+            <div [hidden]="!(editForm.controls.zonedDateTimeRequiredEva?.dirty && editForm.controls.zonedDateTimeRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.zonedDateTimeRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.zonedDateTimeRequiredEva?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.booleanEva" for="field_booleanEva">Boolean Eva</label>
+            <input type="checkbox" class="form-control" name="booleanEva" id="field_booleanEva"
+                [(ngModel)]="fieldTestMapstructEntity.booleanEva"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.booleanRequiredEva" for="field_booleanRequiredEva">Boolean Required Eva</label>
+            <input type="checkbox" class="form-control" name="booleanRequiredEva" id="field_booleanRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.booleanRequiredEva"  />
+            <div [hidden]="!(editForm.controls.booleanRequiredEva?.dirty && editForm.controls.booleanRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.booleanRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.enumEva" for="field_enumEva">Enum Eva</label>
+            <select class="form-control" name="enumEva" [(ngModel)]="fieldTestMapstructEntity.enumEva" id="field_enumEva" >
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.enumRequiredEva" for="field_enumRequiredEva">Enum Required Eva</label>
+            <select class="form-control" name="enumRequiredEva" [(ngModel)]="fieldTestMapstructEntity.enumRequiredEva" id="field_enumRequiredEva"  required>
+                <option value="ENUM_VALUE_1" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" jhiTranslate="jh4TestApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div [hidden]="!(editForm.controls.enumRequiredEva?.dirty && editForm.controls.enumRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.enumRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteImageEva" for="field_byteImageEva">Byte Image Eva</label>
+            <div>
+                <img [src]="'data:' + fieldTestMapstructEntity.byteImageEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageEva" style="max-height: 100px;" *ngIf="fieldTestMapstructEntity.byteImageEva" alt="fieldTestMapstructEntity image"/>
+                <div *ngIf="fieldTestMapstructEntity.byteImageEva" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestMapstructEntity.byteImageEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageEva)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageEva', 'byteImageEvaContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestMapstructEntity, 'byteImageEva', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageEva" id="field_byteImageEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteImageEva"  />
+            <input type="hidden" class="form-control" name="byteImageEvaContentType" id="field_byteImageEvaContentType"
+                [(ngModel)]="fieldTestMapstructEntity.byteImageEvaContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteImageRequiredEva" for="field_byteImageRequiredEva">Byte Image Required Eva</label>
+            <div>
+                <img [src]="'data:' + fieldTestMapstructEntity.byteImageRequiredEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageRequiredEva" style="max-height: 100px;" *ngIf="fieldTestMapstructEntity.byteImageRequiredEva" alt="fieldTestMapstructEntity image"/>
+                <div *ngIf="fieldTestMapstructEntity.byteImageRequiredEva" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestMapstructEntity.byteImageRequiredEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageRequiredEva)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageRequiredEva', 'byteImageRequiredEvaContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestMapstructEntity, 'byteImageRequiredEva', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredEva" id="field_byteImageRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteImageRequiredEva" required />
+            <input type="hidden" class="form-control" name="byteImageRequiredEvaContentType" id="field_byteImageRequiredEvaContentType"
+                [(ngModel)]="fieldTestMapstructEntity.byteImageRequiredEvaContentType" />
+            <div [hidden]="!(editForm.controls.byteImageRequiredEva?.dirty && editForm.controls.byteImageRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteImageRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteImageMinbytesEva" for="field_byteImageMinbytesEva">Byte Image Minbytes Eva</label>
+            <div>
+                <img [src]="'data:' + fieldTestMapstructEntity.byteImageMinbytesEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageMinbytesEva" style="max-height: 100px;" *ngIf="fieldTestMapstructEntity.byteImageMinbytesEva" alt="fieldTestMapstructEntity image"/>
+                <div *ngIf="fieldTestMapstructEntity.byteImageMinbytesEva" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestMapstructEntity.byteImageMinbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageMinbytesEva)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMinbytesEva', 'byteImageMinbytesEvaContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestMapstructEntity, 'byteImageMinbytesEva', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesEva" id="field_byteImageMinbytesEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteImageMinbytesEva" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteImageMinbytesEvaContentType" id="field_byteImageMinbytesEvaContentType"
+                [(ngModel)]="fieldTestMapstructEntity.byteImageMinbytesEvaContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMinbytesEva?.dirty && editForm.controls.byteImageMinbytesEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMinbytesEva?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteImageMaxbytesEva" for="field_byteImageMaxbytesEva">Byte Image Maxbytes Eva</label>
+            <div>
+                <img [src]="'data:' + fieldTestMapstructEntity.byteImageMaxbytesEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageMaxbytesEva" style="max-height: 100px;" *ngIf="fieldTestMapstructEntity.byteImageMaxbytesEva" alt="fieldTestMapstructEntity image"/>
+                <div *ngIf="fieldTestMapstructEntity.byteImageMaxbytesEva" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{fieldTestMapstructEntity.byteImageMaxbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageMaxbytesEva)}}</span>
+                    <button type="button" (click)="clearInputImage('byteImageMaxbytesEva', 'byteImageMaxbytesEvaContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, fieldTestMapstructEntity, 'byteImageMaxbytesEva', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesEva" id="field_byteImageMaxbytesEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteImageMaxbytesEva" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteImageMaxbytesEvaContentType" id="field_byteImageMaxbytesEvaContentType"
+                [(ngModel)]="fieldTestMapstructEntity.byteImageMaxbytesEvaContentType" />
+            <div [hidden]="!(editForm.controls.byteImageMaxbytesEva?.dirty && editForm.controls.byteImageMaxbytesEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteImageMaxbytesEva?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteAnyEva" for="field_byteAnyEva">Byte Any Eva</label>
+            <div>
+                <div *ngIf="fieldTestMapstructEntity.byteAnyEva" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestMapstructEntity.byteAnyEvaContentType, fieldTestMapstructEntity.byteAnyEva)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestMapstructEntity.byteAnyEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyEva)}}</span>
+                    <button type="button" (click)="fieldTestMapstructEntity.byteAnyEva=null;fieldTestMapstructEntity.byteAnyEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestMapstructEntity, 'byteAnyEva', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyEva" id="field_byteAnyEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteAnyEva"  />
+            <input type="hidden" class="form-control" name="byteAnyEvaContentType" id="field_byteAnyEvaContentType"
+                [(ngModel)]="fieldTestMapstructEntity.byteAnyEvaContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteAnyRequiredEva" for="field_byteAnyRequiredEva">Byte Any Required Eva</label>
+            <div>
+                <div *ngIf="fieldTestMapstructEntity.byteAnyRequiredEva" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestMapstructEntity.byteAnyRequiredEvaContentType, fieldTestMapstructEntity.byteAnyRequiredEva)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestMapstructEntity.byteAnyRequiredEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyRequiredEva)}}</span>
+                    <button type="button" (click)="fieldTestMapstructEntity.byteAnyRequiredEva=null;fieldTestMapstructEntity.byteAnyRequiredEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestMapstructEntity, 'byteAnyRequiredEva', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredEva" id="field_byteAnyRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteAnyRequiredEva" required />
+            <input type="hidden" class="form-control" name="byteAnyRequiredEvaContentType" id="field_byteAnyRequiredEvaContentType"
+                [(ngModel)]="fieldTestMapstructEntity.byteAnyRequiredEvaContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyRequiredEva?.dirty && editForm.controls.byteAnyRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteAnyRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteAnyMinbytesEva" for="field_byteAnyMinbytesEva">Byte Any Minbytes Eva</label>
+            <div>
+                <div *ngIf="fieldTestMapstructEntity.byteAnyMinbytesEva" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestMapstructEntity.byteAnyMinbytesEvaContentType, fieldTestMapstructEntity.byteAnyMinbytesEva)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestMapstructEntity.byteAnyMinbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyMinbytesEva)}}</span>
+                    <button type="button" (click)="fieldTestMapstructEntity.byteAnyMinbytesEva=null;fieldTestMapstructEntity.byteAnyMinbytesEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestMapstructEntity, 'byteAnyMinbytesEva', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesEva" id="field_byteAnyMinbytesEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteAnyMinbytesEva" minbytes="0" />
+            <input type="hidden" class="form-control" name="byteAnyMinbytesEvaContentType" id="field_byteAnyMinbytesEvaContentType"
+                [(ngModel)]="fieldTestMapstructEntity.byteAnyMinbytesEvaContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMinbytesEva?.dirty && editForm.controls.byteAnyMinbytesEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMinbytesEva?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteAnyMaxbytesEva" for="field_byteAnyMaxbytesEva">Byte Any Maxbytes Eva</label>
+            <div>
+                <div *ngIf="fieldTestMapstructEntity.byteAnyMaxbytesEva" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType, fieldTestMapstructEntity.byteAnyMaxbytesEva)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyMaxbytesEva)}}</span>
+                    <button type="button" (click)="fieldTestMapstructEntity.byteAnyMaxbytesEva=null;fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, fieldTestMapstructEntity, 'byteAnyMaxbytesEva', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesEva" id="field_byteAnyMaxbytesEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteAnyMaxbytesEva" maxbytes="10000" />
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesEvaContentType" id="field_byteAnyMaxbytesEvaContentType"
+                [(ngModel)]="fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType" />
+            <div [hidden]="!(editForm.controls.byteAnyMaxbytesEva?.dirty && editForm.controls.byteAnyMaxbytesEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteAnyMaxbytesEva?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteTextEva" for="field_byteTextEva">Byte Text Eva</label>
+            <textarea class="form-control" name="byteTextEva" id="field_byteTextEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteTextEva"  ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteTextRequiredEva" for="field_byteTextRequiredEva">Byte Text Required Eva</label>
+            <textarea class="form-control" name="byteTextRequiredEva" id="field_byteTextRequiredEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteTextRequiredEva" required ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextRequiredEva?.dirty && editForm.controls.byteTextRequiredEva?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.byteTextRequiredEva?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteTextMinbytesEva" for="field_byteTextMinbytesEva">Byte Text Minbytes Eva</label>
+            <textarea class="form-control" name="byteTextMinbytesEva" id="field_byteTextMinbytesEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteTextMinbytesEva" minbytes="0" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMinbytesEva?.dirty && editForm.controls.byteTextMinbytesEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMinbytesEva?.errors?.minbytes" jhiTranslate="entity.validation.minbytes" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.fieldTestMapstructEntity.byteTextMaxbytesEva" for="field_byteTextMaxbytesEva">Byte Text Maxbytes Eva</label>
+            <textarea class="form-control" name="byteTextMaxbytesEva" id="field_byteTextMaxbytesEva"
+                [(ngModel)]="fieldTestMapstructEntity.byteTextMaxbytesEva" maxbytes="10000" ></textarea>
+            <div [hidden]="!(editForm.controls.byteTextMaxbytesEva?.dirty && editForm.controls.byteTextMaxbytesEva?.invalid)">
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.byteTextMaxbytesEva?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" translateValues="{ max: 10000 }">
+                    This field cannot be more than 10000.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,66 @@
+{
+    "jh4TestApp": {
+        "fieldTestPaginationEntity" : {
+            "home": {
+                "title": "Field Test Pagination Entities",
+                "createLabel": "建立一筆新的 Field Test Pagination Entity",
+                "createOrEditLabel": "建立或編輯 Field Test Pagination Entity",
+                "search": "搜尋 Field Test Pagination Entity"
+            },
+            "created": "新的 Field Test Pagination Entity 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Field Test Pagination Entity 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Field Test Pagination Entity 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Field Test Pagination Entity {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Field Test Pagination Entity"
+            },
+            "stringAlice": "String Alice",
+            "stringRequiredAlice": "String Required Alice",
+            "stringMinlengthAlice": "String Minlength Alice",
+            "stringMaxlengthAlice": "String Maxlength Alice",
+            "stringPatternAlice": "String Pattern Alice",
+            "integerAlice": "Integer Alice",
+            "integerRequiredAlice": "Integer Required Alice",
+            "integerMinAlice": "Integer Min Alice",
+            "integerMaxAlice": "Integer Max Alice",
+            "longAlice": "Long Alice",
+            "longRequiredAlice": "Long Required Alice",
+            "longMinAlice": "Long Min Alice",
+            "longMaxAlice": "Long Max Alice",
+            "floatAlice": "Float Alice",
+            "floatRequiredAlice": "Float Required Alice",
+            "floatMinAlice": "Float Min Alice",
+            "floatMaxAlice": "Float Max Alice",
+            "doubleRequiredAlice": "Double Required Alice",
+            "doubleMinAlice": "Double Min Alice",
+            "doubleMaxAlice": "Double Max Alice",
+            "bigDecimalRequiredAlice": "Big Decimal Required Alice",
+            "bigDecimalMinAlice": "Big Decimal Min Alice",
+            "bigDecimalMaxAlice": "Big Decimal Max Alice",
+            "localDateAlice": "Local Date Alice",
+            "localDateRequiredAlice": "Local Date Required Alice",
+            "instantAlice": "Instant Alice",
+            "instanteRequiredAlice": "Instante Required Alice",
+            "zonedDateTimeAlice": "Zoned Date Time Alice",
+            "zonedDateTimeRequiredAlice": "Zoned Date Time Required Alice",
+            "booleanAlice": "Boolean Alice",
+            "booleanRequiredAlice": "Boolean Required Alice",
+            "enumAlice": "Enum Alice",
+            "enumRequiredAlice": "Enum Required Alice",
+            "byteImageAlice": "Byte Image Alice",
+            "byteImageRequiredAlice": "Byte Image Required Alice",
+            "byteImageMinbytesAlice": "Byte Image Minbytes Alice",
+            "byteImageMaxbytesAlice": "Byte Image Maxbytes Alice",
+            "byteAnyAlice": "Byte Any Alice",
+            "byteAnyRequiredAlice": "Byte Any Required Alice",
+            "byteAnyMinbytesAlice": "Byte Any Minbytes Alice",
+            "byteAnyMaxbytesAlice": "Byte Any Maxbytes Alice",
+            "byteTextAlice": "Byte Text Alice",
+            "byteTextRequiredAlice": "Byte Text Required Alice",
+            "byteTextMinbytesAlice": "Byte Text Minbytes Alice",
+            "byteTextMaxbytesAlice": "Byte Text Maxbytes Alice"
+        }
+    }
+}

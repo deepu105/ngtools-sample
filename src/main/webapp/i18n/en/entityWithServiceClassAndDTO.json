@@ -1,0 +1,22 @@
+{
+    "jh4TestApp": {
+        "entityWithServiceClassAndDTO" : {
+            "home": {
+                "title": "Entity With Service Class And DTOS",
+                "createLabel": "Create a new Entity With Service Class And DTO",
+                "createOrEditLabel": "Create or edit a Entity With Service Class And DTO",
+                "search": "Search for Entity With Service Class And DTO"
+            },
+            "created": "A new Entity With Service Class And DTO is created with identifier {{ param }}",
+            "updated": "A Entity With Service Class And DTO is updated with identifier {{ param }}",
+            "deleted": "A Entity With Service Class And DTO is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Entity With Service Class And DTO {{ id }}?"
+            },
+            "detail": {
+                "title": "Entity With Service Class And DTO"
+            },
+            "lucas": "Lucas"
+        }
+    }
+}

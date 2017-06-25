@@ -1,0 +1,131 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myBankAccountLabel" jhiTranslate="jh4TestApp.bankAccount.home.createOrEditLabel">Create or edit a Bank Account</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!bankAccount.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="bankAccount.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="bankAccount.name" required />
+            <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.bankNumber" for="field_bankNumber">Bank Number</label>
+            <input type="number" class="form-control" name="bankNumber" id="field_bankNumber"
+                [(ngModel)]="bankAccount.bankNumber"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.agencyNumber" for="field_agencyNumber">Agency Number</label>
+            <input type="number" class="form-control" name="agencyNumber" id="field_agencyNumber"
+                [(ngModel)]="bankAccount.agencyNumber"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.lastOperationDuration" for="field_lastOperationDuration">Last Operation Duration</label>
+            <input type="number" class="form-control" name="lastOperationDuration" id="field_lastOperationDuration"
+                [(ngModel)]="bankAccount.lastOperationDuration"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.meanOperationDuration" for="field_meanOperationDuration">Mean Operation Duration</label>
+            <input type="number" class="form-control" name="meanOperationDuration" id="field_meanOperationDuration"
+                [(ngModel)]="bankAccount.meanOperationDuration"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.balance" for="field_balance">Balance</label>
+            <input type="number" class="form-control" name="balance" id="field_balance"
+                [(ngModel)]="bankAccount.balance" required />
+            <div [hidden]="!(editForm.controls.balance?.dirty && editForm.controls.balance?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.balance?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.balance?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.openingDay" for="field_openingDay">Opening Day</label>
+            <div class="input-group">
+                <input id="field_openingDay" type="text" class="form-control" name="openingDay" ngbDatepicker  #openingDayDp="ngbDatepicker" [(ngModel)]="bankAccount.openingDay"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="openingDayDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.lastOperationDate" for="field_lastOperationDate">Last Operation Date</label>
+            <div class="d-flex">
+                <input id="field_lastOperationDate" type="datetime-local" class="form-control" name="lastOperationDate" [(ngModel)]="bankAccount.lastOperationDate"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.active" for="field_active">Active</label>
+            <input type="checkbox" class="form-control" name="active" id="field_active"
+                [(ngModel)]="bankAccount.active"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.accountType" for="field_accountType">Account Type</label>
+            <select class="form-control" name="accountType" [(ngModel)]="bankAccount.accountType" id="field_accountType" >
+                <option value="CHECKING" jhiTranslate="jh4TestApp.BankAccountType.CHECKING">CHECKING</option>
+                <option value="SAVINGS" jhiTranslate="jh4TestApp.BankAccountType.SAVINGS">SAVINGS</option>
+                <option value="LOAN" jhiTranslate="jh4TestApp.BankAccountType.LOAN">LOAN</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.attachment" for="field_attachment">Attachment</label>
+            <div>
+                <div *ngIf="bankAccount.attachment" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(bankAccount.attachmentContentType, bankAccount.attachment)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{bankAccount.attachmentContentType}}, {{byteSize(bankAccount.attachment)}}</span>
+                    <button type="button" (click)="bankAccount.attachment=null;bankAccount.attachmentContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, bankAccount, 'attachment', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="attachment" id="field_attachment"
+                [(ngModel)]="bankAccount.attachment"  />
+            <input type="hidden" class="form-control" name="attachmentContentType" id="field_attachmentContentType"
+                [(ngModel)]="bankAccount.attachmentContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jh4TestApp.bankAccount.description" for="field_description">Description</label>
+            <textarea class="form-control" name="description" id="field_description"
+                [(ngModel)]="bankAccount.description"  ></textarea>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="jh4TestApp.bankAccount.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" [(ngModel)]="bankAccount.userId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
