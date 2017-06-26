@@ -1,0 +1,29 @@
+{
+    "jh4TestApp": {
+        "division" : {
+            "home": {
+                "title": "Divisions",
+                "createLabel": "建立一筆新的 Division",
+                "createOrEditLabel": "建立或編輯 Division",
+                "search": "搜尋 Division"
+            },
+            "created": "新的 Division 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Division 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Division 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Division {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Division"
+            },
+            "name": "Name",
+            "shortName": "Short Name",
+            "numberOfPeople": "Number Of People",
+            "divisionType": "Division Type",
+            "colorBackground": "Color Background",
+            "colorText": "Color Text",
+            "divisionsPlace": "Divisions Place",
+            "preferredPlace": "Preferred Place"
+        }
+    }
+}

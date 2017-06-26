@@ -1,0 +1,10 @@
+{
+    "jh4TestApp": {
+        "DivisionType" : {
+            "null": "",
+            "SCHOOL": "SCHOOL",
+            "CLASS": "CLASS",
+            "SUBGROUP": "SUBGROUP"
+        }
+    }
+}

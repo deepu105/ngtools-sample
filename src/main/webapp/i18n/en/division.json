@@ -1,0 +1,29 @@
+{
+    "jh4TestApp": {
+        "division" : {
+            "home": {
+                "title": "Divisions",
+                "createLabel": "Create a new Division",
+                "createOrEditLabel": "Create or edit a Division",
+                "search": "Search for Division"
+            },
+            "created": "A new Division is created with identifier {{ param }}",
+            "updated": "A Division is updated with identifier {{ param }}",
+            "deleted": "A Division is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Division {{ id }}?"
+            },
+            "detail": {
+                "title": "Division"
+            },
+            "name": "Name",
+            "shortName": "Short Name",
+            "numberOfPeople": "Number Of People",
+            "divisionType": "Division Type",
+            "colorBackground": "Color Background",
+            "colorText": "Color Text",
+            "divisionsPlace": "Divisions Place",
+            "preferredPlace": "Preferred Place"
+        }
+    }
+}

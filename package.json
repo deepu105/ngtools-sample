@@ -104,7 +104,7 @@
     "webpack:build:vendor": "webpack --config webpack/webpack.vendor.js --progress --profile",
     "webpack:build:dev": "webpack --config webpack/webpack.dev.js --progress --profile",
     "webpack:build": "yarn run cleanup && yarn run webpack:build:vendor && yarn run webpack:build:dev",
-    "webpack:prod": "yarn run cleanup && webpack -p --config webpack/webpack.prod.js --progress --profile --bail",
+    "webpack:prod": "yarn run cleanup && webpack -p --config webpack/webpack.vendor.js --progress --profile && webpack -p --config webpack/webpack.prod.js --progress --profile",
     "webpack:test": "yarn run test",
     "test": "yarn run lint && karma start src/test/javascript/karma.conf.js",
     "test:watch": "karma start src/test/javascript/karma.conf.js --watch",

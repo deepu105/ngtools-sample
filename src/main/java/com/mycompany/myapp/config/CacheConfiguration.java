@@ -47,13 +47,13 @@ public class CacheConfiguration {
             cm.createCache(com.mycompany.myapp.domain.Label.class.getName() + ".operations", jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.Operation.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.Operation.class.getName() + ".labels", jcacheConfiguration);
-            cm.createCache(com.mycompany.myapp.domain.FieldTestEntity.class.getName(), jcacheConfiguration);
-            cm.createCache(com.mycompany.myapp.domain.FieldTestPagerEntity.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.FieldTestMapstructEntity.class.getName(), jcacheConfiguration);
-            cm.createCache(com.mycompany.myapp.domain.FieldTestServiceImplEntity.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.FieldTestEntity.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.FieldTestInfiniteScrollEntity.class.getName(), jcacheConfiguration);
-            cm.createCache(com.mycompany.myapp.domain.FieldTestServiceClassEntity.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.FieldTestPagerEntity.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.FieldTestPaginationEntity.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.FieldTestServiceClassEntity.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.FieldTestServiceImplEntity.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.EntityWithDTO.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.EntityWithServiceClass.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.EntityWithServiceImpl.class.getName(), jcacheConfiguration);
@@ -65,6 +65,11 @@ public class CacheConfiguration {
             cm.createCache(com.mycompany.myapp.domain.EntityWithPaginationAndDTO.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.EntityWithServiceClassPaginationAndDTO.class.getName(), jcacheConfiguration);
             cm.createCache(com.mycompany.myapp.domain.EntityWithServiceImplPaginationAndDTO.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Division.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Division.class.getName() + ".divisionsPlaces", jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Division.class.getName() + ".preferredPlaces", jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Place.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mycompany.myapp.domain.Place.class.getName() + ".preferredDivisions", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

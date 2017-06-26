@@ -1,7 +1,9 @@
 const webpack = require('webpack');
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StringReplacePlugin = require('string-replace-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const MergeJsonWebpackPlugin = require("merge-jsons-webpack-plugin")
 const path = require('path');
@@ -14,6 +16,11 @@ module.exports = (options) => {
         DEBUG_INFO_ENABLED: options.env === 'dev'
     };
     return {
+        entry: {
+            'polyfills': './src/main/webapp/app/polyfills',
+            'global': './src/main/webapp/content/scss/global.scss',
+            'main': './src/main/webapp/app/app.main'
+        },
         resolve: {
             extensions: ['.ts', '.js'],
             modules: ['node_modules']
@@ -21,6 +28,14 @@ module.exports = (options) => {
         module: {
             rules: [
                 { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports-loader?jQuery=jquery' },
+                {
+                    test: /\.ts$/,
+                    loaders: [
+                        'angular2-template-loader',
+                        'awesome-typescript-loader'
+                    ],
+                    exclude: ['node_modules/generator-jhipster']
+                },
                 {
                     test: /\.html$/,
                     loader: 'html-loader',
@@ -71,6 +86,13 @@ module.exports = (options) => {
             ]
         },
         plugins: [
+            new CommonsChunkPlugin({
+                names: ['manifest', 'polyfills'].reverse()
+            }),
+            new webpack.DllReferencePlugin({
+                context: './',
+                manifest: require(path.resolve('./target/www/vendor.json'))
+            }),
             new CopyWebpackPlugin([
                 { from: './node_modules/core-js/client/shim.min.js', to: 'core-js-shim.min.js' },
                 { from: './node_modules/swagger-ui/dist', to: 'swagger-ui/dist' },
@@ -99,6 +121,9 @@ module.exports = (options) => {
                 chunksSortMode: 'dependency',
                 inject: 'body'
             }),
+            new AddAssetHtmlPlugin([
+                { filepath: path.resolve('./target/www/vendor.dll.js'), includeSourcemap: false }
+            ]),
             new StringReplacePlugin(),
             new WebpackNotifierPlugin({
                 title: 'JHipster',

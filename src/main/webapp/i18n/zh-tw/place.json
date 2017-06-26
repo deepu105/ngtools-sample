@@ -1,0 +1,28 @@
+{
+    "jh4TestApp": {
+        "place" : {
+            "home": {
+                "title": "Places",
+                "createLabel": "建立一筆新的 Place",
+                "createOrEditLabel": "建立或編輯 Place",
+                "search": "搜尋 Place"
+            },
+            "created": "新的 Place 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Place 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Place 刪除成功",
+            "delete": {
+                "question": "您確定要刪除 Place {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Place"
+            },
+            "name": "Name",
+            "numberOfSeats": "Number Of Seats",
+            "shortName": "Short Name",
+            "colorBackground": "Color Background",
+            "colorText": "Color Text",
+            "preferredDivision": "Preferred Division",
+            "owner": "Owner"
+        }
+    }
+}

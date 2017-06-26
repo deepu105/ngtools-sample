@@ -1,0 +1,79 @@
+<div>
+    <h2>
+        <span jhiTranslate="jh4TestApp.division.home.title">Divisions</span>
+        <button class="btn btn-primary float-right create-division" [routerLink]="['/', { outlets: { popup: ['division-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="jh4TestApp.division.home.createLabel">
+            Create new Division
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jh4TestApp.division.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="divisions">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jh4TestApp.division.name">Name</span></th>
+            <th><span jhiTranslate="jh4TestApp.division.shortName">Short Name</span></th>
+            <th><span jhiTranslate="jh4TestApp.division.numberOfPeople">Number Of People</span></th>
+            <th><span jhiTranslate="jh4TestApp.division.divisionType">Division Type</span></th>
+            <th><span jhiTranslate="jh4TestApp.division.colorBackground">Color Background</span></th>
+            <th><span jhiTranslate="jh4TestApp.division.colorText">Color Text</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let division of divisions ;trackBy: trackId">
+                <td><a [routerLink]="['../division', division.id ]">{{division.id}}</a></td>
+                <td>{{division.name}}</td>
+                <td>{{division.shortName}}</td>
+                <td>{{division.numberOfPeople}}</td>
+                <td jhiTranslate="{{'jh4TestApp.DivisionType.' + division.divisionType}}">{{division.divisionType}}</td>
+                <td>{{division.colorBackground}}</td>
+                <td>{{division.colorText}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../division', division.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'division/'+ division.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'division/'+ division.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

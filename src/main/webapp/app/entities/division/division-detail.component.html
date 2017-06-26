@@ -1,0 +1,45 @@
+
+<div *ngIf="division">
+    <h2><span jhiTranslate="jh4TestApp.division.detail.title">Division</span> {{division.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jh4TestApp.division.name">Name</span></dt>
+        <dd>
+            <span>{{division.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.division.shortName">Short Name</span></dt>
+        <dd>
+            <span>{{division.shortName}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.division.numberOfPeople">Number Of People</span></dt>
+        <dd>
+            <span>{{division.numberOfPeople}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.division.divisionType">Division Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jh4TestApp.DivisionType.' + division.divisionType}}">{{division.divisionType}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.division.colorBackground">Color Background</span></dt>
+        <dd>
+            <span>{{division.colorBackground}}</span>
+        </dd>
+        <dt><span jhiTranslate="jh4TestApp.division.colorText">Color Text</span></dt>
+        <dd>
+            <span>{{division.colorText}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'division/'+ division.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
