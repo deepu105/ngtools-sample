@@ -44,7 +44,7 @@ describe('Component Tests', () => {
             comp = fixture.componentInstance;
         });
 
-        it('should define its initial state', function() {
+        it('should define its initial state', () => {
             comp.ngOnInit();
 
             expect(comp.keyMissing).toBeFalsy();
