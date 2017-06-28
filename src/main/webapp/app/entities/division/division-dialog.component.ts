@@ -9,6 +9,8 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { Division } from './division.model';
 import { DivisionPopupService } from './division-popup.service';
 import { DivisionService } from './division.service';
+import { Place, PlaceService } from '../place';
+import { ResponseWrapper } from '../../shared';
 
 @Component({
     selector: 'jhi-division-dialog',
@@ -26,6 +28,7 @@ export class DivisionDialogComponent implements OnInit {
         public activeModal: NgbActiveModal,
         private alertService: JhiAlertService,
         private divisionService: DivisionService,
+        private placeService: PlaceService,
         private eventManager: JhiEventManager
     ) {
     }
