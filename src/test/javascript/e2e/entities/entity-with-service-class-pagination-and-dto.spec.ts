@@ -31,7 +31,7 @@ describe('EntityWithServiceClassPaginationAndDTO e2e test', () => {
         });
     });
 
-    it('should load create EntityWithServiceClassPaginationAndDTO dialog', function () {
+    it('should load create EntityWithServiceClassPaginationAndDTO dialog', function() {
         element(by.css('button.create-entity-with-service-class-pagination-and-dto')).click().then(() => {
             const expectVal = /jh4TestApp.entityWithServiceClassPaginationAndDTO.home.createOrEditLabel/;
             element.all(by.css('h4.modal-title')).first().getAttribute('jhiTranslate').then((value) => {
@@ -42,7 +42,7 @@ describe('EntityWithServiceClassPaginationAndDTO e2e test', () => {
         });
     });
 
-    afterAll(function () {
+    afterAll(function() {
         accountMenu.click();
         logout.click();
     });

@@ -31,7 +31,7 @@ describe('BankAccount e2e test', () => {
         });
     });
 
-    it('should load create BankAccount dialog', function () {
+    it('should load create BankAccount dialog', function() {
         element(by.css('button.create-bank-account')).click().then(() => {
             const expectVal = /jh4TestApp.bankAccount.home.createOrEditLabel/;
             element.all(by.css('h4.modal-title')).first().getAttribute('jhiTranslate').then((value) => {
@@ -42,7 +42,7 @@ describe('BankAccount e2e test', () => {
         });
     });
 
-    afterAll(function () {
+    afterAll(function() {
         accountMenu.click();
         logout.click();
     });

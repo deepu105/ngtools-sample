@@ -31,7 +31,7 @@ describe('FieldTestMapstructEntity e2e test', () => {
         });
     });
 
-    it('should load create FieldTestMapstructEntity dialog', function () {
+    it('should load create FieldTestMapstructEntity dialog', function() {
         element(by.css('button.create-field-test-mapstruct-entity')).click().then(() => {
             const expectVal = /jh4TestApp.fieldTestMapstructEntity.home.createOrEditLabel/;
             element.all(by.css('h4.modal-title')).first().getAttribute('jhiTranslate').then((value) => {
@@ -42,7 +42,7 @@ describe('FieldTestMapstructEntity e2e test', () => {
         });
     });
 
-    afterAll(function () {
+    afterAll(function() {
         accountMenu.click();
         logout.click();
     });

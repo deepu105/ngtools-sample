@@ -42,7 +42,6 @@ describe('Component Tests', () => {
             service = fixture.debugElement.injector.get(PlaceService);
         });
 
-
         describe('OnInit', () => {
             it('Should call load all on init', () => {
             // GIVEN
@@ -54,7 +53,7 @@ describe('Component Tests', () => {
 
             // THEN
             expect(service.find).toHaveBeenCalledWith(123);
-            expect(comp.place).toEqual(jasmine.objectContaining({id:10}));
+            expect(comp.place).toEqual(jasmine.objectContaining({id: 10}));
             });
         });
     });

@@ -31,7 +31,7 @@ describe('EntityWithServiceImplAndDTO e2e test', () => {
         });
     });
 
-    it('should load create EntityWithServiceImplAndDTO dialog', function () {
+    it('should load create EntityWithServiceImplAndDTO dialog', function() {
         element(by.css('button.create-entity-with-service-impl-and-dto')).click().then(() => {
             const expectVal = /jh4TestApp.entityWithServiceImplAndDTO.home.createOrEditLabel/;
             element.all(by.css('h4.modal-title')).first().getAttribute('jhiTranslate').then((value) => {
@@ -42,7 +42,7 @@ describe('EntityWithServiceImplAndDTO e2e test', () => {
         });
     });
 
-    afterAll(function () {
+    afterAll(function() {
         accountMenu.click();
         logout.click();
     });

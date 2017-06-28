@@ -31,7 +31,7 @@ describe('EntityWithPagination e2e test', () => {
         });
     });
 
-    it('should load create EntityWithPagination dialog', function () {
+    it('should load create EntityWithPagination dialog', function() {
         element(by.css('button.create-entity-with-pagination')).click().then(() => {
             const expectVal = /jh4TestApp.entityWithPagination.home.createOrEditLabel/;
             element.all(by.css('h4.modal-title')).first().getAttribute('jhiTranslate').then((value) => {
@@ -42,7 +42,7 @@ describe('EntityWithPagination e2e test', () => {
         });
     });
 
-    afterAll(function () {
+    afterAll(function() {
         accountMenu.click();
         logout.click();
     });

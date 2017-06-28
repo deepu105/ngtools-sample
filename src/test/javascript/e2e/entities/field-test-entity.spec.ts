@@ -31,7 +31,7 @@ describe('FieldTestEntity e2e test', () => {
         });
     });
 
-    it('should load create FieldTestEntity dialog', function () {
+    it('should load create FieldTestEntity dialog', function() {
         element(by.css('button.create-field-test-entity')).click().then(() => {
             const expectVal = /jh4TestApp.fieldTestEntity.home.createOrEditLabel/;
             element.all(by.css('h4.modal-title')).first().getAttribute('jhiTranslate').then((value) => {
@@ -42,7 +42,7 @@ describe('FieldTestEntity e2e test', () => {
         });
     });
 
-    afterAll(function () {
+    afterAll(function() {
         accountMenu.click();
         logout.click();
     });

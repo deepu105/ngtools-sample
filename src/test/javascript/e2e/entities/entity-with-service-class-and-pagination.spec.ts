@@ -31,7 +31,7 @@ describe('EntityWithServiceClassAndPagination e2e test', () => {
         });
     });
 
-    it('should load create EntityWithServiceClassAndPagination dialog', function () {
+    it('should load create EntityWithServiceClassAndPagination dialog', function() {
         element(by.css('button.create-entity-with-service-class-and-pagination')).click().then(() => {
             const expectVal = /jh4TestApp.entityWithServiceClassAndPagination.home.createOrEditLabel/;
             element.all(by.css('h4.modal-title')).first().getAttribute('jhiTranslate').then((value) => {
@@ -42,7 +42,7 @@ describe('EntityWithServiceClassAndPagination e2e test', () => {
         });
     });
 
-    afterAll(function () {
+    afterAll(function() {
         accountMenu.click();
         logout.click();
     });
