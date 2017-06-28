@@ -95,8 +95,8 @@
     "node": ">=6.9.0"
   },
   "scripts": {
-    "lint": "tslint 'src/main/webapp/app/**/*.ts'",
-    "lint:fix": "tslint 'src/main/webapp/app/**/*.ts' --fix",
+    "lint": "tslint 'src/main/webapp/app/**/*.ts' 'src/test/javascript/**/*.ts'",
+    "lint:fix": "tslint 'src/main/webapp/app/**/*.ts' 'src/test/javascript/**/*.ts' --fix",
     "ngc": "ngc -p tsconfig-aot.json",
     "cleanup": "rimraf target/{aot,www}",
     "start": "yarn run webpack:dev",
@@ -106,7 +106,7 @@
     "webpack:build": "yarn run cleanup && yarn run webpack:build:vendor && yarn run webpack:build:dev",
     "webpack:prod": "yarn run cleanup && webpack -p --config webpack/webpack.vendor.js --progress --profile && webpack -p --config webpack/webpack.prod.js --progress --profile",
     "webpack:test": "yarn run test",
-    "test": "yarn run lint && karma start src/test/javascript/karma.conf.js",
+    "test": "karma start src/test/javascript/karma.conf.js",
     "test:watch": "karma start src/test/javascript/karma.conf.js --watch",
     "e2e": "protractor src/test/javascript/protractor.conf.js",
     "postinstall": "webdriver-manager update && node node_modules/phantomjs-prebuilt/install.js"
